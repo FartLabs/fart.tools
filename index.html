@@ -18,13 +18,13 @@ h1 {
 pre {
   margin: 0 auto;
   border: 28px solid transparent;
-  border-image-slice: 34;
-  border-image-width: 28px;
-  border-image-outset: 10px;
-  border-image-repeat: stretch stretch;
-  border-image-source: url("empty-tube.svg");
-  border-style: solid;
-  width: max-content;
+  border-image-slice: 31;
+border-image-width: 28px;
+border-image-outset: 10px;
+border-image-repeat: stretch stretch;
+border-image-source: url("empty-tube.svg");
+border-style: solid;
+width: max-content;
 }
 
 pre code {
@@ -34,10 +34,7 @@ pre code {
 </head>
 <body>
     <h1>FartLabs</h1>
-
-    <pre>
-      <code>
-import { Lab } from "./labs.ts";
+<pre><code>import { Lab } from "./labs.ts";
 
 export interface Note {
   title?: string;
@@ -73,8 +70,6 @@ export const notesLab = new Lab()
 notesLab.execute("notes.add", { title: "Hello", content: "World" });
 
 const notes = notesLab.execute("notes.list", {});
-console.log(notes);
-        </code>
-    </pre>
+console.log(notes);</code></pre>
 </body>
 </html>
