@@ -1,4 +1,4 @@
-import { createNoise2D } from "npm:simplex-noise@4.0.1";
+import { createNoise2D } from "simplex-noise";
 
 const noise = createNoise2D();
 
