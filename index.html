@@ -34,10 +34,7 @@ width: max-content;
 </head>
 <body>
     <h1>FartLabs</h1>
-
-    <pre>
-      <code>
-import { Lab } from "./labs.ts";
+<pre><code>import { Lab } from "./labs.ts";
 
 export interface Note {
   title?: string;
@@ -73,8 +70,6 @@ export const notesLab = new Lab()
 notesLab.execute("notes.add", { title: "Hello", content: "World" });
 
 const notes = notesLab.execute("notes.list", {});
-console.log(notes);
-        </code>
-    </pre>
+console.log(notes);</code></pre>
 </body>
 </html>
