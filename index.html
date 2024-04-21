@@ -15,16 +15,22 @@ h1 {
   text-align: center;
 }
 
-pre {
-  margin: 0 auto;
+.border-tube-green {
   border: 28px solid transparent;
   border-image-slice: 31;
-border-image-width: 28px;
-border-image-outset: 10px;
-border-image-repeat: stretch stretch;
-border-image-source: url("empty-tube.svg");
-border-style: solid;
-width: max-content;
+  border-image-width: 28px;
+  border-image-outset: 4px;
+  border-image-repeat: stretch stretch;
+  border-image-source: url("empty-tube.svg");
+  border-style: solid;
+  box-shadow: 0 0 42px 8px #C3EF3Caa;
+  padding: 20px;
+  border-radius: 2em;
+}
+
+pre {
+  margin: 0 auto;
+  width: max-content;
 }
 
 pre code {
@@ -34,7 +40,7 @@ pre code {
 </head>
 <body>
     <h1>FartLabs</h1>
-<pre><code>import { Lab } from "./labs.ts";
+<pre class="border-tube-green"><code>import { Lab } from "./labs.ts";
 
 export interface Note {
   title?: string;
