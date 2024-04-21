@@ -1,9 +1,5 @@
 <svg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'>
-    <linearGradient id='g' x1='0%' y1='0%' x2='0%' y2='100%'>
-        <stop offset='0%' stop-color='#24FE41' />
-        <stop offset='25%' stop-color='#24FE41' />
-        <stop offset='50%' stop-color='#38ef7d' />
-        <stop offset='100%' stop-color='#38ef7d' />
-    </linearGradient>
-    <path d='M1.5 1.5 l97 0l0 97l-97 0 l0 -97' stroke-linecap='square' stroke='url(#g)' stroke-width='3' stroke-dasharray='385' />
+<rect stroke="lightgrey" stroke-width="7.5" x="4" y="4" width="92" height="92" rx="20" ry="20" />
+<rect stroke="lightgrey" stroke-width="7.5" x="28" y="28" width="45" height="45" rx="16" ry="16" />
+<rect filter="blur(1px)" stroke="#cccccc77" stroke-width="10" x="17.5" y="17.5" width="66" height="66" rx="12" ry="12" />
 </svg>
