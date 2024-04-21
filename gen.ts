@@ -5,23 +5,14 @@ const noise = createNoise2D();
 // deno run gen.ts
 //
 if (import.meta.main) {
-  const path1 = [
-    { x: 16, y: 16 },
-    { x: 84, y: 16 },
+  const path = [
+    { x: 20, y: 20 },
+    { x: 84, y: 20 },
     { x: 84, y: 84 },
-    { x: 16, y: 84 },
+    { x: 20, y: 84 },
   ];
-  const path2 = [
-    { x: 84, y: 84 },
-    { x: 16, y: 84 },
-    { x: 16, y: 16 },
-    { x: 84, y: 16 },
-  ];
-  const verticesAmount = Deno.args[0] ? parseInt(Deno.args[0]) : 20;
-  const tubeSVG = renderTube(
-    renderBubbles(path1, verticesAmount, 15),
-    renderBubbles(path2, verticesAmount, 15),
-  );
+  const verticesAmount = Deno.args[0] ? parseInt(Deno.args[0]) : 100;
+  const tubeSVG = renderTube(renderBubbles(path, verticesAmount, 30));
 
   Deno.writeTextFileSync("tube.svg", tubeSVG);
 }
@@ -30,9 +21,9 @@ function renderTube(...children: string[]) {
   return [
     `<svg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'>`,
     `<rect filter="blur(1px)" stroke="#C3EF3Caa" stroke-width="28" x="16" y="16" width="68" height="68" rx="16" ry="16" />`,
+    ...children,
     `<rect stroke="#fffffff0" stroke-width="2" x="3" y="3" width="94" height="94" rx="24" ry="24" />`,
     `<rect stroke="#fffffff0" stroke-width="2" x="29" y="29" width="42" height="42" rx="6" ry="6" />`,
-    ...children,
     `<rect filter="blur(2px)" stroke="#ffffffaa" stroke-width="7.5" x="17.5" y="17.5" width="66" height="66" rx="12" ry="12" />`,
     `</svg>\n`,
   ].join("\n");
@@ -43,7 +34,7 @@ function renderBubbles(
   amount: number,
   totalBubbles: number,
 ): string {
-  const duration = 10;
+  const duration = 8;
   return Array.from(
     { length: totalBubbles },
     (_, i) =>
@@ -133,7 +124,7 @@ function getOffset(
   theta: number,
   offsetX = 0,
   offsetY = offsetX,
-  offsetR = 16,
+  offsetR = 0.5,
 ) {
   const x = Math.cos(theta) * offsetR + offsetX;
   const y = Math.sin(theta) * offsetR + offsetY;
@@ -151,7 +142,7 @@ function generateVertices(
   path: Vertex[],
   amount: number,
   seed: number,
-  variance = 6.67,
+  variance = 5,
   fractionDigits = 2,
 ) {
   if (
