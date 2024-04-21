@@ -1,5 +1,0 @@
-<svg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'>
-<rect stroke="lightgrey" stroke-width="0.5" x="0.5" y="0.5" width="99" height="99" rx="2" ry="2" />
-<rect stroke="lightgrey" stroke-width="0.5" x="4.5" y="4.5" width="91" height="91" rx="1.2" ry="1.2" />
-<rect filter="blur(1px)" stroke="lightgrey" stroke-width="1.5" x="2.25" y="2.25" width="95" height="95" rx="1.5" ry="1.5" />
-</svg>
