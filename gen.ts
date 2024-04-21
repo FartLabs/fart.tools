@@ -17,11 +17,12 @@ if (import.meta.main) {
     { x: 16, y: 16 },
     { x: 84, y: 16 },
   ];
-  const verticesAmount = Deno.args[0] ? parseInt(Deno.args[0]) : 42;
+  const verticesAmount = Deno.args[0] ? parseInt(Deno.args[0]) : 20;
   const tubeSVG = renderTube(
-    renderBubbles(path1, verticesAmount, 10),
-    renderBubbles(path2, verticesAmount, 10),
+    renderBubbles(path1, verticesAmount, 15),
+    renderBubbles(path2, verticesAmount, 15),
   );
+
   Deno.writeTextFileSync("tube.svg", tubeSVG);
 }
 
@@ -42,9 +43,17 @@ function renderBubbles(
   amount: number,
   totalBubbles: number,
 ): string {
+  const duration = 10;
   return Array.from(
     { length: totalBubbles },
-    () => renderBubble(path, amount, Math.random()),
+    (_, i) =>
+      renderBubble(
+        path,
+        amount,
+        Math.random(),
+        duration,
+        -i * (duration / totalBubbles),
+      ),
   ).join("");
 }
 
@@ -52,11 +61,13 @@ function renderBubble(
   path: Vertex[],
   amount: number,
   seed: number,
+  duration: number,
+  delay = 0,
 ): string {
   const vertices = generateVertices(path, amount, seed);
   return [
     '<circle r="2" fill="#000" fill-opacity="60%">',
-    '<animateMotion dur="8s" repeatCount="indefinite" ',
+    `<animateMotion dur="${duration}s" repeatCount="indefinite" begin="${delay}s" `,
     `path="${renderVertices(vertices)}"`,
     "/>",
     "</circle>",
