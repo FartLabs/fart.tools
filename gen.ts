@@ -5,19 +5,64 @@ const noise = createNoise2D();
 // deno run gen.ts
 //
 if (import.meta.main) {
-  // M 16,16 L 84,16 L 84,84 L 16,84 Z
-  const path = [
+  const path1 = [
     { x: 16, y: 16 },
     { x: 84, y: 16 },
     { x: 84, y: 84 },
     { x: 16, y: 84 },
   ];
-  const verticesAmount = Deno.args[0] ? parseInt(Deno.args[0]) : 100;
-  const vertices = generateVertices(path, verticesAmount, Math.random());
-  console.log(renderVertices(vertices));
+  const path2 = [
+    { x: 84, y: 84 },
+    { x: 16, y: 84 },
+    { x: 16, y: 16 },
+    { x: 84, y: 16 },
+  ];
+  const verticesAmount = Deno.args[0] ? parseInt(Deno.args[0]) : 42;
+  const tubeSVG = renderTube(
+    renderBubbles(path1, verticesAmount, 10),
+    renderBubbles(path2, verticesAmount, 10),
+  );
+  Deno.writeTextFileSync("tube.svg", tubeSVG);
 }
 
-// path="M 16,16 L 84,16 L 84,84 L 16,84 Z"
+function renderTube(...children: string[]) {
+  return [
+    `<svg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'>`,
+    `<rect filter="blur(1px)" stroke="#C3EF3Caa" stroke-width="28" x="16" y="16" width="68" height="68" rx="16" ry="16" />`,
+    `<rect stroke="#fffffff0" stroke-width="2" x="3" y="3" width="94" height="94" rx="24" ry="24" />`,
+    `<rect stroke="#fffffff0" stroke-width="2" x="29" y="29" width="42" height="42" rx="6" ry="6" />`,
+    ...children,
+    `<rect filter="blur(2px)" stroke="#ffffffaa" stroke-width="7.5" x="17.5" y="17.5" width="66" height="66" rx="12" ry="12" />`,
+    `</svg>\n`,
+  ].join("\n");
+}
+
+function renderBubbles(
+  path: Vertex[],
+  amount: number,
+  totalBubbles: number,
+): string {
+  return Array.from(
+    { length: totalBubbles },
+    () => renderBubble(path, amount, Math.random()),
+  ).join("");
+}
+
+function renderBubble(
+  path: Vertex[],
+  amount: number,
+  seed: number,
+): string {
+  const vertices = generateVertices(path, amount, seed);
+  return [
+    '<circle r="2" fill="#000" fill-opacity="60%">',
+    '<animateMotion dur="8s" repeatCount="indefinite" ',
+    `path="${renderVertices(vertices)}"`,
+    "/>",
+    "</circle>",
+  ].join("");
+}
+
 function renderVertices(vertices: Vertex[]): string {
   let path = "M ";
   for (const vertex of vertices) {
@@ -84,10 +129,18 @@ function getOffset(
   return (noise(x, y) - 0.5) * maxOffset;
 }
 
+/**
+ * generateVertices generates a set of vertices based on a path and a seed
+ * used for Simplex noise using the polar noise technique.
+ *
+ * @see
+ * [Coding Challenge #136.1: Polar Perlin Noise Loops](https://youtu.be/ZI1dmHv3MeM)
+ */
 function generateVertices(
   path: Vertex[],
   amount: number,
   seed: number,
+  variance = 6.67,
   fractionDigits = 2,
 ) {
   if (
@@ -102,8 +155,8 @@ function generateVertices(
   return Array.from(iteratePath(path, amount))
     .map((v, i, { length }) => {
       const theta = (i / length) * Math.PI * 2;
-      const offsetX = getOffset(1, theta, seedX);
-      const offsetY = getOffset(1, theta, seedY);
+      const offsetX = getOffset(variance, theta, seedX);
+      const offsetY = getOffset(variance, theta, seedY);
       return {
         x: Number((v.x + offsetX).toFixed(fractionDigits)),
         y: Number((v.y + offsetY).toFixed(fractionDigits)),
