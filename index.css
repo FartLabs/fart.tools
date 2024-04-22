@@ -7,11 +7,17 @@
   --darker-dark-green: #002d17;
 
   --secondary: #db7093;
+  --off-white: #ddd;
+  --dark-off-white: #aaa;
+}
+
+::selection {
+  background-color: #db709396;
 }
 
 body {
   background-color: var(--dark-green);
-  color: #ddd;
+  color: var(--off-white);
   font-family: sans-serif;
 }
 
@@ -26,17 +32,46 @@ h3,
 h4,
 h5,
 h6 {
-  text-align: center;
   font-family: "Overpass", sans-serif;
+}
+
+.page-section {
+  margin: 1em auto;
+  max-width: 64ch;
+
+  @media (max-width: 800px) {
+    padding: 0 1em;
+  }
+}
+
+.page-nav-header {
+  font-family: "Overpass", sans-serif;
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+.page-link,
+.page-link-visible-on-hover {
+  color: var(--off-white);
+}
+
+.page-link:visited,
+.page-link-visible-on-hover:visited {
+  color: var(--dark-off-white);
+}
+
+.page-link-visible-on-hover {
+  text-decoration: none;
+}
+
+.page-link-visible-on-hover:hover {
+  color: var(--secondary);
+  text-decoration: underline;
 }
 
 p,
 pre {
   width: min(80ch, 80%);
-}
-
-p {
-  margin: 2em auto 2em auto;
 }
 
 pre {
@@ -162,7 +197,11 @@ pre code {
 }
 
 footer {
-  text-align: center;
   margin-top: 4em;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+footer p {
+  text-align: center;
+  width: 100%;
 }

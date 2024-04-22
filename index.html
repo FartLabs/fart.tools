@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FartLabs</title>
+    <title>FartLabs, where imagination becomes software</title>
+    <link rel="icon" href="fl-logo.png" />
     <link rel="stylesheet" href="tube-green.css" />
     <link rel="stylesheet" href="tube-empty.css" />
     <link rel="stylesheet" href="keyframes.css" />
@@ -11,10 +12,16 @@
     <script src="https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js"></script>
   </head>
   <body>
-    <h1>FartLabs</h1>
+    <section class="page-section">
+      <nav>
+        <a class="page-nav-header page-link-visible-on-hover" href="">FartLabs</a>
+      </nav>
+    </section>
 
-    <section class="hero">
-      <h2>Where your imagination becomes software.</h2>
+    <section class="hero page-section">
+      <h2 id="imagination">
+        <a class="page-link-visible-on-hover" href="#imagination">Where your imagination becomes software.</a>
+      </h2>
 
       <pre class="border-tube-green glow"><code>import { Lab } from "./labs.ts";
 
@@ -55,7 +62,11 @@ const notes = notesLab.execute("notes.list", {});
 console.log(notes);</code></pre>        
     </section>
 
-    <h2>Rise to the occasion.</h2>
+    <section class="page-section">
+      <h2 id="rise">
+        <a class="page-link-visible-on-hover" href="#rise">Rise to the occasion.</a>
+      </h2>
+    </section>
 
     <section class="cubes">
       <div class="cube">
@@ -83,14 +94,19 @@ console.log(notes);</code></pre>
       </div>
     </section>
 
-    <section class="qna">
-      <h2>Q&A</h2>
+    <section class="qna page-section">
+      <h2 id="faq">
+        <a class="page-link-visible-on-hover" href="#faq">FAQs</a>
+      </h2>
 
-      <h3>What is FartLabs?</h3>
+      <h3 id="what-is-fartlabs">
+        <a class="page-link-visible-on-hover" href="#what-is-fartlabs">What is FartLabs?</a>
+      </h3>
       <p>
         FartLabs develops software out the wazoo! We specialize in
         <strong class="sparkle">imagination-driven</strong> development.
       </p>
+      </section>
 
     <footer>
       <p>© <a href="https://github.com/FartLabs">FartLabs</a></p>
