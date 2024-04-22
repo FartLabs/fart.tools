@@ -3,7 +3,7 @@
 :root {
   --green: #c3ef3c;
   --dark-green: #004021;
-  --lighter-dark-green: #005e32;
+  --lighter-dark-green: #004927;
   --darker-dark-green: #002d17;
 
   --secondary: #db7093;
@@ -36,7 +36,7 @@ pre {
 }
 
 p {
-  margin: 4em auto;
+  margin: 2em auto 2em auto;
 }
 
 pre {
@@ -65,9 +65,7 @@ pre code {
     grid-template-columns: 1fr;
   }
 
-  .cube:nth-child(2),
-  .cube:nth-child(3),
-  .cube:nth-child(4) {
+  .cube:not(:nth-child(1)) {
     display: none;
   }
 }
@@ -77,40 +75,10 @@ pre code {
   width: 2em;
   transform-style: preserve-3d;
   transform: rotateX(-32deg) rotateY(32deg);
-}
 
-.side {
-  font-family: "Overpass", sans-serif;
-  font-weight: 900;
-  border-radius: 5px;
-  position: absolute;
-  width: 2em;
-  text-align: center;
-  line-height: 2em;
-}
-
-.top {
-  transform: rotateX(90deg) translateZ(1em);
-  color: #111;
-  background-image: linear-gradient(#c3ef3caa, #c3ef3caa);
-  height: 2em;
-  outline: 2px solid #ffffffdd;
-}
-
-.left {
-  transform: rotateY(-90deg) translateZ(1em);
-  background-image: linear-gradient(
-    var(--light-dark-green) 0%,
-    rgba(0, 0, 0, 0) 100%
-  );
-}
-
-.front {
-  transform: translateZ(1em);
-  background-image: linear-gradient(
-    var(--darker-dark-green) 0%,
-    rgba(0, 0, 0, 0) 100%
-  );
+  @media (reduced-motion: reduce) {
+    animation-timing-function: 0s linear;
+  }
 }
 
 .cube:nth-child(1) {
@@ -133,142 +101,65 @@ pre code {
   animation-timeline: view();
 }
 
-@keyframes rise {
-  0% {
-    transform: translateY(1000px);
-    height: 0em;
-  }
-
-  60% {
-    transform: translateY(0);
-    height: 6em;
-  }
-
-  100% {
-    transform: translateY(0);
-    height: 6em;
-  }
+.side {
+  font-family: "Overpass", sans-serif;
+  font-weight: 900;
+  border-radius: 5px;
+  position: absolute;
+  width: 2em;
+  text-align: center;
+  line-height: 2em;
 }
 
-@keyframes rise-fast {
-  0% {
-    transform: translateY(1000px);
-    height: 0em;
-  }
-
-  50% {
-    transform: translateY(0);
-    height: 6em;
-  }
-
-  100% {
-    transform: translateY(0);
-    height: 6em;
-  }
+.top {
+  transform: rotateX(90deg) translateZ(1em);
+  color: var(--darker-dark-green);
+  background-image: linear-gradient(#c3ef3caa, #c3ef3caa);
+  height: 2em;
+  outline: 2px solid var(--darker-dark-green);
+  animation: fade-in linear;
+  animation-timeline: view();
 }
 
-@keyframes rise-faster {
-  0% {
-    transform: translateY(1000px);
-    height: 0em;
-  }
-
-  40% {
-    transform: translateY(0);
-    height: 6em;
-  }
-
-  100% {
-    transform: translateY(0);
-    height: 6em;
-  }
+.left {
+  transform: rotateY(-90deg) translateZ(1em);
+  background-image: linear-gradient(
+    var(--lighter-dark-green) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
 }
 
-@keyframes rise-fastest {
-  0% {
-    transform: translateY(1000px);
-    height: 0em;
-  }
-
-  30% {
-    transform: translateY(0);
-    height: 6em;
-  }
-
-  100% {
-    transform: translateY(0);
-    height: 6em;
-  }
+.front {
+  color: var(--green);
+  transform: translateZ(1em);
+  background-image: linear-gradient(
+    var(--darker-dark-green) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
 }
 
-/* @keyframes lengthen-fastest {
-  0% {
-    height: 0em;
-  }
-
-  50% {
-    height: 6em;
-  }
-
-  100% {
-    height: 6em;
-  }
+.cube:nth-child(1) .front,
+.cube:nth-child(1) .left {
+  animation: fade-in linear, lengthen-fastest linear;
+  animation-timeline: view();
 }
 
-@keyframes lengthen-faster {
-  0% {
-    height: 0em;
-  }
-
-  60% {
-    height: 6em;
-  }
-
-  100% {
-    height: 6em;
-  }
+.cube:nth-child(2) .front,
+.cube:nth-child(2) .left {
+  animation: fade-in linear, lengthen-faster linear;
+  animation-timeline: view();
 }
 
-@keyframes lengthen-fast {
-  0% {
-    height: 0em;
-  }
-
-  70% {
-    height: 6em;
-  }
-
-  100% {
-    height: 6em;
-  }
+.cube:nth-child(3) .front,
+.cube:nth-child(3) .left {
+  animation: fade-in linear, lengthen-fast linear;
+  animation-timeline: view();
 }
 
-@keyframes lengthen {
-  0% {
-    height: 0em;
-  }
-
-  80% {
-    height: 6em;
-  }
-
-  100% {
-    height: 6em;
-  }
-} */
-
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-
-  40% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 1;
-  }
+.cube:nth-child(4) .front,
+.cube:nth-child(4) .left {
+  animation: fade-in linear, lengthen linear;
+  animation-timeline: view();
 }
 
 footer {
