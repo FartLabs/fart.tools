@@ -36,7 +36,7 @@ pre code {
   grid-template-rows: 1fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
-  margin: 24em auto;
+  margin: 4em auto 32em auto;
   justify-items: center;
 }
 
@@ -45,17 +45,16 @@ pre code {
   width: 2em;
   transform-style: preserve-3d;
   transform: rotateX(-32deg) rotateY(32deg);
-  /* TODO: is everything ok? */
 }
 
 .side {
+  font-family: "Overpass", sans-serif;
   border-radius: 5px;
   position: absolute;
   width: 2em;
   text-align: center;
   line-height: 2em;
   opacity: 0;
-  font-family: "Overpass", sans-serif;
 }
 
 .top {
@@ -72,7 +71,6 @@ pre code {
     var(--light-dark-green) 0%,
     rgba(0, 0, 0, 0) 100%
   );
-  animation-timeline: view();
 }
 
 .front {
@@ -81,27 +79,30 @@ pre code {
     var(--darker-dark-green) 0%,
     rgba(0, 0, 0, 0) 100%
   );
-  animation-timeline: view();
 }
 
 .cube:nth-child(1) .front,
 .cube:nth-child(1) .left {
   animation: fade-in linear, rise-fastest linear;
+  animation-timeline: view();
 }
 
 .cube:nth-child(2) .front,
 .cube:nth-child(2) .left {
   animation: fade-in linear, rise-faster linear;
+  animation-timeline: view();
 }
 
 .cube:nth-child(3) .front,
 .cube:nth-child(3) .left {
   animation: fade-in linear, rise-fast linear;
+  animation-timeline: view();
 }
 
 .cube:nth-child(4) .front,
 .cube:nth-child(4) .left {
   animation: fade-in linear, rise linear;
+  animation-timeline: view();
 }
 
 @keyframes rise-fastest {
