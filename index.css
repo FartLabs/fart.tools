@@ -77,7 +77,6 @@ pre code {
   width: 2em;
   transform-style: preserve-3d;
   transform: rotateX(-32deg) rotateY(32deg);
-  /* opacity: 0; */
 }
 
 .side {
@@ -95,8 +94,6 @@ pre code {
   color: #111;
   background-image: linear-gradient(#c3ef3caa, #c3ef3caa);
   height: 2em;
-  animation: fade-in linear;
-  animation-timeline: view();
   outline: 2px solid #ffffffdd;
 }
 
@@ -117,78 +114,90 @@ pre code {
 }
 
 .cube:nth-child(1) {
-  animation: fade-in linear, rise-fastest linear;
+  animation: rise-fastest linear;
   animation-timeline: view();
 }
 
 .cube:nth-child(2) {
-  animation: fade-in linear, rise-faster linear;
+  animation: rise-faster linear;
   animation-timeline: view();
 }
 
 .cube:nth-child(3) {
-  animation: fade-in linear, rise-fast linear;
+  animation: rise-fast linear;
   animation-timeline: view();
 }
 
 .cube:nth-child(4) {
-  animation: fade-in linear, rise linear;
+  animation: rise linear;
   animation-timeline: view();
 }
 
 @keyframes rise {
   0% {
     transform: translateY(1000px);
+    height: 0em;
   }
 
   60% {
     transform: translateY(0);
+    height: 6em;
   }
 
   100% {
     transform: translateY(0);
+    height: 6em;
   }
 }
 
 @keyframes rise-fast {
   0% {
     transform: translateY(1000px);
+    height: 0em;
   }
 
   50% {
     transform: translateY(0);
+    height: 6em;
   }
 
   100% {
     transform: translateY(0);
+    height: 6em;
   }
 }
 
 @keyframes rise-faster {
   0% {
     transform: translateY(1000px);
+    height: 0em;
   }
 
   40% {
     transform: translateY(0);
+    height: 6em;
   }
 
   100% {
     transform: translateY(0);
+    height: 6em;
   }
 }
 
 @keyframes rise-fastest {
   0% {
     transform: translateY(1000px);
+    height: 0em;
   }
 
   30% {
     transform: translateY(0);
+    height: 6em;
   }
 
   100% {
     transform: translateY(0);
+    height: 6em;
   }
 }
 
