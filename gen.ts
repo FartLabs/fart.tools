@@ -2,6 +2,8 @@ import { createNoise2D } from "simplex-noise";
 
 const noise = createNoise2D();
 
+const green = "#C3EF3C";
+
 // deno run gen.ts
 //
 if (import.meta.main) {
@@ -12,15 +14,51 @@ if (import.meta.main) {
     { x: 20, y: 84 },
   ];
   const verticesAmount = Deno.args[0] ? parseInt(Deno.args[0]) : 100;
-  const tubeSVG = renderTube(renderBubbles(path, verticesAmount, 30));
 
-  Deno.writeTextFileSync("tube.svg", tubeSVG);
+  const emptyTubeSVG = renderEmptyTube();
+  Deno.writeTextFileSync("tube-empty.svg", emptyTubeSVG);
+
+  const emptyTubeCSS = renderTubeCSS("empty", "#ffffffaa");
+  Deno.writeTextFileSync("tube-empty.css", emptyTubeCSS);
+
+  const greenTubeSVG = renderGreenTube(
+    renderBubbles(path, verticesAmount, 30, green),
+  );
+  Deno.writeTextFileSync("tube-green.svg", greenTubeSVG);
+
+  const greenTubeCSS = renderTubeCSS("green", green);
+  Deno.writeTextFileSync("tube-green.css", greenTubeCSS);
 }
 
-function renderTube(...children: string[]) {
+function renderTubeCSS(name: string, color: string) {
+  return `.border-tube-${name} {
+  border: 28px solid transparent;
+  border-image-slice: 31;
+  border-image-width: 28px;
+  border-image-outset: 4px;
+  border-image-repeat: stretch stretch;
+  border-image-source: url("tube-${name}.svg");
+  border-style: solid;
+  padding: 20px;
+  border-radius: 2em;
+}
+
+.border-tube-${name}[class*=" glow"],
+.border-tube-${name}[class*="glow "] {
+  box-shadow: 0 0 42px 8px ${color};
+}\n`;
+}
+
+function renderGreenTube(...children: string[]) {
+  return renderEmptyTube(
+    `<rect filter="blur(1px)" stroke="${green}aa" stroke-width="28" x="16" y="16" width="68" height="68" rx="16" ry="16" />`,
+    ...children,
+  );
+}
+
+function renderEmptyTube(...children: string[]) {
   return [
     `<svg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'>`,
-    `<rect filter="blur(1px)" stroke="#C3EF3Caa" stroke-width="28" x="16" y="16" width="68" height="68" rx="16" ry="16" />`,
     ...children,
     `<rect stroke="#fffffff0" stroke-width="2" x="3" y="3" width="94" height="94" rx="24" ry="24" />`,
     `<rect stroke="#fffffff0" stroke-width="2" x="29" y="29" width="42" height="42" rx="6" ry="6" />`,
@@ -33,6 +71,7 @@ function renderBubbles(
   path: Vertex[],
   amount: number,
   totalBubbles: number,
+  color: string,
 ): string {
   const duration = 8;
   return Array.from(
@@ -42,6 +81,7 @@ function renderBubbles(
         path,
         amount,
         Math.random(),
+        color,
         duration,
         -i * (duration / totalBubbles),
       ),
@@ -52,12 +92,13 @@ function renderBubble(
   path: Vertex[],
   amount: number,
   seed: number,
+  color: string,
   duration: number,
   delay = 0,
 ): string {
   const vertices = generateVertices(path, amount, seed);
   return [
-    '<circle r="2" fill="#000" fill-opacity="60%">',
+    `<circle r="4" fill="${color}" fill-opacity="60%">`,
     `<animateMotion dur="${duration}s" repeatCount="indefinite" begin="${delay}s" `,
     `path="${renderVertices(vertices)}"`,
     "/>",

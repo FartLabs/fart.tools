@@ -1,0 +1,16 @@
+.border-tube-empty {
+  border: 28px solid transparent;
+  border-image-slice: 31;
+  border-image-width: 28px;
+  border-image-outset: 4px;
+  border-image-repeat: stretch stretch;
+  border-image-source: url("tube-empty.svg");
+  border-style: solid;
+  padding: 20px;
+  border-radius: 2em;
+}
+
+.border-tube-empty[class*=" glow"],
+.border-tube-empty[class*="glow "] {
+  box-shadow: 0 0 42px 8px #ffffffaa;
+}
