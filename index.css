@@ -36,8 +36,8 @@ h6 {
 }
 
 .page-section {
-  margin: 1em auto;
   max-width: 64ch;
+  margin: 0 auto 8em auto;
 
   @media (max-width: 800px) {
     padding: 0 1em;
@@ -75,6 +75,22 @@ h6 {
 
 .page-heading-2 {
   font-size: 2.34em;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  align-items: center;
+  justify-items: center;
+
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.hero h2 {
+  max-width: 64ch;
 }
 
 pre code {
