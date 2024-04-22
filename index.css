@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap");
+
 :root {
   --green: #c3ef3c;
   --dark-green: #004021;
@@ -10,10 +12,13 @@
 body {
   background-color: var(--dark-green);
   color: #ddd;
+  font-family: sans-serif;
 }
 
-h1 {
+h1,
+h2 {
   text-align: center;
+  font-family: "Overpass", sans-serif;
 }
 
 pre {
@@ -40,7 +45,7 @@ pre code {
   width: 2em;
   transform-style: preserve-3d;
   transform: rotateX(-32deg) rotateY(32deg);
-  justify-items: baseline; /* TODO: Fix this */
+  /* TODO: is everything ok? */
 }
 
 .side {
@@ -50,6 +55,7 @@ pre code {
   text-align: center;
   line-height: 2em;
   opacity: 0;
+  font-family: "Overpass", sans-serif;
 }
 
 .top {
