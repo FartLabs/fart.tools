@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FartLabs, where imagination becomes software</title>
     <link rel="icon" href="fl-logo.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark-dimmed.min.css"
+    />
     <link rel="stylesheet" href="tube-green.css" />
     <link rel="stylesheet" href="tube-empty.css" />
     <link rel="stylesheet" href="keyframes.css" />
@@ -14,57 +18,73 @@
   <body>
     <section class="page-section">
       <nav>
-        <a class="page-nav-header page-link-visible-on-hover" href="">FartLabs</a>
+        <a class="page-nav-header page-link-visible-on-hover" href=""
+          >FartLabs</a
+        >
       </nav>
     </section>
 
     <section class="hero page-section">
       <h2 id="imagination">
-        <a class="page-link-visible-on-hover" href="#imagination">Where your imagination becomes software.</a>
+        <a class="page-link-visible-on-hover" href="#imagination"
+          >Where your imagination becomes software.</a
+        >
       </h2>
 
-      <pre class="border-tube-green glow"><code>import { Lab } from "./labs.ts";
+      <pre
+        class="border-tube-green glow"
+      ><code class="hljs"><span class="hljs-keyword">import</span> { <span class="hljs-title class_">Lab</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">"labs/labs.ts"</span>;
 
-export interface Note {
-  title?: string;
-  content: string;
+<span class="hljs-keyword">interface</span> <span class="hljs-title class_">Note</span> {
+  title?: <span class="hljs-built_in">string</span>;
+  <span class="hljs-attr">content</span>: <span class="hljs-built_in">string</span>;
 }
 
-export const notesLab = new Lab()
-  .variable("notes", new Map<string, Note>())
-  .procedure(
-    "notes.add",
-    (note: Note, { notes }) => {
-      const id = crypto.randomUUID();
-      notes.set(id, note);
-      return { id };
+<span class="hljs-keyword">const</span> notesLab = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Lab</span>()
+  .<span class="hljs-title function_">variable</span>(<span class="hljs-string">"notes"</span>, <span class="hljs-keyword">new</span> <span class="hljs-title class_">Map</span>&lt;<span class="hljs-built_in">string</span>, <span class="hljs-title class_">Note</span>&gt;())
+  .<span class="hljs-title function_">procedure</span>(
+    <span class="hljs-string">"notes.add"</span>,
+    <span class="hljs-function">(<span class="hljs-params">note: Note, { notes }</span>) =&gt;</span> {
+      <span class="hljs-keyword">const</span> id = crypto.<span class="hljs-title function_">randomUUID</span>();
+      notes.<span class="hljs-title function_">set</span>(id, note);
+      <span class="hljs-keyword">return</span> { id };
     },
-    ["notes"],
+    [<span class="hljs-string">"notes"</span>],
   )
-  .procedure(
-    "notes.get",
-    ({ id }: { id: string }, { notes }) => {
-      return notes.get(id);
+  .<span class="hljs-title function_">procedure</span>(
+    <span class="hljs-string">"notes.get"</span>,
+    <span class="hljs-function">(<span class="hljs-params">{ id }: { id: <span class="hljs-built_in">string</span> }, { notes }</span>) =&gt;</span> {
+      <span class="hljs-keyword">return</span> notes.<span class="hljs-title function_">get</span>(id);
     },
-    ["notes"],
+    [<span class="hljs-string">"notes"</span>],
   )
-  .procedure(
-    "notes.list",
-    (_, { notes }) => {
-      return Array.from(notes.values());
+  .<span class="hljs-title function_">procedure</span>(
+    <span class="hljs-string">"notes.list"</span>,
+    <span class="hljs-function">(<span class="hljs-params">_, { notes }</span>) =&gt;</span> {
+      <span class="hljs-keyword">return</span> <span class="hljs-title class_">Array</span>.<span class="hljs-title function_">from</span>(notes.<span class="hljs-title function_">values</span>());
     },
-    ["notes"],
+    [<span class="hljs-string">"notes"</span>],
   );
 
-notesLab.execute("notes.add", { title: "Hello", content: "World" });
+notesLab.<span class="hljs-title function_">execute</span>(
+  <span class="hljs-string">"notes.add"</span>,
+  { <span class="hljs-attr">title</span>: <span class="hljs-string">"Hello"</span>, <span class="hljs-attr">content</span>: <span class="hljs-string">"World"</span> },
+);
 
-const notes = notesLab.execute("notes.list", {});
-console.log(notes);</code></pre>        
+<span class="hljs-keyword">const</span> notes = notesLab.<span class="hljs-title function_">execute</span>(
+  <span class="hljs-string">"notes.list"</span>,
+  {},
+);
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(notes);
+</code></pre>
     </section>
 
     <section class="page-section">
       <h2 id="rise">
-        <a class="page-link-visible-on-hover" href="#rise">Rise to the occasion.</a>
+        <a class="page-link-visible-on-hover" href="#rise"
+          >Rise to the occasion.</a
+        >
       </h2>
     </section>
 
@@ -100,13 +120,15 @@ console.log(notes);</code></pre>
       </h2>
 
       <h3 id="what-is-fartlabs">
-        <a class="page-link-visible-on-hover" href="#what-is-fartlabs">What is FartLabs?</a>
+        <a class="page-link-visible-on-hover" href="#what-is-fartlabs"
+          >What is FartLabs?</a
+        >
       </h3>
       <p>
         FartLabs develops software out the wazoo! We specialize in
         <strong class="sparkle">imagination-driven</strong> development.
       </p>
-      </section>
+    </section>
 
     <footer>
       <p>© <a href="https://github.com/FartLabs">FartLabs</a></p>

@@ -12,7 +12,7 @@
 }
 
 ::selection {
-  background-color: #db709396;
+  background-color: #db709384;
 }
 
 body {
@@ -67,16 +67,6 @@ h6 {
 .page-link-visible-on-hover:hover {
   color: var(--secondary);
   text-decoration: underline;
-}
-
-p,
-pre {
-  width: min(80ch, 80%);
-}
-
-pre {
-  margin: 4em auto;
-  border: 10px solid transparent;
 }
 
 pre code {
@@ -204,4 +194,8 @@ footer {
 footer p {
   text-align: center;
   width: 100%;
+}
+
+.hljs {
+  background-color: var(--darker-dark-green);
 }
