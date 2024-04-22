@@ -15,14 +15,28 @@ body {
   font-family: sans-serif;
 }
 
+.sparkle:before,
+.sparkle:after {
+  content: "✨";
+}
+
 h1,
-h2 {
+h2,
+h3,
+h4,
+h5,
+h6 {
   text-align: center;
   font-family: "Overpass", sans-serif;
 }
 
+p {
+  margin: 1em auto;
+  width: 50ch;
+}
+
 pre {
-  margin: 0 auto;
+  margin: 4em auto;
   width: max-content;
 }
 
@@ -38,6 +52,7 @@ pre code {
   grid-row-gap: 0px;
   margin: 4em auto 32em auto;
   justify-items: center;
+  /* TODO: Show cubes rising from the bottom of the container. */
 }
 
 .cube {
@@ -49,6 +64,7 @@ pre code {
 
 .side {
   font-family: "Overpass", sans-serif;
+  font-weight: 900;
   border-radius: 5px;
   position: absolute;
   width: 2em;
@@ -59,10 +75,12 @@ pre code {
 
 .top {
   transform: rotateX(90deg) translateZ(1em);
+  color: #111;
   background-image: linear-gradient(#c3ef3caa, #c3ef3caa);
   height: 2em;
   animation: fade-in linear;
   animation-timeline: view();
+  outline: 2px solid #ffffffdd;
 }
 
 .left {
