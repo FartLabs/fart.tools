@@ -60,12 +60,16 @@ h6 {
   color: var(--dark-off-white);
 }
 
+.page-link:hover,
+.page-link-visible-on-hover:hover {
+  color: var(--secondary);
+}
+
 .page-link-visible-on-hover {
   text-decoration: none;
 }
 
 .page-link-visible-on-hover:hover {
-  color: var(--secondary);
   text-decoration: underline;
 }
 
