@@ -249,3 +249,35 @@
     opacity: 1;
   }
 }
+
+@keyframes shake {
+  0% {
+    scale: 1;
+    transform: rotate(0deg);
+  }
+
+  20% {
+    transform: rotate(-25deg);
+  }
+
+  40% {
+    transform: rotate(10deg);
+  }
+
+  50% {
+    scale: 1.2;
+  }
+
+  60% {
+    transform: rotate(-25deg);
+  }
+
+  80% {
+    transform: rotate(10deg);
+  }
+
+  100% {
+    scale: 1;
+    transform: rotate(0deg);
+  }
+}

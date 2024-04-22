@@ -35,6 +35,15 @@ h6 {
   font-family: "Overpass", sans-serif;
 }
 
+.fl-icon {
+  position: absolute;
+  text-decoration: none;
+}
+
+.fl-icon:hover {
+  animation: shake 560ms ease-in-out;
+}
+
 .page-section {
   max-width: 64ch;
   margin: 0 auto 8em auto;
