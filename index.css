@@ -69,6 +69,14 @@ h6 {
   text-decoration: underline;
 }
 
+.page-heading {
+  font-size: 3em;
+}
+
+.page-heading-2 {
+  font-size: 2.34em;
+}
+
 pre code {
   white-space: pre-wrap;
 }
