@@ -74,7 +74,6 @@ pre code {
   font-size: 4em;
   width: 2em;
   transform-style: preserve-3d;
-  transform: rotateX(-32deg) rotateY(32deg);
 
   @media (reduced-motion: reduce) {
     animation-timing-function: 0s linear;
@@ -87,17 +86,17 @@ pre code {
 }
 
 .cube:nth-child(2) {
-  animation: rise-faster linear;
-  animation-timeline: view();
-}
-
-.cube:nth-child(3) {
   animation: rise-fast linear;
   animation-timeline: view();
 }
 
-.cube:nth-child(4) {
+.cube:nth-child(3) {
   animation: rise linear;
+  animation-timeline: view();
+}
+
+.cube:nth-child(4) {
+  animation: rise-faster linear;
   animation-timeline: view();
 }
 
@@ -130,8 +129,8 @@ pre code {
 }
 
 .front {
-  color: var(--green);
   transform: translateZ(1em);
+  color: var(--green);
   background-image: linear-gradient(
     var(--darker-dark-green) 0%,
     rgba(0, 0, 0, 0) 100%
@@ -146,19 +145,19 @@ pre code {
 
 .cube:nth-child(2) .front,
 .cube:nth-child(2) .left {
-  animation: fade-in linear, lengthen-faster linear;
+  animation: fade-in linear, lengthen-fast linear;
   animation-timeline: view();
 }
 
 .cube:nth-child(3) .front,
 .cube:nth-child(3) .left {
-  animation: fade-in linear, lengthen-fast linear;
+  animation: fade-in linear, lengthen linear;
   animation-timeline: view();
 }
 
 .cube:nth-child(4) .front,
 .cube:nth-child(4) .left {
-  animation: fade-in linear, lengthen linear;
+  animation: fade-in linear, lengthen-faster linear;
   animation-timeline: view();
 }
 

@@ -17,7 +17,7 @@
     height: 0em;
   }
 
-  30% {
+  40% {
     height: 100%;
   }
 
@@ -31,7 +31,7 @@
     height: 0em;
   }
 
-  40% {
+  60% {
     height: 100%;
   }
 
@@ -45,7 +45,7 @@
     height: 0em;
   }
 
-  50% {
+  80% {
     height: 100%;
   }
 
@@ -56,57 +56,57 @@
 
 @keyframes rise-fastest {
   0% {
-    transform: rotateX(-32deg) rotateY(32deg) translateY(1000px);
+    transform: translateY(1000px);
   }
 
   20% {
-    transform: rotateX(-32deg) rotateY(32deg) translateY(0);
+    transform: translateY(0);
   }
 
   100% {
-    transform: rotateX(-32deg) rotateY(32deg) translateY(0);
+    transform: translateY(0);
   }
 }
 
 @keyframes rise-faster {
   0% {
-    transform: rotateX(-32deg) rotateY(32deg) translateY(1000px);
+    transform: translateY(1000px);
   }
 
   30% {
-    transform: rotateX(-32deg) rotateY(32deg) translateY(0);
+    transform: translateY(0);
   }
 
   100% {
-    transform: rotateX(-32deg) rotateY(32deg) translateY(0);
+    transform: translateY(0);
   }
 }
 
 @keyframes rise-fast {
   0% {
-    transform: rotateX(-32deg) rotateY(32deg) translateY(1000px);
+    transform: translateY(1000px);
   }
 
   40% {
-    transform: rotateX(-32deg) rotateY(32deg) translateY(0);
+    transform: translateY(0);
   }
 
   100% {
-    transform: rotateX(-32deg) rotateY(32deg) translateY(0);
+    transform: translateY(0);
   }
 }
 
 @keyframes rise {
   0% {
-    transform: rotateX(-32deg) rotateY(32deg) translateY(1000px);
+    transform: translateY(1000px);
   }
 
   50% {
-    transform: rotateX(-32deg) rotateY(32deg) translateY(0);
+    transform: translateY(0);
   }
 
   100% {
-    transform: rotateX(-32deg) rotateY(32deg) translateY(0);
+    transform: translateY(0);
   }
 }
 
@@ -182,7 +182,7 @@
 
 @keyframes rise-fastest {
   0% {
-    transform: rotateX(-32deg) rotateY(32deg) translateY(1000px);
+    transform: rotateX(-32deg) rotateY(-32deg) translateY(1000px);
   }
 
   20% {
@@ -196,7 +196,7 @@
 
 @keyframes rise-faster {
   0% {
-    transform: rotateX(-32deg) rotateY(32deg) translateY(1000px);
+    transform: rotateX(-32deg) rotateY(-32deg) translateY(1000px);
   }
 
   30% {
@@ -210,7 +210,7 @@
 
 @keyframes rise-fast {
   0% {
-    transform: rotateX(-32deg) rotateY(32deg) translateY(1000px);
+    transform: rotateX(-32deg) rotateY(-32deg) translateY(1000px);
   }
 
   40% {
@@ -224,7 +224,7 @@
 
 @keyframes rise {
   0% {
-    transform: rotateX(-32deg) rotateY(32deg) translateY(1000px);
+    transform: rotateX(-32deg) rotateY(-32deg) translateY(1000px);
   }
 
   50% {
