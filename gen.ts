@@ -32,7 +32,6 @@ if (import.meta.main) {
 
 function renderTubeCSS(name: string, color: string) {
   return `.border-tube-${name} {
-  border: 28px solid transparent;
   border-image-slice: 31;
   border-image-width: 28px;
   border-image-outset: 4px;
