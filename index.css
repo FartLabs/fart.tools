@@ -133,10 +133,20 @@ nav {
   grid-template-rows: auto;
   grid-column-gap: 1em;
   grid-row-gap: 1em;
+
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .project {
   padding: 2em;
+  display: flex;
+  flex-direction: column;
+}
+
+.topics {
+  margin-top: auto;
 }
 
 .topic {

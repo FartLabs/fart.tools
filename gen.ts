@@ -3,6 +3,12 @@ import { createNoise2D } from "simplex-noise";
 const noise = createNoise2D();
 
 const green = "#C3EF3C";
+const purple = "#9D00FF";
+const yellow = "#FDBD01";
+const turquoise = "#16E2F5";
+const magenta = "#FF00FF";
+const orange = "#FF6700";
+const blue = "#1589FF";
 
 // deno run gen.ts
 //
@@ -28,6 +34,54 @@ if (import.meta.main) {
 
   const greenTubeCSS = renderTubeCSS("green", green);
   Deno.writeTextFileSync("tube-green.css", greenTubeCSS);
+
+  const purpleTubeSVG = renderPurpleTube(
+    renderBubbles(path, verticesAmount, 30, purple),
+  );
+  Deno.writeTextFileSync("tube-purple.svg", purpleTubeSVG);
+
+  const purpleTubeCSS = renderTubeCSS("purple", purple);
+  Deno.writeTextFileSync("tube-purple.css", purpleTubeCSS);
+
+  const yellowTubeSVG = renderYellowTube(
+    renderBubbles(path, verticesAmount, 30, yellow),
+  );
+  Deno.writeTextFileSync("tube-yellow.svg", yellowTubeSVG);
+
+  const yellowTubeCSS = renderTubeCSS("yellow", yellow);
+  Deno.writeTextFileSync("tube-yellow.css", yellowTubeCSS);
+
+  const turquoiseTubeSVG = renderTurquoiseTube(
+    renderBubbles(path, verticesAmount, 30, turquoise),
+  );
+  Deno.writeTextFileSync("tube-turquoise.svg", turquoiseTubeSVG);
+
+  const turquoiseTubeCSS = renderTubeCSS("turquoise", turquoise);
+  Deno.writeTextFileSync("tube-turquoise.css", turquoiseTubeCSS);
+
+  const magentaTubeSVG = renderMagentaTube(
+    renderBubbles(path, verticesAmount, 30, magenta),
+  );
+  Deno.writeTextFileSync("tube-magenta.svg", magentaTubeSVG);
+
+  const magentaTubeCSS = renderTubeCSS("magenta", magenta);
+  Deno.writeTextFileSync("tube-magenta.css", magentaTubeCSS);
+
+  const orangeTubeSVG = renderOrangeTube(
+    renderBubbles(path, verticesAmount, 30, orange),
+  );
+  Deno.writeTextFileSync("tube-orange.svg", orangeTubeSVG);
+
+  const orangeTubeCSS = renderTubeCSS("orange", orange);
+  Deno.writeTextFileSync("tube-orange.css", orangeTubeCSS);
+
+  const blueTubeSVG = renderBlueTube(
+    renderBubbles(path, verticesAmount, 30, blue),
+  );
+  Deno.writeTextFileSync("tube-blue.svg", blueTubeSVG);
+
+  const blueTubeCSS = renderTubeCSS("blue", blue);
+  Deno.writeTextFileSync("tube-blue.css", blueTubeCSS);
 }
 
 function renderTubeCSS(name: string, color: string) {
@@ -51,6 +105,48 @@ function renderTubeCSS(name: string, color: string) {
 function renderGreenTube(...children: string[]) {
   return renderEmptyTube(
     `<rect filter="blur(1px)" stroke="${green}aa" stroke-width="28" x="16" y="16" width="68" height="68" rx="16" ry="16" />`,
+    ...children,
+  );
+}
+
+function renderPurpleTube(...children: string[]) {
+  return renderEmptyTube(
+    `<rect filter="blur(1px)" stroke="${purple}aa" stroke-width="28" x="16" y="16" width="68" height="68" rx="16" ry="16" />`,
+    ...children,
+  );
+}
+
+function renderYellowTube(...children: string[]) {
+  return renderEmptyTube(
+    `<rect filter="blur(1px)" stroke="${yellow}aa" stroke-width="28" x="16" y="16" width="68" height="68" rx="16" ry="16" />`,
+    ...children,
+  );
+}
+
+function renderTurquoiseTube(...children: string[]) {
+  return renderEmptyTube(
+    `<rect filter="blur(1px)" stroke="${turquoise}aa" stroke-width="28" x="16" y="16" width="68" height="68" rx="16" ry="16" />`,
+    ...children,
+  );
+}
+
+function renderMagentaTube(...children: string[]) {
+  return renderEmptyTube(
+    `<rect filter="blur(1px)" stroke="${magenta}aa" stroke-width="28" x="16" y="16" width="68" height="68" rx="16" ry="16" />`,
+    ...children,
+  );
+}
+
+function renderOrangeTube(...children: string[]) {
+  return renderEmptyTube(
+    `<rect filter="blur(1px)" stroke="${orange}aa" stroke-width="28" x="16" y="16" width="68" height="68" rx="16" ry="16" />`,
+    ...children,
+  );
+}
+
+function renderBlueTube(...children: string[]) {
+  return renderEmptyTube(
+    `<rect filter="blur(1px)" stroke="${blue}aa" stroke-width="28" x="16" y="16" width="68" height="68" rx="16" ry="16" />`,
     ...children,
   );
 }
