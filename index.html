@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FartLabs, where imagination becomes software</title>
+    <meta
+      name="description"
+      content="Software out the wazoo! We specialize in imagination-driven development."
+    />
+    <link rel="icon" href="fl-logo.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark-dimmed.min.css"
+    />
+    <link rel="stylesheet" href="background-blob.css" />
+    <link rel="stylesheet" href="tube-green.css" />
+    <link rel="stylesheet" href="tube-purple.css" />
+    <link rel="stylesheet" href="tube-yellow.css" />
+    <link rel="stylesheet" href="tube-turquoise.css" />
+    <link rel="stylesheet" href="tube-magenta.css" />
+    <link rel="stylesheet" href="tube-orange.css" />
+    <link rel="stylesheet" href="tube-blue.css" />
+    <link rel="stylesheet" href="tube-empty.css" />
+    <link rel="stylesheet" href="keyframes.css" />
+    <link rel="stylesheet" href="index.css" />
+    <script src="https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+  </head>
+  <body>
+    <section class="page-section">
+      <nav>
+        <a class="page-nav-header page-link-visible-on-hover" href=""
+          >FartLabs</a
+        >
+      </nav>
+    </section>
+
+    <section class="hero page-section">
+      <h2 id="imagination" class="page-heading">
+        <a class="page-link-visible-on-hover" href="#imagination"
+          >Where imagination becomes great software</a
+        >
+      </h2>
+
+      <!-- https://github.com/wagerfield/parallax?tab=readme-ov-file#2-configuration -->
+      <div
+        class="hero-animation-container background-blob"
+        data-relative-input="true"
+      >
+        <div data-depth="0.1">
+          <img src="baby-goop.png" width="250" alt="FartLabs logo animation" />
+        </div>
+      </div>
+    </section>
+
+    <section class="example page-section">
+      <h2 id="seconds" class="page-heading">
+        <a class="page-link-visible-on-hover" href="#seconds"
+          >Build modern software solutions in seconds</a
+        >
+      </h2>
+
+      <pre
+        class="border-tube-green glow"
+      ><code class="hljs"><span class="hljs-keyword">import</span> { <span class="hljs-title class_">Lab</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">"labs/labs.ts"</span>;
+
+<span class="hljs-keyword">interface</span> <span class="hljs-title class_">Note</span> {
+  title?: <span class="hljs-built_in">string</span>;
+  <span class="hljs-attr">content</span>: <span class="hljs-built_in">string</span>;
+}
+
+<span class="hljs-keyword">const</span> notesLab = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Lab</span>()
+  .<span class="hljs-title function_">variable</span>(<span class="hljs-string">"notes"</span>, <span class="hljs-keyword">new</span> <span class="hljs-title class_">Map</span>&lt;<span class="hljs-built_in">string</span>, <span class="hljs-title class_">Note</span>&gt;())
+  .<span class="hljs-title function_">procedure</span>(
+    <span class="hljs-string">"notes.add"</span>,
+    <span class="hljs-function">(<span class="hljs-params">note: Note, { notes }</span>) =&gt;</span> {
+      <span class="hljs-keyword">const</span> id = crypto.<span class="hljs-title function_">randomUUID</span>();
+      notes.<span class="hljs-title function_">set</span>(id, note);
+      <span class="hljs-keyword">return</span> { id };
+    },
+    [<span class="hljs-string">"notes"</span>],
+  )
+  .<span class="hljs-title function_">procedure</span>(
+    <span class="hljs-string">"notes.get"</span>,
+    <span class="hljs-function">(<span class="hljs-params">{ id }: { id: <span class="hljs-built_in">string</span> }, { notes }</span>) =&gt;</span> {
+      <span class="hljs-keyword">return</span> notes.<span class="hljs-title function_">get</span>(id);
+    },
+    [<span class="hljs-string">"notes"</span>],
+  )
+  .<span class="hljs-title function_">procedure</span>(
+    <span class="hljs-string">"notes.list"</span>,
+    <span class="hljs-function">(<span class="hljs-params">_, { notes }</span>) =&gt;</span> {
+      <span class="hljs-keyword">return</span> <span class="hljs-title class_">Array</span>.<span class="hljs-title function_">from</span>(notes.<span class="hljs-title function_">values</span>());
+    },
+    [<span class="hljs-string">"notes"</span>],
+  );
+
+notesLab.<span class="hljs-title function_">execute</span>(
+  <span class="hljs-string">"notes.add"</span>,
+  { <span class="hljs-attr">title</span>: <span class="hljs-string">"Hello"</span>, <span class="hljs-attr">content</span>: <span class="hljs-string">"World"</span> },
+);
+
+<span class="hljs-keyword">const</span> notes = notesLab.<span class="hljs-title function_">execute</span>(
+  <span class="hljs-string">"notes.list"</span>,
+  {},
+);
+
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(notes);
+</code></pre>
+    </section>
+
+    <section class="page-section">
+      <h2 id="projects" class="page-heading">
+        <a class="page-link-visible-on-hover" href="#projects"
+          >Notable projects</a
+        >
+      </h2>
+
+      <p class="projects-subtitle page-heading-2">Software out the wazoo!</p>
+
+      <div class="projects">
+        <div class="project border-tube-blue glow">
+          <h3 id="jsonx">
+            <a href="https://github.com/FartLabs/jsonx" class="page-link"
+              >jsonx</a
+            >
+          </h3>
+
+          <p>
+            JSX runtime and compiler for composing JSON data. Visit the official
+            <a href="https://jsonx.fart.tools/" class="page-link"
+              >jsonx website</a
+            >
+            to play with JSON like never before!
+          </p>
+
+          <div class="topics">
+            <span class="topic">deno</span>
+            <span class="topic">jsr.io</span>
+            <span class="topic">jsx/tsx</span>
+          </div>
+        </div>
+
+        <div class="project border-tube-turquoise glow">
+          <h3>
+            <a href="https://github.com/FartLabs/ht" class="page-link">ht</a>
+          </h3>
+
+          <p>
+            Type-safe HTML rendering library for Deno. Visit the generated
+            <a href="https://jsr.io/@fartlabs/ht" class="page-link"
+              >API documentation</a
+            >
+            to learn more!
+          </p>
+
+          <div class="topics">
+            <span class="topic">deno</span>
+            <span class="topic">html</span>
+            <span class="topic">jsr.io</span>
+          </div>
+        </div>
+
+        <div class="project border-tube-purple glow">
+          <h3>
+            <a href="https://github.com/FartLabs/htx" class="page-link">htx</a>
+          </h3>
+
+          <p>
+            Library of <code>@fartlabs/jsonx</code> components for composing
+            HTML content. Visit the generated
+            <a href="https://jsr.io/@fartlabs/htx" class="page-link"
+              >API documentation</a
+            >
+            to learn more!
+          </p>
+
+          <div class="topics">
+            <span class="topic">deno</span>
+            <span class="topic">html</span>
+            <span class="topic">jsr.io</span>
+            <span class="topic">jsx/tsx</span>
+          </div>
+        </div>
+
+        <div class="project border-tube-yellow glow">
+          <h3>
+            <a href="https://github.com/FartLabs/rt" class="page-link">rt</a>
+          </h3>
+
+          <p>
+            Minimal HTTP router library based on the URLPattern API. Visit the
+            generated
+            <a href="https://jsr.io/@fartlabs/rt" class="page-link"
+              >API documentation</a
+            >
+            to learn more!
+          </p>
+
+          <div class="topics">
+            <span class="topic">deno</span>
+            <span class="topic">http</span>
+            <span class="topic">jsr.io</span>
+          </div>
+        </div>
+
+        <div class="project border-tube-magenta glow">
+          <h3>
+            <a href="https://github.com/FartLabs/rtx" class="page-link">rtx</a>
+          </h3>
+
+          <p>
+            Library of <code>@fartlabs/jsonx</code> components for composing
+            <code>@fartlabs/rt</code> routers. Visit the generated
+            <a href="https://jsr.io/@fartlabs/rtx" class="page-link"
+              >API documentation</a
+            >
+            to learn more!
+          </p>
+
+          <div class="topics">
+            <span class="topic">deno</span>
+            <span class="topic">http</span>
+            <span class="topic">jsr.io</span>
+            <span class="topic">jsx/tsx</span>
+          </div>
+        </div>
+
+        <div class="project border-tube-green glow">
+          <h3>
+            <a href="https://github.com/FartLabs/labs" class="page-link"
+              >Labs</a
+            >
+          </h3>
+
+          <p>
+            Labs are data structures designed for composable and type-safe
+            management of variables and procedures at scale.
+          </p>
+
+          <div class="topics">
+            <span class="topic">codegen</span>
+            <span class="topic">deno</span>
+            <span class="topic">typescript</span>
+          </div>
+        </div>
+
+        <div class="project border-tube-orange glow">
+          <h3>
+            <a href="https://github.com/FartLabs/deno_blocks" class="page-link"
+              >Deno Blocks</a
+            >
+          </h3>
+
+          <p>
+            Blockly IDE integration with Fresh and Deno Subhosting.
+            <span class="sparkle"><em>Winner</em></span> of Deno Subhosting
+            Hackathon (Ryan Dahl's favorite). Visit
+            <a href="https://blocks.deno.dev/" class="page-link">Deno Blocks</a
+            >!
+          </p>
+
+          <div class="topics">
+            <span class="topic">blockly</span>
+            <span class="topic">deno</span>
+            <span class="topic">fresh</span>
+            <span class="topic">subhosting</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <h2 id="rise" class="page-heading">
+        <a class="page-link-visible-on-hover" href="#rise"
+          >Rise to the occasion</a
+        >
+      </h2>
+    </section>
+
+    <section class="cubes">
+      <div class="cube">
+        <div class="side front fade-in">L</div>
+        <div class="side left fade-in"></div>
+        <div class="side top fade-in">F</div>
+      </div>
+
+      <div class="cube">
+        <div class="side front fade-in">A</div>
+        <div class="side left fade-in"></div>
+        <div class="side top fade-in">A</div>
+      </div>
+
+      <div class="cube">
+        <div class="side front fade-in">B</div>
+        <div class="side left fade-in"></div>
+        <div class="side top fade-in">R</div>
+      </div>
+
+      <div class="cube">
+        <div class="side front fade-in">S</div>
+        <div class="side left fade-in"></div>
+        <div class="side top fade-in">T</div>
+      </div>
+    </section>
+
+    <section class="qna page-section">
+      <h2 id="faq" class="page-heading">
+        <a class="page-link-visible-on-hover" href="#faq">FAQs</a>
+      </h2>
+
+      <h3 id="what-is-fartlabs" class="page-heading-2">
+        <a class="page-link-visible-on-hover" href="#what-is-fartlabs"
+          >What is FartLabs?</a
+        >
+      </h3>
+      <p>
+        We maintain ethical, economically-sustainable, built-to-last, organic,
+        open-source software&hellip; out the wazoo! We specialize in
+        <strong class="sparkle">imagination-driven</strong> development.
+      </p>
+
+      <h3 id="join-community" class="page-heading-2">
+        <a class="page-link-visible-on-hover" href="#join-community"
+          >How do I join the community?</a
+        >
+      </h3>
+      <p>
+        Join our
+        <a href="https://go.fart.tools/chat" class="page-link"
+          >Discord server</a
+        >
+        to chat with us and other members of the community. Also, check out our
+        <a href="https://github.com/FartLabs" class="page-link">GitHub org</a>.
+      </p>
+    </section>
+
+    <footer>
+      <p>
+        © <strong>FartLabs</strong>
+        <a class="fl-icon" href="" class="page-link">🧪</a>
+      </p>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        new Parallax(
+          document.querySelector(".hero-animation-container", {
+            relativeInput: true,
+          })
+        );
+      });
+    </script>
+  </body>
+</html>
