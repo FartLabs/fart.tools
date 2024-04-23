@@ -1,7 +1,7 @@
 import { A, DIV, H2, IMG, SCRIPT } from "@fartlabs/htx";
 import { PageSection } from "#/components/page_section.tsx";
 
-export function Hero() {
+export function HeroSection() {
   return (
     <PageSection class="hero">
       <H2 id="imagination" class="page-heading">

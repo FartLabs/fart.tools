@@ -1,10 +1,23 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>FartLabs, where imagination becomes software</title><meta name="description" content="Software out the wazoo! We specialize in imagination-driven development."><link rel="icon" href="/fl-logo.png"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark-dimmed.min.css"><link rel="stylesheet" href="/background-blob.css"><link rel="stylesheet" href="/tube-green.css"><link rel="stylesheet" href="/tube-purple.css"><link rel="stylesheet" href="/tube-yellow.css"><link rel="stylesheet" href="/tube-turquoise.css"><link rel="stylesheet" href="/tube-magenta.css"><link rel="stylesheet" href="/tube-orange.css"><link rel="stylesheet" href="/tube-blue.css"><link rel="stylesheet" href="/tube-empty.css"><link rel="stylesheet" href="/keyframes.css"><link rel="stylesheet" href="/index.css"><script src="https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script></head><body><section class="page-section"><nav><a class="page-nav-header page-link-visible-on-hover" href="/">FartLabs</a></nav></section><section class="page-section hero"><h2 id="imagination" class="page-heading"><a class="page-link-visible-on-hover" href="#imagination">Where imagination becomes great software</a></h2><div class="hero-animation-container background-blob" data-relative-input="true"><div data-depth="0.1"><img src="baby-goop.png" width="250" alt="FartLabs logo animation"></div></div><script>document.addEventListener("DOMContentLoaded", () => {
-  new Parallax(
-    document.querySelector(".hero-animation-container", {
-      relativeInput: true,
-    })
+import { A, H2 } from "@fartlabs/htx";
+import { PageSection } from "#/components/page_section.tsx";
+
+export function ExampleSection() {
+  return (
+    <PageSection class="example">
+      <H2 id="seconds" class="page-heading">
+        <A class="page-link-visible-on-hover" href="#seconds">
+          Build modern software solutions in seconds
+        </A>
+      </H2>
+
+      {EXAMPLE_CODE}
+    </PageSection>
   );
-});</script></section><section class="page-section example"><h2 id="seconds" class="page-heading"><a class="page-link-visible-on-hover" href="#seconds">Build modern software solutions in seconds</a></h2><pre class="border-tube-green glow"><code class="hljs"><span class="hljs-keyword">import</span> { <span class="hljs-title class_">Lab</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">"labs/labs.ts"</span>;
+}
+
+// https://github.com/FartLabs/jsonx_docs/pull/25
+const EXAMPLE_CODE =
+  `<pre class="border-tube-green glow"><code class="hljs"><span class="hljs-keyword">import</span> { <span class="hljs-title class_">Lab</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">"labs/labs.ts"</span>;
 
 <span class="hljs-keyword">interface</span> <span class="hljs-title class_">Note</span> {
   title?: <span class="hljs-built_in">string</span>;
@@ -48,4 +61,4 @@ notesLab.<span class="hljs-title function_">execute</span>(
 );
 
 <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(notes);
-</code></pre></section></body></html>
+</code></pre>`;
