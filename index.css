@@ -88,10 +88,12 @@ nav {
 }
 
 .page-heading {
+  font-family: "Overpass", sans-serif;
   font-size: 3em;
 }
 
 .page-heading-2 {
+  font-family: "Overpass", sans-serif;
   font-size: 2.34em;
 }
 
@@ -123,6 +125,28 @@ nav {
     height: 200%;
     margin: 5em auto;
   }
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  grid-column-gap: 1em;
+  grid-row-gap: 1em;
+}
+
+.project {
+  padding: 2em;
+}
+
+.topic {
+  word-break: keep-all;
+  padding: 0.25em 0.5em;
+  border-radius: 5px;
+  background-color: var(--darker-dark-green);
+  color: var(--off-white);
+  display: inline-block;
+  margin: 2px;
 }
 
 pre code {
