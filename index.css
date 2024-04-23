@@ -19,6 +19,7 @@ body {
   background-color: var(--dark-green);
   color: var(--off-white);
   font-family: sans-serif;
+  margin: 0;
 }
 
 .sparkle:before,
@@ -46,11 +47,15 @@ h6 {
 
 .page-section {
   max-width: 64ch;
-  margin: 0 auto 8em auto;
+  margin: 0 auto 6em auto;
 
   @media (max-width: 800px) {
     padding: 0 1em;
   }
+}
+
+nav {
+  margin-top: 1em;
 }
 
 .page-nav-header {
@@ -104,6 +109,20 @@ h6 {
 
 .hero h2 {
   max-width: 64ch;
+}
+
+.hero-animation-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 125%;
+  height: 125%;
+
+  @media (max-width: 800px) {
+    width: 100%;
+    height: 200%;
+    margin: 5em auto;
+  }
 }
 
 pre code {

@@ -13,11 +13,13 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark-dimmed.min.css"
     />
+    <link rel="stylesheet" href="background-blob.css" />
     <link rel="stylesheet" href="tube-green.css" />
     <link rel="stylesheet" href="tube-empty.css" />
     <link rel="stylesheet" href="keyframes.css" />
     <link rel="stylesheet" href="index.css" />
     <script src="https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
   </head>
   <body>
     <section class="page-section">
@@ -31,14 +33,22 @@
     <section class="hero page-section">
       <h2 id="imagination" class="page-heading">
         <a class="page-link-visible-on-hover" href="#imagination"
-          >Where your imagination becomes software.</a
+          >Where your imagination becomes great software.</a
         >
       </h2>
 
-      <img
-        src="https://placekitten.com/200/300"
-        alt="FartLabs logo animation"
-      />
+      <!-- https://github.com/wagerfield/parallax?tab=readme-ov-file#2-configuration -->
+      <div
+        class="hero-animation-container background-blob"
+        data-relative-input="true"
+      >
+        <div data-depth="0.1">
+          <img
+            src="https://placekitten.com/200/300"
+            alt="FartLabs logo animation"
+          />
+        </div>
+      </div>
     </section>
 
     <section class="example page-section">
@@ -158,5 +168,15 @@ notesLab.<span class="hljs-title function_">execute</span>(
         >
       </p>
     </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        new Parallax(
+          document.querySelector(".hero-animation-container", {
+            relativeInput: true,
+          })
+        );
+      });
+    </script>
   </body>
 </html>
