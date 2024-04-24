@@ -1,6 +1,7 @@
 import { BODY, HEAD, HTML, LINK, META, SCRIPT, TITLE } from "@fartlabs/htx";
 import { PageSection } from "./page_section.tsx";
 import { PageNav } from "./page_nav.tsx";
+import { PageFoot } from "./page_foot.tsx";
 
 export interface PageLayoutProps {
   title: string;
@@ -23,14 +24,16 @@ export function PageLayout(props: PageLayoutProps) {
         {stylesheets
           .map((href) => <LINK rel="stylesheet" href={href} />)
           .join("")}
-        {scripts.map((src) => <SCRIPT src={src} />).join("")}
+        {scripts
+          .map((src) => <SCRIPT src={src} />)
+          .join("")}
       </HEAD>
       <BODY>
         <PageSection>
           <PageNav />
         </PageSection>
-
         {(props.children ?? []).join("")}
+        <PageFoot />
       </BODY>
     </HTML>
   );
