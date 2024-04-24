@@ -1,7 +1,7 @@
 import { test } from "@std/front-matter";
 import { extract } from "@std/front-matter/any";
 import { expandGlobSync } from "@std/fs";
-import type { Post, PostAttrs } from "./posts.ts";
+import { isPostAttrs, type Post, type PostAttrs } from "./posts.ts";
 import { renderHTML } from "./markdown.ts";
 
 export const posts = readPosts();
@@ -20,6 +20,10 @@ function readPosts(): Post[] {
     }
 
     const extracted = extract<PostAttrs>(md);
+    if (!isPostAttrs(extracted.attrs)) {
+      throw new Error(`invalid post attributes in ${file.path}`);
+    }
+
     const post: Post = {
       id: file.name,
       attrs: extracted.attrs,
@@ -29,7 +33,7 @@ function readPosts(): Post[] {
   }
 
   return posts
-    .toSorted((a, b) => a.attrs.date.localeCompare(b.attrs.date));
+    .toSorted((a, b) => a.attrs.date.getTime() - b.attrs.date.getTime());
 }
 
 /**

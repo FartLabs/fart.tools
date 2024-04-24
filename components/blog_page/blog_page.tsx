@@ -34,6 +34,13 @@ function PostPreview(props: { post: Post }) {
           {props.post.attrs.title}
         </A>
       </H3>
+      <P class="post-date">{props.post.attrs.date}</P>
+      {/* TODO: Abstract into blog_authors.ts */}
+      <P class="post-authors">
+        {props.post.attrs.authors
+          .map((author) => author.name)
+          .join(", ")}
+      </P>
       <P>{props.post.attrs.description}</P>
       <BlogTopics topics={props.post.attrs.topics} />
     </DIV>

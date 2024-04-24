@@ -15,7 +15,22 @@ export interface PostAttrs {
   description: string;
   authors: PostAuthor[];
   topics: string[];
-  date: string;
+  date: Date;
+}
+
+/**
+ * isPostAttrs checks if an object is a PostAttrs.
+ */
+export function isPostAttrs(obj: any): obj is PostAttrs {
+  return (
+    typeof obj.title === "string" &&
+    typeof obj.description === "string" &&
+    Array.isArray(obj.authors) &&
+    obj.authors.every((author: any) => isPostAuthor(author)) &&
+    Array.isArray(obj.topics) &&
+    obj.topics.every((topic: any) => typeof topic === "string") &&
+    obj.date instanceof Date
+  );
 }
 
 /**
@@ -24,6 +39,16 @@ export interface PostAttrs {
 export interface PostAuthor {
   name: string;
   username: string;
+}
+
+/**
+ * isPostAuthor checks if an object is a PostAuthor.
+ */
+export function isPostAuthor(obj: any): obj is PostAuthor {
+  return (
+    typeof obj.name === "string" &&
+    typeof obj.username === "string"
+  );
 }
 
 /**
