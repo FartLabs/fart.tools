@@ -6,7 +6,7 @@
   },
   "imports": {
     "#/": "./",
-    "@fartlabs/htx": "jsr:@fartlabs/htx@^0.0.2",
+    "@fartlabs/htx": "jsr:@fartlabs/htx@^0.0.3",
     "@fartlabs/jsonx": "jsr:@fartlabs/jsonx@^0.0.10",
     "@std/fs": "jsr:@std/fs@^0.223.0",
     "@std/http": "jsr:@std/http@^0.223.0",

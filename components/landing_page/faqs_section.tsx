@@ -1,4 +1,5 @@
 import { A, H2, H3, P, STRONG } from "@fartlabs/htx";
+import { TextNode } from "@fartlabs/htx/special";
 import { PageSection } from "#/components/page_section.tsx";
 
 export function FAQsSection() {
@@ -51,11 +52,13 @@ interface FAQSectionProps {
 
 function FAQSection(props: FAQSectionProps) {
   return (
-    <H3 id={props.id} class="page-heading-2">
-      <A class="page-link-visible-on-hover" href={`#${props.id}`}>
-        {props.questionHTML}
-      </A>
-    </H3>
-  ) +
-    props.answerHTML;
+    <TextNode>
+      <H3 id={props.id} class="page-heading-2">
+        <A class="page-link-visible-on-hover" href={`#${props.id}`}>
+          {props.questionHTML}
+        </A>
+      </H3>
+      {props.answerHTML}
+    </TextNode>
+  );
 }
