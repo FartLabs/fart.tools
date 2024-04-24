@@ -1,6 +1,6 @@
 ---
 title: "Introducing: The FartLabs Blog!"
-description: "Keep up to date with our latest developments - everything will be covered on our blog!"
+description: "Keep up to date with our latest developments ~ everything will be covered on our blog!"
 authors:
   - name: "Ethan Davidson"
     username: "EthanThatOneKid"

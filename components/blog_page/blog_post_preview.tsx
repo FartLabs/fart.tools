@@ -1,15 +1,16 @@
-import { A, DIV, H3, P, SPAN, TIME } from "@fartlabs/htx";
+import { A, DIV, H1, H3, P, SPAN, TIME } from "@fartlabs/htx";
 import type { Post, PostAuthor } from "./posts.ts";
 import { BlogTopics } from "./blog_topics.tsx";
 
-export function BlogPostPreview(props: { post: Post }) {
+export function BlogPostPreview(props: { post: Post; level?: 1 | 3 }) {
+  const Heading = props.level === 1 ? H1 : H3;
   return (
     <DIV class="post-preview">
-      <H3 class="page-heading-2">
+      <Heading>
         <A class="page-link-visible-on-hover" href={`/${props.post.id}`}>
           {props.post.attrs.title}
         </A>
-      </H3>
+      </Heading>
       <BlogPostDate date={props.post.attrs.date} /> |{" "}
       <SPAN class="post-authors">
         {props.post.attrs.authors

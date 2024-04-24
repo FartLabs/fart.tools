@@ -17,7 +17,7 @@ export function BlogPostPage(props: BlogPostPageProps) {
       headHTML={<LINK rel="stylesheet" href="/blog-post.css" />}
     >
       <PageSection>
-        <BlogPostPreview post={props.post} />
+        <BlogPostPreview post={props.post} level={1} />
       </PageSection>
 
       <PageBreak />
