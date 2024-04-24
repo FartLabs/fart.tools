@@ -1,4 +1,5 @@
 import { BODY, HEAD, HTML, LINK, META, SCRIPT, TITLE } from "@fartlabs/htx";
+import { TextNode } from "@fartlabs/htx/special";
 import { PageSection } from "./page_section.tsx";
 import { PageNav } from "./page_nav.tsx";
 import { PageFoot } from "./page_foot.tsx";
@@ -6,36 +7,41 @@ import { PageFoot } from "./page_foot.tsx";
 export interface PageLayoutProps {
   title: string;
   description: string;
+  headHTML?: string;
   children?: string[];
 }
 
 export function PageLayout(props: PageLayoutProps) {
-  return "<!DOCTYPE html>" + (
-    <HTML lang="en">
-      <HEAD>
-        <META charset="UTF-8" />
-        <META
-          name="viewport"
-          content="width=device-width, initial-scale=1.0"
-        />
-        <TITLE>{props.title}</TITLE>
-        <META name="description" content={props.description} />
-        <Favicon />
-        {stylesheets
-          .map((href) => <LINK rel="stylesheet" href={href} />)
-          .join("")}
-        {scripts
-          .map((src) => <SCRIPT src={src} />)
-          .join("")}
-      </HEAD>
-      <BODY>
-        <PageSection>
-          <PageNav />
-        </PageSection>
-        {(props.children ?? []).join("")}
-        <PageFoot />
-      </BODY>
-    </HTML>
+  return (
+    <TextNode>
+      {"<!DOCTYPE html>"}
+      <HTML lang="en">
+        <HEAD>
+          <META charset="UTF-8" />
+          <META
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+          />
+          <TITLE>{props.title}</TITLE>
+          <META name="description" content={props.description} />
+          <Favicon />
+          {stylesheets
+            .map((href) => <LINK rel="stylesheet" href={href} />)
+            .join("")}
+          {scripts
+            .map((src) => <SCRIPT src={src} />)
+            .join("")}
+          {props.headHTML ?? ""}
+        </HEAD>
+        <BODY>
+          <PageSection>
+            <PageNav />
+          </PageSection>
+          {(props.children ?? []).join("")}
+          <PageFoot />
+        </BODY>
+      </HTML>
+    </TextNode>
   );
 }
 
