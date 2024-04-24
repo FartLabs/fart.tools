@@ -8,8 +8,6 @@ topics: ["Community"]
 date: 2024-04-23
 ---
 
-# Introducing: The FartLabs Blog!
-
 > Where imagination becomes great software!
 
 Welcome to the official FartLabs blog! We're excited to launch this platform to
