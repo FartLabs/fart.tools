@@ -1,6 +1,7 @@
 import { createNoise2D } from "simplex-noise";
+import { default as seed } from "alea";
 
-const noise = createNoise2D();
+const noise = createNoise2D(seed("tube"));
 
 const green = "#C3EF3C";
 const purple = "#9D00FF";
@@ -10,78 +11,76 @@ const magenta = "#FF00FF";
 const orange = "#FF6700";
 const blue = "#1589FF";
 
-// deno run gen.ts
-//
-if (import.meta.main) {
+export function generateTubes() {
+  const verticesAmount = 100;
   const path = [
     { x: 20, y: 20 },
     { x: 84, y: 20 },
     { x: 84, y: 84 },
     { x: 20, y: 84 },
   ];
-  const verticesAmount = Deno.args[0] ? parseInt(Deno.args[0]) : 100;
 
   const emptyTubeSVG = renderEmptyTube();
-  Deno.writeTextFileSync("tube-empty.svg", emptyTubeSVG);
+  Deno.writeTextFileSync("static/tube-empty.svg", emptyTubeSVG);
 
   const emptyTubeCSS = renderTubeCSS("empty", "#ffffffaa");
-  Deno.writeTextFileSync("tube-empty.css", emptyTubeCSS);
+  Deno.writeTextFileSync("static/tube-empty.css", emptyTubeCSS);
 
   const greenTubeSVG = renderGreenTube(
     renderBubbles(path, verticesAmount, 30, green),
   );
-  Deno.writeTextFileSync("tube-green.svg", greenTubeSVG);
+  Deno.writeTextFileSync("static/tube-green.svg", greenTubeSVG);
 
   const greenTubeCSS = renderTubeCSS("green", green);
-  Deno.writeTextFileSync("tube-green.css", greenTubeCSS);
+  Deno.writeTextFileSync("static/tube-green.css", greenTubeCSS);
 
   const purpleTubeSVG = renderPurpleTube(
     renderBubbles(path, verticesAmount, 30, purple),
   );
-  Deno.writeTextFileSync("tube-purple.svg", purpleTubeSVG);
+  Deno.writeTextFileSync("static/tube-purple.svg", purpleTubeSVG);
 
   const purpleTubeCSS = renderTubeCSS("purple", purple);
-  Deno.writeTextFileSync("tube-purple.css", purpleTubeCSS);
+  Deno.writeTextFileSync("static/tube-purple.css", purpleTubeCSS);
 
   const yellowTubeSVG = renderYellowTube(
     renderBubbles(path, verticesAmount, 30, yellow),
   );
-  Deno.writeTextFileSync("tube-yellow.svg", yellowTubeSVG);
+  Deno.writeTextFileSync("static/tube-yellow.svg", yellowTubeSVG);
 
   const yellowTubeCSS = renderTubeCSS("yellow", yellow);
-  Deno.writeTextFileSync("tube-yellow.css", yellowTubeCSS);
+  Deno.writeTextFileSync("static/tube-yellow.css", yellowTubeCSS);
 
   const turquoiseTubeSVG = renderTurquoiseTube(
     renderBubbles(path, verticesAmount, 30, turquoise),
   );
-  Deno.writeTextFileSync("tube-turquoise.svg", turquoiseTubeSVG);
+  Deno.writeTextFileSync("static/tube-turquoise.svg", turquoiseTubeSVG);
 
   const turquoiseTubeCSS = renderTubeCSS("turquoise", turquoise);
-  Deno.writeTextFileSync("tube-turquoise.css", turquoiseTubeCSS);
+  Deno.writeTextFileSync("static/tube-turquoise.css", turquoiseTubeCSS);
 
   const magentaTubeSVG = renderMagentaTube(
     renderBubbles(path, verticesAmount, 30, magenta),
   );
-  Deno.writeTextFileSync("tube-magenta.svg", magentaTubeSVG);
+  Deno.writeTextFileSync("static/tube-magenta.svg", magentaTubeSVG);
 
   const magentaTubeCSS = renderTubeCSS("magenta", magenta);
-  Deno.writeTextFileSync("tube-magenta.css", magentaTubeCSS);
+  Deno.writeTextFileSync("static/tube-magenta.css", magentaTubeCSS);
 
   const orangeTubeSVG = renderOrangeTube(
     renderBubbles(path, verticesAmount, 30, orange),
   );
-  Deno.writeTextFileSync("tube-orange.svg", orangeTubeSVG);
+  Deno.writeTextFileSync("static/tube-orange.svg", orangeTubeSVG);
 
   const orangeTubeCSS = renderTubeCSS("orange", orange);
-  Deno.writeTextFileSync("tube-orange.css", orangeTubeCSS);
+  Deno.writeTextFileSync("static/tube-orange.css", orangeTubeCSS);
 
   const blueTubeSVG = renderBlueTube(
     renderBubbles(path, verticesAmount, 30, blue),
   );
-  Deno.writeTextFileSync("tube-blue.svg", blueTubeSVG);
+  Deno.writeTextFileSync("static/tube-blue.svg", blueTubeSVG);
 
   const blueTubeCSS = renderTubeCSS("blue", blue);
-  Deno.writeTextFileSync("tube-blue.css", blueTubeCSS);
+  Deno.writeTextFileSync("static/tube-blue.css", blueTubeCSS);
 }
 
 function renderTubeCSS(name: string, color: string) {
@@ -175,7 +174,7 @@ function renderBubbles(
       renderBubble(
         path,
         amount,
-        Math.random(),
+        i / totalBubbles,
         color,
         duration,
         -i * (duration / totalBubbles),

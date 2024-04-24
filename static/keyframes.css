@@ -182,7 +182,7 @@
 
 @keyframes rise-fastest {
   0% {
-    transform: rotateX(-32deg) rotateY(-32deg) translateY(1000px);
+    transform: rotateX(-120deg) rotateY(-32deg) translateY(1000px);
   }
 
   20% {
@@ -196,7 +196,7 @@
 
 @keyframes rise-faster {
   0% {
-    transform: rotateX(-32deg) rotateY(-32deg) translateY(1000px);
+    transform: rotateX(-120deg) rotateY(-32deg) translateY(1000px);
   }
 
   30% {
@@ -210,7 +210,7 @@
 
 @keyframes rise-fast {
   0% {
-    transform: rotateX(-32deg) rotateY(-32deg) translateY(1000px);
+    transform: rotateX(-120deg) rotateY(-32deg) translateY(1000px);
   }
 
   40% {
@@ -224,7 +224,7 @@
 
 @keyframes rise {
   0% {
-    transform: rotateX(-32deg) rotateY(-32deg) translateY(1000px);
+    transform: rotateX(-120deg) rotateY(-32deg) translateY(1000px);
   }
 
   50% {

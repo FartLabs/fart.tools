@@ -3,7 +3,7 @@
 :root {
   --green: #c3ef3c;
   --dark-green: #004021;
-  --lighter-dark-green: #004927;
+  --lighter-dark-green: #005b31;
   --darker-dark-green: #002d17;
 
   --secondary: #db7093;
@@ -143,6 +143,7 @@ nav {
   padding: 2em;
   display: flex;
   flex-direction: column;
+  background-color: var(--darker-dark-green);
 }
 
 .topics {
@@ -153,8 +154,8 @@ nav {
   word-break: keep-all;
   padding: 0.25em 0.5em;
   border-radius: 5px;
-  background-color: var(--darker-dark-green);
-  color: var(--off-white);
+  background-color: var(--lighter-dark-green);
+  color: var(--green);
   display: inline-block;
   margin: 2px;
 }
