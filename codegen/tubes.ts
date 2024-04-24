@@ -1,6 +1,7 @@
 import { createNoise2D } from "simplex-noise";
+import { default as seed } from "alea";
 
-const noise = createNoise2D();
+const noise = createNoise2D(seed("tube"));
 
 const green = "#C3EF3C";
 const purple = "#9D00FF";
@@ -173,7 +174,7 @@ function renderBubbles(
       renderBubble(
         path,
         amount,
-        Math.random(),
+        i / totalBubbles,
         color,
         duration,
         -i * (duration / totalBubbles),
