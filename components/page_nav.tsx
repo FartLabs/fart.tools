@@ -1,4 +1,4 @@
-import { A, NAV } from "@fartlabs/htx";
+import { A, DIV, NAV } from "@fartlabs/htx";
 
 export function PageNav() {
   return (
@@ -7,9 +7,11 @@ export function PageNav() {
         FartLabs
       </A>
 
-      <A class="page-nav-button" href="/blog">
-        Blog
-      </A>
+      <DIV class="page-nav-buttons">
+        <A class="page-button" href="/blog">
+          Blog
+        </A>
+      </DIV>
     </NAV>
   );
 }

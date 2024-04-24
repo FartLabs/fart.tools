@@ -20,5 +20,9 @@ export interface BlogTopicProps {
 }
 
 export function BlogTopic(props: BlogTopicProps) {
-  return <A href={`/blog/${toTopicID(props.topic)}`}>{props.topic}</A>;
+  return (
+    <A class="page-button" href={`/blog/${toTopicID(props.topic)}`}>
+      {props.topic}
+    </A>
+  );
 }

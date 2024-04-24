@@ -55,6 +55,10 @@ h6 {
 }
 
 nav {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
   margin-top: 1em;
 }
 
@@ -62,6 +66,21 @@ nav {
   font-family: "Overpass", sans-serif;
   font-size: 1.5em;
   font-weight: 700;
+}
+
+.page-button {
+  background-color: var(--darker-dark-green);
+  color: var(--green);
+  border: 1px solid var(--green);
+  border-radius: 5px;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.page-button:hover {
+  background-color: var(--lighter-dark-green);
+  text-decoration: underline;
 }
 
 .page-link,
@@ -146,6 +165,10 @@ nav {
   background-color: var(--darker-dark-green);
 }
 
+.project-title a {
+  color: var(--green);
+}
+
 .topics {
   margin-top: auto;
 }
@@ -156,6 +179,8 @@ nav {
   border-radius: 5px;
   background-color: var(--lighter-dark-green);
   color: var(--green);
+  border: 1px solid var(--green);
+  border-radius: 5px;
   display: inline-block;
   margin: 2px;
 }

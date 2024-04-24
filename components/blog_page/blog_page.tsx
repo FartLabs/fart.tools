@@ -1,4 +1,4 @@
-import { A, DIV, H2, H3, P } from "@fartlabs/htx";
+import { A, DIV, H3, HR, LINK, P } from "@fartlabs/htx";
 import { PageLayout } from "#/components/page_layout.tsx";
 import { PageSection } from "#/components/page_section.tsx";
 import type { Post } from "./posts.ts";
@@ -14,9 +14,9 @@ export function BlogPage(props: BlogPageProps) {
     <PageLayout
       title="Blog | FartLabs, where imagination becomes software"
       description="Software out the wazoo! We specialize in imagination-driven development."
+      headHTML={<LINK rel="stylesheet" href="/blog.css" />}
     >
       <BlogHeroSection />
-
       <PageSection>
         {props.posts
           .map((post) => <PostPreview post={post} />)

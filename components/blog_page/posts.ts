@@ -21,13 +21,16 @@ export interface PostAttrs {
 /**
  * isPostAttrs checks if an object is a PostAttrs.
  */
+// deno-lint-ignore no-explicit-any
 export function isPostAttrs(obj: any): obj is PostAttrs {
   return (
     typeof obj.title === "string" &&
     typeof obj.description === "string" &&
     Array.isArray(obj.authors) &&
+    // deno-lint-ignore no-explicit-any
     obj.authors.every((author: any) => isPostAuthor(author)) &&
     Array.isArray(obj.topics) &&
+    // deno-lint-ignore no-explicit-any
     obj.topics.every((topic: any) => typeof topic === "string") &&
     obj.date instanceof Date
   );
@@ -44,6 +47,7 @@ export interface PostAuthor {
 /**
  * isPostAuthor checks if an object is a PostAuthor.
  */
+// deno-lint-ignore no-explicit-any
 export function isPostAuthor(obj: any): obj is PostAuthor {
   return (
     typeof obj.name === "string" &&

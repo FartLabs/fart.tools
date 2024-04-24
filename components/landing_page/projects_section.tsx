@@ -184,7 +184,7 @@ function ProjectSection(props: ProjectSectionProps) {
   }${props.tubeGlow ? " glow" : ""}`;
   return (
     <DIV class={className}>
-      <H3>{props.titleHTML}</H3>
+      <H3 class="project-title">{props.titleHTML}</H3>
       {props.descriptionHTML}
       <ProjectTopics topics={props.topics} />
     </DIV>

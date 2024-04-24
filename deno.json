@@ -19,6 +19,7 @@
   },
   "tasks": {
     "generate": "deno run --allow-read --allow-write codegen/codegen.ts",
-    "start": "deno run --allow-net --allow-read main.ts generated"
+    "start": "deno run --allow-net --allow-read main.ts generated",
+    "dev": "deno run --allow-net --allow-read --watch main.ts generated"
   }
 }
