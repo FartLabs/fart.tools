@@ -1,6 +1,6 @@
-import { LINK } from "@fartlabs/htx";
 import { PageLayout } from "#/components/page_layout.tsx";
 import { PageSection } from "#/components/page_section.tsx";
+import { PageBreak } from "#/components/page_break.tsx";
 import { BlogHeroSection } from "./blog_hero_section.tsx";
 import { BlogPostPreview } from "./blog_post_preview.tsx";
 import { toTopicID } from "./posts.ts";
@@ -15,9 +15,11 @@ export function BlogPage(props: BlogPageProps) {
     <PageLayout
       title="Blog | FartLabs, where imagination becomes software"
       description="Software out the wazoo! We specialize in imagination-driven development."
-      headHTML={<LINK rel="stylesheet" href="/blog.css" />}
     >
       <BlogHeroSection />
+
+      <PageBreak />
+
       <PageSection>
         {getPosts(props.topicID)
           .map((post) => <BlogPostPreview post={post} />)
