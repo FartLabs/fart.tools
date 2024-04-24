@@ -6,8 +6,7 @@ export function PageFoot() {
     <FOOTER>
       <PageBreak />
       <P>
-        © <STRONG>FartLabs</STRONG>
-        <A class="fl-icon page-link-visible-on-hover" href="/">🧪</A>
+        © FartLabs <A class="fl-icon" href="/">🧪</A>
       </P>
     </FOOTER>
   );
