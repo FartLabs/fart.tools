@@ -22,10 +22,10 @@ export function ProjectsSection() {
           descriptionHTML={
             <P>
               JSX runtime and compiler for composing JSON data. Visit the
-              official
+              official{" "}
               <A href="https://jsonx.fart.tools/" class="page-link">
                 jsonx website
-              </A>
+              </A>{" "}
               to play with JSON like never before!
             </P>
           }
@@ -41,9 +41,13 @@ export function ProjectsSection() {
           descriptionHTML={
             <P>
               Type-safe HTML rendering library for Deno. Visit the generated
-              <A href="https://jsr.io/@fartlabs/ht" class="page-link">
+              {" "}
+              <A
+                href="https://jsr.io/@fartlabs/ht"
+                class="page-link"
+              >
                 API documentation
-              </A>
+              </A>{" "}
               to learn more!
             </P>
           }
@@ -59,10 +63,10 @@ export function ProjectsSection() {
           descriptionHTML={
             <P>
               Library of <CODE>@fartlabs/jsonx</CODE>{" "}
-              components for composing HTML content. Visit the generated
+              components for composing HTML content. Visit the generated{" "}
               <A href="https://jsr.io/@fartlabs/htx" class="page-link">
                 API documentation
-              </A>
+              </A>{" "}
               to learn more!
             </P>
           }
@@ -78,10 +82,10 @@ export function ProjectsSection() {
           descriptionHTML={
             <P>
               Minimal HTTP router library based on the URLPattern API. Visit the
-              generated
+              generated{" "}
               <A href="https://jsr.io/@fartlabs/rt" class="page-link">
                 API documentation
-              </A>
+              </A>{" "}
               to learn more!
             </P>
           }
@@ -97,10 +101,11 @@ export function ProjectsSection() {
           descriptionHTML={
             <P>
               Library of <CODE>@fartlabs/jsonx</CODE> components for composing
-              <CODE>@fartlabs/rt</CODE> routers. Visit the generated
+              {" "}
+              <CODE>@fartlabs/rt</CODE> routers. Visit the generated{" "}
               <A href="https://jsr.io/@fartlabs/rtx" class="page-link">
                 API documentation
-              </A>
+              </A>{" "}
               to learn more!
             </P>
           }
@@ -134,12 +139,15 @@ export function ProjectsSection() {
           }
           descriptionHTML={
             <P>
-              Blockly IDE integration with Fresh and Deno Subhosting.
+              Blockly IDE integration with Fresh and Deno Subhosting.{" "}
               <SPAN class="sparkle">
                 <EM>Winner</EM>
               </SPAN>{" "}
-              of Deno Subhosting Hackathon (Ryan Dahl's favorite). Visit
-              <A href="https://blocks.deno.dev/" class="page-link">
+              of Deno Subhosting Hackathon (Ryan Dahl's favorite). Visit{" "}
+              <A
+                href="https://blocks.deno.dev/"
+                class="page-link"
+              >
                 Deno Blocks
               </A>!
             </P>
