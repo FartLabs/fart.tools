@@ -6,9 +6,7 @@ export function FAQsSection() {
   return (
     <PageSection class="faq">
       <H2 id="faq" class="page-heading">
-        <A class="page-link-visible-on-hover" href="#faq">
-          FAQs
-        </A>
+        FAQs
       </H2>
 
       <FAQSection

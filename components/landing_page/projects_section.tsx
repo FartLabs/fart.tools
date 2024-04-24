@@ -5,9 +5,7 @@ export function ProjectsSection() {
   return (
     <PageSection>
       <H2 id="projects" class="page-heading">
-        <A class="page-link-visible-on-hover" href="#projects">
-          Notable projects
-        </A>
+        Notable projects
       </H2>
 
       <P class="projects-subtitle page-heading-2">Software out the wazoo!</P>

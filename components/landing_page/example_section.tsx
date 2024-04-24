@@ -5,9 +5,7 @@ export function ExampleSection() {
   return (
     <PageSection class="example">
       <H2 id="seconds" class="page-heading">
-        <A class="page-link-visible-on-hover" href="#seconds">
-          Build modern software solutions in seconds
-        </A>
+        Build modern software solutions in seconds
       </H2>
 
       {EXAMPLE_CODE}
