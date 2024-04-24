@@ -10,7 +10,7 @@ date: 2024-04-23
 
 # Introducing: The FartLab Blog!
 
-> Building a Community of Fartastic Developers!
+> Where imagination becomes great software
 
 Welcome to the official FartLab blog! We're excited to launch this platform to
 keep you informed about all the latest developments in the FartLabs universe.
@@ -37,13 +37,12 @@ By joining our community, you have the opportunity to:
 - Share your knowledge and expertise with other developers.
 - Learn from others and stay up-to-date on the latest FartLabs developments.
 - Be part of a supportive and collaborative community.
-- Make a real difference in the future of FartLabs!
+- Make a real difference in the future of FartLabs and our greater communities.
 
 ## Get involved!
 
 Head over to the blog page ([https://fart.tools/blog](https://fart.tools/blog))
 to learn more and stay tuned for updates on how to contribute to the community.
 
-We can't wait to meet you and see what amazing things we can create together!
-
-Join the conversation on Discord: <https://go.fart.tools/chat>.
+Join the conversation on Discord: <https://go.fart.tools/chat>. We can't wait to
+meet you and see what amazing things we can create together!

@@ -1,4 +1,4 @@
-import { A, DIV, H3, LINK, P } from "@fartlabs/htx";
+import { A, DIV, H3, LINK, P, TIME } from "@fartlabs/htx";
 import { PageLayout } from "#/components/page_layout.tsx";
 import { PageSection } from "#/components/page_section.tsx";
 import type { Post, PostAuthor } from "./posts.ts";
@@ -36,8 +36,11 @@ function PostPreview(props: { post: Post }) {
           {props.post.attrs.title}
         </A>
       </H3>
-      <P class="post-date">{props.post.attrs.date}</P>
-      {/* TODO: Abstract into blog_authors.ts */}
+      <TIME datetime={props.post.attrs.date.toISOString()} class="post-date">
+        {Intl.DateTimeFormat("en-US", {
+          dateStyle: "long",
+        }).format(props.post.attrs.date)}
+      </TIME>
       <P class="post-authors">
         By {props.post.attrs.authors
           .map((author) => <Author author={author} />)
