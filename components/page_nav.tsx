@@ -6,6 +6,10 @@ export function PageNav() {
       <A class="page-nav-header page-link-visible-on-hover" href="/">
         FartLabs
       </A>
+
+      <A class="page-nav-button" href="/blog">
+        Blog
+      </A>
     </NAV>
   );
 }
