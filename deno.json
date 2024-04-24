@@ -8,12 +8,13 @@
     "#/": "./",
     "@fartlabs/htx": "jsr:@fartlabs/htx@^0.0.2",
     "@fartlabs/jsonx": "jsr:@fartlabs/jsonx@^0.0.10",
+    "@std/fs": "jsr:@std/fs@^0.223.0",
     "@std/http": "jsr:@std/http@^0.223.0",
     "alea": "npm:alea@^1.0.1",
     "simplex-noise": "npm:simplex-noise@^4.0.1"
   },
   "tasks": {
-    "start": "deno run --allow-net --allow-read main.ts",
-    "generate": "deno run --allow-write codegen/codegen.ts"
+    "generate": "deno run --allow-read --allow-write codegen/codegen.ts",
+    "start": "deno run --allow-net --allow-read main.ts generated"
   }
 }

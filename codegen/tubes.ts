@@ -21,66 +21,66 @@ export function generateTubes() {
   ];
 
   const emptyTubeSVG = renderEmptyTube();
-  Deno.writeTextFileSync("static/tube-empty.svg", emptyTubeSVG);
+  Deno.writeTextFileSync("generated/tube-empty.svg", emptyTubeSVG);
 
   const emptyTubeCSS = renderTubeCSS("empty", "#ffffffaa");
-  Deno.writeTextFileSync("static/tube-empty.css", emptyTubeCSS);
+  Deno.writeTextFileSync("generated/tube-empty.css", emptyTubeCSS);
 
   const greenTubeSVG = renderGreenTube(
     renderBubbles(path, verticesAmount, 30, green),
   );
-  Deno.writeTextFileSync("static/tube-green.svg", greenTubeSVG);
+  Deno.writeTextFileSync("generated/tube-green.svg", greenTubeSVG);
 
   const greenTubeCSS = renderTubeCSS("green", green);
-  Deno.writeTextFileSync("static/tube-green.css", greenTubeCSS);
+  Deno.writeTextFileSync("generated/tube-green.css", greenTubeCSS);
 
   const purpleTubeSVG = renderPurpleTube(
     renderBubbles(path, verticesAmount, 30, purple),
   );
-  Deno.writeTextFileSync("static/tube-purple.svg", purpleTubeSVG);
+  Deno.writeTextFileSync("generated/tube-purple.svg", purpleTubeSVG);
 
   const purpleTubeCSS = renderTubeCSS("purple", purple);
-  Deno.writeTextFileSync("static/tube-purple.css", purpleTubeCSS);
+  Deno.writeTextFileSync("generated/tube-purple.css", purpleTubeCSS);
 
   const yellowTubeSVG = renderYellowTube(
     renderBubbles(path, verticesAmount, 30, yellow),
   );
-  Deno.writeTextFileSync("static/tube-yellow.svg", yellowTubeSVG);
+  Deno.writeTextFileSync("generated/tube-yellow.svg", yellowTubeSVG);
 
   const yellowTubeCSS = renderTubeCSS("yellow", yellow);
-  Deno.writeTextFileSync("static/tube-yellow.css", yellowTubeCSS);
+  Deno.writeTextFileSync("generated/tube-yellow.css", yellowTubeCSS);
 
   const turquoiseTubeSVG = renderTurquoiseTube(
     renderBubbles(path, verticesAmount, 30, turquoise),
   );
-  Deno.writeTextFileSync("static/tube-turquoise.svg", turquoiseTubeSVG);
+  Deno.writeTextFileSync("generated/tube-turquoise.svg", turquoiseTubeSVG);
 
   const turquoiseTubeCSS = renderTubeCSS("turquoise", turquoise);
-  Deno.writeTextFileSync("static/tube-turquoise.css", turquoiseTubeCSS);
+  Deno.writeTextFileSync("generated/tube-turquoise.css", turquoiseTubeCSS);
 
   const magentaTubeSVG = renderMagentaTube(
     renderBubbles(path, verticesAmount, 30, magenta),
   );
-  Deno.writeTextFileSync("static/tube-magenta.svg", magentaTubeSVG);
+  Deno.writeTextFileSync("generated/tube-magenta.svg", magentaTubeSVG);
 
   const magentaTubeCSS = renderTubeCSS("magenta", magenta);
-  Deno.writeTextFileSync("static/tube-magenta.css", magentaTubeCSS);
+  Deno.writeTextFileSync("generated/tube-magenta.css", magentaTubeCSS);
 
   const orangeTubeSVG = renderOrangeTube(
     renderBubbles(path, verticesAmount, 30, orange),
   );
-  Deno.writeTextFileSync("static/tube-orange.svg", orangeTubeSVG);
+  Deno.writeTextFileSync("generated/tube-orange.svg", orangeTubeSVG);
 
   const orangeTubeCSS = renderTubeCSS("orange", orange);
-  Deno.writeTextFileSync("static/tube-orange.css", orangeTubeCSS);
+  Deno.writeTextFileSync("generated/tube-orange.css", orangeTubeCSS);
 
   const blueTubeSVG = renderBlueTube(
     renderBubbles(path, verticesAmount, 30, blue),
   );
-  Deno.writeTextFileSync("static/tube-blue.svg", blueTubeSVG);
+  Deno.writeTextFileSync("generated/tube-blue.svg", blueTubeSVG);
 
   const blueTubeCSS = renderTubeCSS("blue", blue);
-  Deno.writeTextFileSync("static/tube-blue.css", blueTubeCSS);
+  Deno.writeTextFileSync("generated/tube-blue.css", blueTubeCSS);
 }
 
 function renderTubeCSS(name: string, color: string) {
