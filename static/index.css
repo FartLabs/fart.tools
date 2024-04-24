@@ -34,40 +34,41 @@ h4,
 h5,
 h6 {
   font-family: "Overpass", sans-serif;
-}
-
-h1 {
-  font-size: 3em;
   line-height: 1.2;
 }
 
-h2 {
-  font-size: 2.34em;
-  line-height: 1.2;
+h1,
+h1 a {
+  font-size: 3rem;
 }
 
-h3 {
-  font-size: 1.75em;
-  line-height: 1.2;
+h2,
+h2 a {
+  font-size: 2.5rem;
 }
 
-h4 {
-  font-size: 1.3em;
-  line-height: 1.2;
+h3,
+h3 a {
+  font-size: 1.75rem;
 }
 
-h5 {
-  font-size: 1em;
-  line-height: 1.2;
+h4,
+h4 a {
+  font-size: 1.32rem;
 }
 
-h6 {
-  font-size: 0.75em;
-  line-height: 1.2;
+h5,
+h5 a {
+  font-size: 1.17rem;
+}
+
+h6,
+h6 a {
+  font-size: 0.78rem;
 }
 
 p {
-  font-size: 1em;
+  font-size: 1.2rem;
   line-height: 1.5;
 }
 
@@ -82,10 +83,21 @@ p {
 
 .page-section {
   max-width: 64ch;
-  margin: 0 auto 6em auto;
+  margin: 6rem auto;
 
   @media (max-width: 800px) {
-    padding: 0 1em;
+    padding: 0 1rem;
+  }
+}
+
+hr,
+.page-break {
+  max-width: 64ch;
+  margin: 0 auto;
+  border-image: radial-gradient(circle, var(--green) 0%, transparent 100%) 1;
+
+  @media (max-width: 800px) {
+    padding: 0 1rem;
   }
 }
 
@@ -94,12 +106,12 @@ nav {
   width: 100%;
   align-items: center;
   justify-content: space-between;
-  margin-top: 1em;
+  margin-top: 1rem;
 }
 
 .page-nav-header {
   font-family: "Overpass", sans-serif;
-  font-size: 1.5em;
+  font-size: 1.5rem;
   font-weight: 700;
 }
 
@@ -115,7 +127,7 @@ nav {
   color: var(--green);
   border: 1px solid var(--green);
   border-radius: 5px;
-  padding: 0.25em 0.5em;
+  padding: 0.25rem 0.5rem;
   text-decoration: none;
   transition: background-color 0.3s;
 }
@@ -151,16 +163,6 @@ a:hover,
   text-decoration: underline;
 }
 
-.page-heading {
-  font-family: "Overpass", sans-serif;
-  font-size: 3em;
-}
-
-.page-heading-2 {
-  font-family: "Overpass", sans-serif;
-  font-size: 2.34em;
-}
-
 .hero {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -187,7 +189,7 @@ a:hover,
   @media (max-width: 800px) {
     width: 100%;
     height: 200%;
-    margin: 5em auto;
+    margin: 5rem auto;
   }
 }
 
@@ -195,8 +197,9 @@ a:hover,
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: auto;
-  grid-column-gap: 1em;
-  grid-row-gap: 1em;
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
+  margin: 2rem auto;
 
   @media (max-width: 800px) {
     grid-template-columns: 1fr;
@@ -204,7 +207,7 @@ a:hover,
 }
 
 .project {
-  padding: 2em;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   background-color: var(--darker-dark-green);
@@ -220,7 +223,7 @@ a:hover,
 
 .topic {
   word-break: keep-all;
-  padding: 0.25em 0.5em;
+  padding: 0.25rem 0.5rem;
   border-radius: 5px;
   background-color: var(--lighter-dark-green);
   color: var(--green);
@@ -257,7 +260,7 @@ pre code {
 }
 
 .cube {
-  font-size: 4em;
+  font-size: 4rem;
   width: 2em;
   transform-style: preserve-3d;
 
@@ -349,14 +352,9 @@ pre code {
 
 footer p {
   text-align: center;
-  padding: 1em 0;
   width: 100%;
 }
 
 .hljs {
   background-color: var(--darker-dark-green);
-}
-
-hr {
-  border-image: radial-gradient(circle, var(--green) 0%, transparent 100%) 1;
 }

@@ -1,3 +1,4 @@
+import { HR } from "@fartlabs/htx";
 import { PageLayout } from "#/components/page_layout.tsx";
 import { PageSection } from "#/components/page_section.tsx";
 import { PageBreak } from "#/components/page_break.tsx";

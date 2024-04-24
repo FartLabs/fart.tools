@@ -8,8 +8,6 @@ topics: ["Community"]
 date: 2024-04-23
 ---
 
-> Where imagination becomes great software!
-
 Welcome to the official FartLabs blog! We're excited to launch this platform to
 keep you informed about all the latest developments in the FartLabs universe.
 
@@ -25,6 +23,8 @@ easier for developers, and we believe that through open communication and
 collaboration, we can achieve even greater things!
 
 ## Our community
+
+> Where imagination becomes great software!
 
 The FartLabs community is a global network of developers who share a common
 passion for creating innovative and useful tools. We value open communication
@@ -44,6 +44,11 @@ to learn more and stay tuned for updates on how to contribute to the community.
 
 Join the conversation on Discord: <https://go.fart.tools/chat>. We can't wait to
 meet you and see what amazing things we can create together!
+
+## Source code
+
+The source code for <https://fart.tools/> is available on GitHub:
+<https://go.fart.tools/gh/fart.tools/>!
 
 ```ts
 console.log("Maintained with 🧪 @FartLabs!");

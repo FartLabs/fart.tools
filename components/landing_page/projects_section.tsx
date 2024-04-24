@@ -27,7 +27,7 @@ export function ProjectsSection() {
               to play with JSON like never before!
             </P>
           }
-          tubeColor="blue"
+          tubeColor="magenta"
           tubeGlow={true}
           topics={["deno", "jsr.io", "jsx/tsx"]}
         />
@@ -107,7 +107,7 @@ export function ProjectsSection() {
               to learn more!
             </P>
           }
-          tubeColor="magenta"
+          tubeColor="blue"
           tubeGlow={true}
           topics={["deno", "http", "jsr.io", "jsx/tsx"]}
         />
