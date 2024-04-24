@@ -60,14 +60,10 @@
   border-left: 0.25em solid var(--green);
 }
 
-.markdown-body pre,
-.markdown-body code {
+.markdown-body pre {
   font-family: monospace;
-  color: #ddd;
-  background-color: #44475a;
-  border: 1px solid #282a36;
-  border-radius: 3px;
-  padding: 0.1em 0.2em;
+  background-color: var(--darker-dark-green);
+  border-radius: 2em;
 }
 
 .markdown-body pre * {
@@ -97,6 +93,7 @@
   color: #bbb;
 }
 
+/* TODO: Add copy code button to pre code blocks. */
 .markdown-body pre button {
   position: absolute;
   top: 5px;

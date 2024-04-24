@@ -37,10 +37,14 @@ By joining our community, you have the opportunity to:
 - Be part of a supportive and collaborative community.
 - Make a real difference in the future of FartLabs and our greater communities.
 
-## Get involved!
+## Get involved
 
 Head over to the blog page ([https://fart.tools/blog](https://fart.tools/blog))
 to learn more and stay tuned for updates on how to contribute to the community.
 
 Join the conversation on Discord: <https://go.fart.tools/chat>. We can't wait to
 meet you and see what amazing things we can create together!
+
+```ts
+console.log("Maintained with 🧪 @FartLabs!");
+```

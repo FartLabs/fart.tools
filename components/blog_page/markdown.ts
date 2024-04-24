@@ -26,13 +26,12 @@ const renderer: MarkdownIt = new MarkdownIt({
         { language, ignoreIllegals: true },
       ).value
       : renderer.utils.escapeHtml(content);
-    return `<pre data-lang="${language}"><code class="hljs">${html}</code></pre>`;
+    return `<pre data-lang="${language}" class="border-tube-green"><code class="hljs">${html}</code></pre>`;
   },
 });
 
 renderer.use(anchorPlugin, {
-  permalink: true,
-  permalinkBefore: true,
-  permalinkSymbol: "🧪",
-  permalinkClass: "page-link-visible-on-hover",
+  permalink: anchorPlugin.permalink.headerLink({
+    class: "page-link-visible-on-hover",
+  }),
 });
