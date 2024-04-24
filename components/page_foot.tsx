@@ -6,7 +6,7 @@ export function PageFoot() {
       <HR />
       <P>
         © <STRONG>FartLabs</STRONG>
-        <A class="fl-icon page-link" href="/">🧪</A>
+        <A class="fl-icon page-link-visible-on-hover" href="/">🧪</A>
       </P>
     </FOOTER>
   );
