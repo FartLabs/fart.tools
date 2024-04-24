@@ -1,5 +1,5 @@
 ---
-title: "Introducing: The FartLab Blog!"
+title: "Introducing: The FartLabs Blog!"
 description: "Keep up to date with our latest developments - everything will be covered on our blog!"
 authors:
   - name: "Ethan Davidson"
@@ -8,11 +8,11 @@ topics: ["Community"]
 date: 2024-04-23
 ---
 
-# Introducing: The FartLab Blog!
+# Introducing: The FartLabs Blog!
 
-> Where imagination becomes great software
+> Where imagination becomes great software!
 
-Welcome to the official FartLab blog! We're excited to launch this platform to
+Welcome to the official FartLabs blog! We're excited to launch this platform to
 keep you informed about all the latest developments in the FartLabs universe.
 
 The FartLabs blog <https://fart.tools/blog> serves as the official platform for

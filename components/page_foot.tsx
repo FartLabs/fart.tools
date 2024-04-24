@@ -5,7 +5,7 @@ export function PageFoot() {
     <FOOTER>
       <P>
         © <STRONG>FartLabs</STRONG>
-        <A class="fl-icon page-link" href="">🧪</A>
+        <A class="fl-icon page-link" href="/">🧪</A>
       </P>
     </FOOTER>
   );

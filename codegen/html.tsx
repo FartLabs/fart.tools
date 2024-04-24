@@ -5,6 +5,7 @@ import {
   topics,
   toTopicID,
 } from "#/components/blog_page/mod.ts";
+import { BlogPostPage } from "#/components/blog_page/blog_post_page/blog_post_page.tsx";
 
 export function generateHTML() {
   const landingPageHTML = <LandingPage /> as string;
@@ -25,7 +26,11 @@ export function generateHTML() {
   }
 
   for (const post of posts) {
-    // TODO: Generate individual post pages.
-    console.log(post);
+    const postPageHTML = <BlogPostPage post={post} /> as string;
+    Deno.mkdirSync(`generated/${post.id}`, { recursive: true });
+    Deno.writeTextFileSync(
+      `generated/${post.id}/index.html`,
+      postPageHTML,
+    );
   }
 }

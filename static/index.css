@@ -83,16 +83,19 @@ nav {
   text-decoration: underline;
 }
 
+a,
 .page-link,
 .page-link-visible-on-hover {
   color: var(--off-white);
 }
 
+a:visited,
 .page-link:visited,
 .page-link-visible-on-hover:visited {
   color: var(--dark-off-white);
 }
 
+a:hover,
 .page-link:hover,
 .page-link-visible-on-hover:hover {
   color: var(--secondary);

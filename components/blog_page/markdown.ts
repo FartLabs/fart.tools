@@ -34,4 +34,5 @@ renderer.use(anchorPlugin, {
   permalink: true,
   permalinkBefore: true,
   permalinkSymbol: "🧪",
+  permalinkClass: "page-link-visible-on-hover",
 });
