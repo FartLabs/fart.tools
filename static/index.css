@@ -68,6 +68,13 @@ nav {
   font-weight: 700;
 }
 
+.page-nav-buttons {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-auto-flow: column;
+  gap: 2px;
+}
+
 .page-button {
   background-color: var(--darker-dark-green);
   color: var(--green);
