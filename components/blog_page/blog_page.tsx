@@ -1,7 +1,7 @@
 import { A, DIV, H3, LINK, P } from "@fartlabs/htx";
 import { PageLayout } from "#/components/page_layout.tsx";
 import { PageSection } from "#/components/page_section.tsx";
-import type { Post } from "./posts.ts";
+import type { Post, PostAuthor } from "./posts.ts";
 import { toTopicID } from "./posts.ts";
 import { BlogHeroSection } from "./blog_hero_section.tsx";
 import { BlogTopics } from "./blog_topics.tsx";
@@ -39,13 +39,21 @@ function PostPreview(props: { post: Post }) {
       <P class="post-date">{props.post.attrs.date}</P>
       {/* TODO: Abstract into blog_authors.ts */}
       <P class="post-authors">
-        {props.post.attrs.authors
-          .map((author) => author.name)
+        By {props.post.attrs.authors
+          .map((author) => <Author author={author} />)
           .join(", ")}
       </P>
       <P>{props.post.attrs.description}</P>
       <BlogTopics topics={props.post.attrs.topics} />
     </DIV>
+  );
+}
+
+function Author(props: { author: PostAuthor }) {
+  return (
+    <A href={`https://github.com/${props.author.username}`} class="page-link">
+      {props.author.name}
+    </A>
   );
 }
 

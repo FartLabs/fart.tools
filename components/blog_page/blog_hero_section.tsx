@@ -7,7 +7,7 @@ export function BlogHeroSection() {
   return (
     <PageSection class="blog-hero">
       <H2 id="blog" class="page-heading">
-        <A class="page-link-visible-on-hover" href="#blog">
+        <A class="page-link-visible-on-hover" href="/blog">
           Blog
         </A>
       </H2>
