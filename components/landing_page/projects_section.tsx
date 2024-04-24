@@ -186,11 +186,19 @@ function ProjectSection(props: ProjectSectionProps) {
     <DIV class={className}>
       <H3>{props.titleHTML}</H3>
       {props.descriptionHTML}
-      <DIV class="topics">
-        {props.topics
-          .map((topic) => <SPAN class="topic">{topic}</SPAN>)
-          .join("")}
-      </DIV>
+      <ProjectTopics topics={props.topics} />
     </DIV>
   );
+}
+
+function ProjectTopics(props: { topics: string[] }) {
+  return (
+    <DIV class="topics">
+      {props.topics.map((topic) => <ProjectTopic topic={topic} />)}
+    </DIV>
+  );
+}
+
+function ProjectTopic(props: { topic: string }) {
+  return <SPAN class="topic">{props.topic}</SPAN>;
 }
