@@ -1,7 +1,9 @@
 import { test } from "@std/front-matter";
 import { extract } from "@std/front-matter/any";
+import type { WalkEntry } from "@std/fs";
 import { expandGlobSync } from "@std/fs";
-import { isPostAttrs, type Post, type PostAttrs } from "./posts.ts";
+import type { Post, PostAttrs } from "./posts.ts";
+import { isPostAttrs } from "./posts.ts";
 import { renderHTML } from "./markdown.ts";
 
 export const posts = readPosts();
@@ -12,28 +14,35 @@ export const topics = topicsOf(posts);
  */
 function readPosts(): Post[] {
   const posts: Post[] = [];
-  const it = expandGlobSync("blog/*.md");
-  for (const file of it) {
-    const md = Deno.readTextFileSync(file.path);
-    if (!test(md)) {
-      throw new Error(`invalid front matter in ${file.path}`);
-    }
-
-    const extracted = extract<PostAttrs>(md);
-    if (!isPostAttrs(extracted.attrs)) {
-      throw new Error(`invalid post attributes in ${file.path}`);
-    }
-
-    const post: Post = {
-      id: file.name,
-      attrs: extracted.attrs,
-      html: renderHTML(extracted.body),
-    };
-    posts.push(post);
+  for (const file of expandGlobSync("blog/*.md")) {
+    posts.push(readPost(file));
   }
 
-  return posts
-    .toSorted((a, b) => a.attrs.date.getTime() - b.attrs.date.getTime());
+  return posts.toSorted((a, b) => {
+    return a.attrs.date.getTime() - b.attrs.date.getTime();
+  });
+}
+
+/**
+ * readPost reads a blog post.
+ */
+export function readPost(entry: WalkEntry): Post {
+  const md = Deno.readTextFileSync(entry.path);
+  if (!test(md)) {
+    throw new Error(`invalid front matter in ${entry.path}`);
+  }
+
+  const extracted = extract<PostAttrs>(md);
+  if (!isPostAttrs(extracted.attrs)) {
+    throw new Error(`invalid post attributes in ${entry.path}`);
+  }
+
+  const id = entry.name.replace(/\.md$/, "");
+  return {
+    id,
+    attrs: extracted.attrs,
+    html: renderHTML(extracted.body),
+  };
 }
 
 /**
