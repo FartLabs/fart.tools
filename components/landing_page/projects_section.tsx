@@ -1,4 +1,4 @@
-import { A, CODE, DIV, EM, H2, H3, P, SPAN } from "@fartlabs/htx";
+import { A, BLOCKQUOTE, CODE, DIV, EM, H2, H3, P, SPAN } from "@fartlabs/htx";
 import { PageSection } from "#/components/page_section.tsx";
 
 export function ProjectsSection() {
@@ -8,7 +8,9 @@ export function ProjectsSection() {
         Notable projects
       </H2>
 
-      <P class="projects-subtitle page-heading-2">Software out the wazoo!</P>
+      <BLOCKQUOTE class="projects-subtitle special">
+        Software out the wazoo!
+      </BLOCKQUOTE>
 
       <DIV class="projects">
         <ProjectSection

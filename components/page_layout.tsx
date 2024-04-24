@@ -34,9 +34,7 @@ export function PageLayout(props: PageLayoutProps) {
           {props.headHTML ?? ""}
         </HEAD>
         <BODY>
-          <PageSection>
-            <PageNav />
-          </PageSection>
+          <PageNav />
           {(props.children ?? []).join("")}
           <PageSection>
             <PageFoot />
