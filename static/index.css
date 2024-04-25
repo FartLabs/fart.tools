@@ -27,6 +27,11 @@ body {
   content: "✨";
 }
 
+.special {
+  font-family: "Overpass", sans-serif;
+  font-size: 1.5rem;
+}
+
 h1,
 h2,
 h3,
@@ -34,6 +39,69 @@ h4,
 h5,
 h6 {
   font-family: "Overpass", sans-serif;
+}
+
+h1 {
+  font-size: 3.2rem;
+  margin: 3.2rem 0;
+}
+
+h2 {
+  font-size: 3rem;
+  margin: 2.4rem 0;
+}
+
+h3 {
+  font-size: 2rem;
+  margin: 1.5rem 0;
+}
+
+h4 {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+h5 {
+  font-size: 1.25rem;
+  margin: 1rem 0;
+}
+
+h6 {
+  font-size: 1rem;
+  margin: 1rem 0;
+}
+
+p,
+ul,
+ol,
+blockquote,
+pre {
+  font-size: 1.2rem;
+  margin: 1rem 0;
+  line-height: 1.5;
+}
+
+ul,
+ol {
+  margin: 0.5rem 2rem;
+}
+
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+  margin: 0;
+}
+
+li {
+  margin: 0.25rem 0;
+}
+
+blockquote {
+  margin: 0.5rem 0;
+  padding: 0.5rem 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-left: 0.25rem solid var(--green);
 }
 
 .fl-icon {
@@ -47,33 +115,77 @@ h6 {
 
 .page-section {
   max-width: 64ch;
-  margin: 0 auto 6em auto;
+  margin: 6rem auto;
 
   @media (max-width: 800px) {
-    padding: 0 1em;
+    padding: 0 1rem;
+  }
+}
+
+hr,
+.page-break {
+  border-image: radial-gradient(circle, var(--green) 0%, transparent 100%) 1;
+  max-width: 64ch;
+  margin: 0 auto;
+
+  @media (max-width: 800px) {
+    padding: 0 1rem;
   }
 }
 
 nav {
-  margin-top: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 64ch;
+  margin: 1rem auto 0 auto;
+
+  @media (max-width: 800px) {
+    margin: 1rem 1rem 0 1rem;
+  }
 }
 
 .page-nav-header {
   font-family: "Overpass", sans-serif;
-  font-size: 1.5em;
+  font-size: 1.5rem;
   font-weight: 700;
 }
 
+.page-nav-buttons {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-auto-flow: column;
+  gap: 2px;
+}
+
+.page-button {
+  background-color: var(--darker-dark-green);
+  color: var(--green);
+  border: 1px solid var(--green);
+  border-radius: 5px;
+  padding: 0.25rem 0.5rem;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.page-button:hover {
+  background-color: var(--lighter-dark-green);
+  text-decoration: underline;
+}
+
+a,
 .page-link,
 .page-link-visible-on-hover {
   color: var(--off-white);
 }
 
+a:visited,
 .page-link:visited,
 .page-link-visible-on-hover:visited {
   color: var(--dark-off-white);
 }
 
+a:hover,
 .page-link:hover,
 .page-link-visible-on-hover:hover {
   color: var(--secondary);
@@ -85,16 +197,6 @@ nav {
 
 .page-link-visible-on-hover:hover {
   text-decoration: underline;
-}
-
-.page-heading {
-  font-family: "Overpass", sans-serif;
-  font-size: 3em;
-}
-
-.page-heading-2 {
-  font-family: "Overpass", sans-serif;
-  font-size: 2.34em;
 }
 
 .hero {
@@ -123,27 +225,31 @@ nav {
   @media (max-width: 800px) {
     width: 100%;
     height: 200%;
-    margin: 5em auto;
+    margin: 5rem auto;
   }
 }
 
 .projects {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   grid-template-rows: auto;
-  grid-column-gap: 1em;
-  grid-row-gap: 1em;
+  grid-row-gap: 3rem;
+  margin: 2rem auto;
+}
 
-  @media (max-width: 800px) {
-    grid-template-columns: 1fr;
-  }
+.projects-subtitle {
+  margin: 3rem 0;
 }
 
 .project {
-  padding: 2em;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   background-color: var(--darker-dark-green);
+}
+
+.project-title a {
+  color: var(--green);
 }
 
 .topics {
@@ -152,10 +258,12 @@ nav {
 
 .topic {
   word-break: keep-all;
-  padding: 0.25em 0.5em;
+  padding: 0.25rem 0.5rem;
   border-radius: 5px;
   background-color: var(--lighter-dark-green);
   color: var(--green);
+  border: 1px solid var(--green);
+  border-radius: 5px;
   display: inline-block;
   margin: 2px;
 }
@@ -187,7 +295,7 @@ pre code {
 }
 
 .cube {
-  font-size: 4em;
+  font-size: 4rem;
   width: 2em;
   transform-style: preserve-3d;
 
@@ -275,11 +383,6 @@ pre code {
 .cube:nth-child(4) .left {
   animation: fade-in linear, lengthen-faster linear;
   animation-timeline: view();
-}
-
-footer {
-  margin-top: 4em;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 footer p {

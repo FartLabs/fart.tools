@@ -1,11 +1,10 @@
-import { A, FOOTER, P, STRONG } from "@fartlabs/htx";
+import { A, FOOTER, P } from "@fartlabs/htx";
 
 export function PageFoot() {
   return (
     <FOOTER>
       <P>
-        © <STRONG>FartLabs</STRONG>
-        <A class="fl-icon page-link" href="">🧪</A>
+        © FartLabs <A class="fl-icon" href="/">🧪</A>
       </P>
     </FOOTER>
   );

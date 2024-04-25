@@ -1,16 +1,16 @@
-import { A, CODE, DIV, EM, H2, H3, P, SPAN } from "@fartlabs/htx";
+import { A, BLOCKQUOTE, CODE, DIV, EM, H2, H3, P, SPAN } from "@fartlabs/htx";
 import { PageSection } from "#/components/page_section.tsx";
 
 export function ProjectsSection() {
   return (
     <PageSection>
       <H2 id="projects" class="page-heading">
-        <A class="page-link-visible-on-hover" href="#projects">
-          Notable projects
-        </A>
+        Notable projects
       </H2>
 
-      <P class="projects-subtitle page-heading-2">Software out the wazoo!</P>
+      <BLOCKQUOTE class="projects-subtitle special">
+        Software out the wazoo!
+      </BLOCKQUOTE>
 
       <DIV class="projects">
         <ProjectSection
@@ -29,31 +29,9 @@ export function ProjectsSection() {
               to play with JSON like never before!
             </P>
           }
-          tubeColor="blue"
+          tubeColor="magenta"
           tubeGlow={true}
           topics={["deno", "jsr.io", "jsx/tsx"]}
-        />
-
-        <ProjectSection
-          titleHTML={
-            <A href="https://github.com/FartLabs/ht" class="page-link">ht</A>
-          }
-          descriptionHTML={
-            <P>
-              Type-safe HTML rendering library for Deno. Visit the generated
-              {" "}
-              <A
-                href="https://jsr.io/@fartlabs/ht"
-                class="page-link"
-              >
-                API documentation
-              </A>{" "}
-              to learn more!
-            </P>
-          }
-          tubeColor="turquoise"
-          tubeGlow={true}
-          topics={["deno", "html", "jsr.io"]}
         />
 
         <ProjectSection
@@ -77,25 +55,6 @@ export function ProjectsSection() {
 
         <ProjectSection
           titleHTML={
-            <A href="https://github.com/FartLabs/rt" class="page-link">rt</A>
-          }
-          descriptionHTML={
-            <P>
-              Minimal HTTP router library based on the URLPattern API. Visit the
-              generated{" "}
-              <A href="https://jsr.io/@fartlabs/rt" class="page-link">
-                API documentation
-              </A>{" "}
-              to learn more!
-            </P>
-          }
-          tubeColor="yellow"
-          tubeGlow={true}
-          topics={["deno", "http", "jsr.io"]}
-        />
-
-        <ProjectSection
-          titleHTML={
             <A href="https://github.com/FartLabs/rtx" class="page-link">rtx</A>
           }
           descriptionHTML={
@@ -109,7 +68,7 @@ export function ProjectsSection() {
               to learn more!
             </P>
           }
-          tubeColor="magenta"
+          tubeColor="blue"
           tubeGlow={true}
           topics={["deno", "http", "jsr.io", "jsx/tsx"]}
         />
@@ -184,7 +143,7 @@ function ProjectSection(props: ProjectSectionProps) {
   }${props.tubeGlow ? " glow" : ""}`;
   return (
     <DIV class={className}>
-      <H3>{props.titleHTML}</H3>
+      <H3 class="project-title">{props.titleHTML}</H3>
       {props.descriptionHTML}
       <ProjectTopics topics={props.topics} />
     </DIV>

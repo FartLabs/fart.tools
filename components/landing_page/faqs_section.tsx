@@ -6,9 +6,7 @@ export function FAQsSection() {
   return (
     <PageSection class="faq">
       <H2 id="faq" class="page-heading">
-        <A class="page-link-visible-on-hover" href="#faq">
-          FAQs
-        </A>
+        FAQs
       </H2>
 
       <FAQSection
@@ -18,7 +16,11 @@ export function FAQsSection() {
           <P>
             We maintain ethical, economically-sustainable, built-to-last,
             organic, open-source software&hellip; out the wazoo! We specialize
-            in <STRONG class="sparkle">imagination-driven</STRONG> development.
+            in <STRONG class="sparkle">imagination-driven</STRONG>{" "}
+            development. Learn more about us on our{" "}
+            <A class="page-button" href="/blog">
+              Blog
+            </A>.
           </P>
         }
       />

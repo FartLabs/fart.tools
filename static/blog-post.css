@@ -1,0 +1,64 @@
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-bottom: 1rem;
+}
+
+.markdown-body pre {
+  font-family: monospace;
+  background-color: var(--darker-dark-green);
+  border-radius: 2em;
+}
+
+.markdown-body pre * {
+  font-family: monospace;
+}
+
+.markdown-body pre code {
+  display: block;
+  padding: 1em;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-all;
+  border: none;
+}
+
+.markdown-body pre {
+  position: relative;
+}
+
+.markdown-body pre:before {
+  content: attr(data-lang);
+  display: block;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-underline-offset: 0.3em;
+  padding: 0.2em 0.9em;
+  color: #bbb;
+}
+
+/* TODO: Add copy code button to pre code blocks. */
+.markdown-body pre button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  height: 2em;
+  color: #bbb;
+  background-color: #303241;
+}
+
+.markdown-body kbd {
+  border-radius: 3px;
+  padding: 1px 2px 0;
+  border: 1px solid black;
+  background-color: #f7f7f7;
+  font-family: monospace;
+}
+
+.markdown-body img:not(:has([width]), :has([height])) {
+  max-width: 100%;
+  height: auto;
+}

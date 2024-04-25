@@ -1,13 +1,11 @@
-import { A, H2 } from "@fartlabs/htx";
+import { H2 } from "@fartlabs/htx";
 import { PageSection } from "#/components/page_section.tsx";
 
 export function ExampleSection() {
   return (
     <PageSection class="example">
       <H2 id="seconds" class="page-heading">
-        <A class="page-link-visible-on-hover" href="#seconds">
-          Build modern software solutions in seconds
-        </A>
+        Build modern software solutions in seconds
       </H2>
 
       {EXAMPLE_CODE}
