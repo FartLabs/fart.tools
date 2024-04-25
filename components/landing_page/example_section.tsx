@@ -18,7 +18,7 @@ const EXAMPLE_CODE =
   `<pre class="border-tube-green glow"><code class="hljs"><span class="hljs-keyword">import</span> { <span class="hljs-title class_">Lab</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">"labs/labs.ts"</span>;
 
 <span class="hljs-keyword">interface</span> <span class="hljs-title class_">Note</span> {
-  title?: <span class="hljs-built_in">string</span>;
+  <span class="hljs-attr">title</span>: <span class="hljs-built_in">string</span>;
   <span class="hljs-attr">content</span>: <span class="hljs-built_in">string</span>;
 }
 
@@ -39,24 +39,17 @@ const EXAMPLE_CODE =
       <span class="hljs-keyword">return</span> notes.<span class="hljs-title function_">get</span>(id);
     },
     [<span class="hljs-string">"notes"</span>],
-  )
-  .<span class="hljs-title function_">procedure</span>(
-    <span class="hljs-string">"notes.list"</span>,
-    <span class="hljs-function">(<span class="hljs-params">_, { notes }</span>) =&gt;</span> {
-      <span class="hljs-keyword">return</span> <span class="hljs-title class_">Array</span>.<span class="hljs-title function_">from</span>(notes.<span class="hljs-title function_">values</span>());
-    },
-    [<span class="hljs-string">"notes"</span>],
   );
 
-notesLab.<span class="hljs-title function_">execute</span>(
+<span class="hljs-keyword">const</span> noteID = notesLab.<span class="hljs-title function_">execute</span>(
   <span class="hljs-string">"notes.add"</span>,
   { <span class="hljs-attr">title</span>: <span class="hljs-string">"Hello"</span>, <span class="hljs-attr">content</span>: <span class="hljs-string">"World"</span> },
 );
 
-<span class="hljs-keyword">const</span> notes = notesLab.<span class="hljs-title function_">execute</span>(
-  <span class="hljs-string">"notes.list"</span>,
-  {},
+<span class="hljs-keyword">const</span> note = notesLab.<span class="hljs-title function_">execute</span>(
+  <span class="hljs-string">"notes.get"</span>,
+  { <span class="hljs-attr">id</span>: noteID.<span class="hljs-property">id</span> },
 );
 
-<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(notes);
+<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(note);
 </code></pre>`;

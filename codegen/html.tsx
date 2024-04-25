@@ -5,7 +5,7 @@ import {
   topics,
   toTopicID,
 } from "#/components/blog_page/mod.ts";
-import { BlogPostPage } from "#/components/blog_page/blog_post_page/blog_post_page.tsx";
+import { BlogPostPage } from "#/components/blog_page/blog_post_page/mod.ts";
 
 export function generateHTML() {
   const landingPageHTML = <LandingPage /> as string;
