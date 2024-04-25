@@ -1,4 +1,4 @@
-import { A, DIV, H2, IMG, SCRIPT } from "@fartlabs/htx";
+import { DIV, H2, IMG, SCRIPT } from "@fartlabs/htx";
 import { PageSection } from "#/components/page_section.tsx";
 
 export function HeroSection() {

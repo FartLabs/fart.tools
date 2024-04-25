@@ -36,28 +36,6 @@ export function ProjectsSection() {
 
         <ProjectSection
           titleHTML={
-            <A href="https://github.com/FartLabs/ht" class="page-link">ht</A>
-          }
-          descriptionHTML={
-            <P>
-              Type-safe HTML rendering library for Deno. Visit the generated
-              {" "}
-              <A
-                href="https://jsr.io/@fartlabs/ht"
-                class="page-link"
-              >
-                API documentation
-              </A>{" "}
-              to learn more!
-            </P>
-          }
-          tubeColor="turquoise"
-          tubeGlow={true}
-          topics={["deno", "html", "jsr.io"]}
-        />
-
-        <ProjectSection
-          titleHTML={
             <A href="https://github.com/FartLabs/htx" class="page-link">htx</A>
           }
           descriptionHTML={
@@ -73,25 +51,6 @@ export function ProjectsSection() {
           tubeColor="purple"
           tubeGlow={true}
           topics={["deno", "html", "jsr.io", "jsx/tsx"]}
-        />
-
-        <ProjectSection
-          titleHTML={
-            <A href="https://github.com/FartLabs/rt" class="page-link">rt</A>
-          }
-          descriptionHTML={
-            <P>
-              Minimal HTTP router library based on the URLPattern API. Visit the
-              generated{" "}
-              <A href="https://jsr.io/@fartlabs/rt" class="page-link">
-                API documentation
-              </A>{" "}
-              to learn more!
-            </P>
-          }
-          tubeColor="yellow"
-          tubeGlow={true}
-          topics={["deno", "http", "jsr.io"]}
         />
 
         <ProjectSection

@@ -1,4 +1,4 @@
-import { A, H2 } from "@fartlabs/htx";
+import { H2 } from "@fartlabs/htx";
 import { PageSection } from "#/components/page_section.tsx";
 
 export function ExampleSection() {

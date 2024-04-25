@@ -231,15 +231,14 @@ a:hover,
 
 .projects {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr;
   grid-template-rows: auto;
-  grid-column-gap: 2rem;
-  grid-row-gap: 2rem;
+  grid-row-gap: 3rem;
   margin: 2rem auto;
+}
 
-  @media (max-width: 800px) {
-    grid-template-columns: 1fr;
-  }
+.projects-subtitle {
+  margin: 3rem 0;
 }
 
 .project {
