@@ -292,7 +292,8 @@ pre code {
   transform-style: preserve-3d;
 
   @media (prefers-reduced-motion: reduce) {
-    animation-timing-function: 0 linear;
+    animation-timing-function: linear;
+    animation-duration: 0s;
     animation-timeline: none;
   }
 }
