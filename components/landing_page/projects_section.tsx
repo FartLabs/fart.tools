@@ -8,10 +8,6 @@ export function ProjectsSection() {
         Notable projects
       </H2>
 
-      <BLOCKQUOTE class="projects-subtitle special">
-        Software out the wazoo!
-      </BLOCKQUOTE>
-
       <DIV class="projects">
         <ProjectSection
           titleHTML={
