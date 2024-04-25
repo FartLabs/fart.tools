@@ -1,4 +1,4 @@
-import { A, DIV, H2, SECTION } from "@fartlabs/htx";
+import { DIV, H2, SECTION } from "@fartlabs/htx";
 import { TextNode } from "@fartlabs/htx/special";
 import { PageSection } from "#/components/page_section.tsx";
 

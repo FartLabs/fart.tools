@@ -1,6 +1,5 @@
 import { BODY, HEAD, HTML, LINK, META, SCRIPT, TITLE } from "@fartlabs/htx";
 import { TextNode } from "@fartlabs/htx/special";
-import { PageSection } from "./page_section.tsx";
 import { PageNav } from "./page_nav.tsx";
 import { PageFoot } from "./page_foot.tsx";
 import { PageBreak } from "#/components/page_break.tsx";
