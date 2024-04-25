@@ -1,10 +1,8 @@
-import { A, FOOTER, P, STRONG } from "@fartlabs/htx";
-import { PageBreak } from "#/components/page_break.tsx";
+import { A, FOOTER, P } from "@fartlabs/htx";
 
 export function PageFoot() {
   return (
     <FOOTER>
-      <PageBreak />
       <P>
         © FartLabs <A class="fl-icon" href="/">🧪</A>
       </P>

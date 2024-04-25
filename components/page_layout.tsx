@@ -3,6 +3,7 @@ import { TextNode } from "@fartlabs/htx/special";
 import { PageSection } from "./page_section.tsx";
 import { PageNav } from "./page_nav.tsx";
 import { PageFoot } from "./page_foot.tsx";
+import { PageBreak } from "#/components/page_break.tsx";
 
 export interface PageLayoutProps {
   title: string;
@@ -36,9 +37,8 @@ export function PageLayout(props: PageLayoutProps) {
         <BODY>
           <PageNav />
           {(props.children ?? []).join("")}
-          <PageSection>
-            <PageFoot />
-          </PageSection>
+          <PageBreak />
+          <PageFoot />
         </BODY>
       </HTML>
     </TextNode>
