@@ -47,9 +47,15 @@ meet you and see what amazing things we can create together!
 
 ## Source code
 
-The source code for <https://fart.tools/> is available on GitHub:
-<https://go.fart.tools/gh/fart.tools/>!
+The source code for <https://fart.tools/> is open-source and available on
+GitHub: <https://github.com/FartLabs/fart.tools/>!
 
 ```ts
 console.log("Maintained with 🧪 @FartLabs!");
 ```
+
+This project was initially developed in under a week during the
+["ACM Design Portfolio Spring 2024"](https://acm-portfolio-sp2024.devpost.com/)
+competition! Give our submission
+["FartLabs - fart.tools"](https://devpost.com/software/fartlabs-fart-tools) a
+look! Submitted April 25th, 2024.

@@ -8,11 +8,10 @@ We appreciate your help!
 
 ### Run
 
+Run `deno task generate` to generate the static files. This is required to run
+the server because the server serves the generated static files.
+
 Run `deno task start` to start the server.
-
-### Code generation
-
-Run `deno task generate` to generate the static files.
 
 ### Style
 
