@@ -5,13 +5,21 @@ import { PageFoot } from "./page_foot.tsx";
 import { PageBreak } from "#/components/page_break.tsx";
 
 export interface PageLayoutProps {
-  title: string;
-  description: string;
+  title?: string;
+  description?: string;
   headHTML?: string;
   children?: string[];
 }
 
+export const defaultTitle =
+  "FartLabs, where imagination becomes great software";
+export const defaultDescription =
+  "Software out the wazoo! We specialize in imagination-driven development.";
+
 export function PageLayout(props: PageLayoutProps) {
+  const title = props.title ?? defaultTitle;
+  const description = props.description ?? defaultDescription;
+
   return (
     <TextNode>
       {"<!DOCTYPE html>"}
@@ -22,8 +30,8 @@ export function PageLayout(props: PageLayoutProps) {
             name="viewport"
             content="width=device-width, initial-scale=1.0"
           />
-          <TITLE>{props.title}</TITLE>
-          <META name="description" content={props.description} />
+          <TITLE>{title}</TITLE>
+          <META name="description" content={description} />
           <Favicon />
           {stylesheets
             .map((href) => <LINK rel="stylesheet" href={href} />)

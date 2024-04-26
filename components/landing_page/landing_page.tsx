@@ -7,10 +7,7 @@ import { FAQsSection } from "./faqs_section.tsx";
 
 export function LandingPage() {
   return (
-    <PageLayout
-      title="FartLabs, where imagination becomes software"
-      description="Software out the wazoo! We specialize in imagination-driven development."
-    >
+    <PageLayout>
       <HeroSection />
       <ExampleSection />
       <ProjectsSection />

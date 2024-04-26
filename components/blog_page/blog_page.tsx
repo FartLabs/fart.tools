@@ -1,4 +1,4 @@
-import { PageLayout } from "#/components/page_layout.tsx";
+import { defaultTitle, PageLayout } from "#/components/page_layout.tsx";
 import { PageSection } from "#/components/page_section.tsx";
 import { PageBreak } from "#/components/page_break.tsx";
 import { BlogHeroSection } from "./blog_hero_section.tsx";
@@ -12,10 +12,7 @@ export interface BlogPageProps {
 
 export function BlogPage(props: BlogPageProps) {
   return (
-    <PageLayout
-      title="Blog | FartLabs, where imagination becomes software"
-      description="Software out the wazoo! We specialize in imagination-driven development."
-    >
+    <PageLayout title={`Blog | ${defaultTitle}`}>
       <BlogHeroSection />
 
       <PageBreak />
