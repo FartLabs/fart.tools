@@ -8,16 +8,16 @@ import {
 import { BlogPostPage } from "#/components/blog_page/blog_post_page/mod.ts";
 
 export function generateHTML() {
-  const landingPageHTML = <LandingPage /> as string;
+  const landingPageHTML: string = <LandingPage />;
   Deno.writeTextFileSync("generated/index.html", landingPageHTML);
 
-  const blogPageHTML = <BlogPage /> as string;
+  const blogPageHTML: string = <BlogPage />;
   Deno.mkdirSync("generated/blog", { recursive: true });
   Deno.writeTextFileSync("generated/blog/index.html", blogPageHTML);
 
   for (const topic of topics) {
     const topicID = toTopicID(topic);
-    const topicPageHTML = <BlogPage topicID={topicID} /> as string;
+    const topicPageHTML: string = <BlogPage topicID={topicID} />;
     Deno.mkdirSync(`generated/blog/${topicID}`, { recursive: true });
     Deno.writeTextFileSync(
       `generated/blog/${topicID}/index.html`,
@@ -26,7 +26,7 @@ export function generateHTML() {
   }
 
   for (const post of posts) {
-    const postPageHTML = <BlogPostPage post={post} /> as string;
+    const postPageHTML: string = <BlogPostPage post={post} />;
     Deno.mkdirSync(`generated/${post.id}`, { recursive: true });
     Deno.writeTextFileSync(
       `generated/${post.id}/index.html`,
