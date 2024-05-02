@@ -1,6 +1,10 @@
 import { A, H2, H3, P, STRONG } from "@fartlabs/htx";
 import { TextNode } from "@fartlabs/htx/special";
 import { PageSection } from "#/components/page_section.tsx";
+import {
+  BlogButton,
+  ChatButton,
+} from "#/components/page_button/buttons/mod.ts";
 
 export function FAQsSection() {
   return (
@@ -17,10 +21,7 @@ export function FAQsSection() {
             We maintain ethical, economically-sustainable, built-to-last,
             organic, open-source software&hellip; out the wazoo! We specialize
             in <STRONG class="sparkle">imagination-driven</STRONG>{" "}
-            development. Learn more about us on our{" "}
-            <A class="page-button" href="/blog">
-              Blog
-            </A>.
+            development. Learn more about us on our <BlogButton />.
           </P>
         }
       />
@@ -30,12 +31,9 @@ export function FAQsSection() {
         questionHTML="How do I join the community?"
         answerHTML={
           <P>
-            Join our{" "}
-            <A href="https://go.fart.tools/chat" class="page-link">
-              Discord server
-            </A>{" "}
-            to chat with us and other members of the community. Also, check out
-            our{" "}
+            Join our <ChatButton />{" "}
+            to hang out with us and other members of the community. Also, check
+            out our{" "}
             <A href="https://github.com/FartLabs" class="page-link">
               GitHub org
             </A>.

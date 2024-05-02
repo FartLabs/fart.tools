@@ -1,4 +1,10 @@
-import { A, DIV, NAV, SMALL } from "@fartlabs/htx";
+import { A, DIV, NAV } from "@fartlabs/htx";
+import {
+  BlogButton,
+  ChatButton,
+  GitHubButton,
+} from "#/components/page_button/buttons/mod.ts";
+import {} from "#/components/page_button/buttons/chat_button.tsx";
 
 export function PageNav() {
   return (
@@ -8,28 +14,10 @@ export function PageNav() {
       </A>
 
       <DIV class="page-nav-buttons">
-        <A class="page-button" href="/blog">
-          Blog
-        </A>
-        <A
-          class="page-button"
-          href="https://go.fart.tools/chat"
-          target="_blank"
-        >
-          Chat<Outbound />
-        </A>
-        <A
-          class="page-button"
-          href="https://github.com/FartLabs"
-          target="_blank"
-        >
-          GitHub<Outbound />
-        </A>
+        <BlogButton />
+        <ChatButton />
+        <GitHubButton />
       </DIV>
     </NAV>
   );
-}
-
-function Outbound() {
-  return <SMALL>&#8599;</SMALL>;
 }
