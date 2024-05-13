@@ -4,6 +4,7 @@ import { PageSection } from "#/components/page_section.tsx";
 import {
   BlogButton,
   ChatButton,
+  GitHubButton,
 } from "#/components/page_button/buttons/mod.ts";
 
 export function FAQsSection() {
@@ -33,10 +34,7 @@ export function FAQsSection() {
           <P>
             Join our <ChatButton />{" "}
             to hang out with us and other members of the community. Also, check
-            out our{" "}
-            <A href="https://github.com/FartLabs" class="page-link">
-              GitHub org
-            </A>.
+            out our org on <GitHubButton />.
           </P>
         }
       />
