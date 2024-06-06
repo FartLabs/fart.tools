@@ -1,4 +1,4 @@
-import { A, BLOCKQUOTE, CODE, DIV, EM, H2, H3, P, SPAN } from "@fartlabs/htx";
+import { A, CODE, DIV, EM, H2, H3, P, SPAN } from "@fartlabs/htx";
 import { PageSection } from "#/components/page_section.tsx";
 
 export function ProjectsSection() {
