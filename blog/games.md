@@ -20,7 +20,10 @@ game puts your auditory memory skills to the test.
 - Play online: <https://concentration.fart.tools>
 - Source code: <https://github.com/FartLabs/concentration>
 
-This game features a variety of **fart sounds** that you must match to win.
+This game features a variety of
+[**fart sounds**](https://concentration.fart.tools/sounds) that you must match
+to win. Study each sound carefully, and try to remember where you heard it. Can
+you match them all?
 
 [Concentration](https://en.wikipedia.org/wiki/Concentration_(game)) is a memory
 game where you match pairs of cards. Click on a card to reveal its sound. Click
@@ -37,10 +40,9 @@ complete the game.
 
 [![Fart Concentration game with 10 cards](https://github.com/EthanThatOneKid/fart-concentration/assets/31261035/cf79371a-6ece-4121-9de1-b88d7a4c648b)](https://concentration.fart.tools/10)
 
-The player is also able to [_study_](https://concentration.fart.tools/sounds)
-each sound as many times as they want before starting the game. This feature is
-especially useful for players who are new to the game and want to familiarize
-themselves with the sounds before starting.
+The player is also able to study each sound to their heart's content before
+starting the game. This feature is especially useful for players who are new to
+the game and want to familiarize themselves with the sounds before starting.
 
 ## Thanks for playing
 
