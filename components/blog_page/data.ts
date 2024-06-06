@@ -13,14 +13,9 @@ export const topics = topicsOf(posts);
  * readPosts reads all the blog posts.
  */
 function readPosts(): Post[] {
-  const posts: Post[] = [];
-  for (const file of expandGlobSync("blog/*.md")) {
-    posts.push(readPost(file));
-  }
-
-  return posts.toSorted((a, b) => {
-    return a.attrs.date.getTime() - b.attrs.date.getTime();
-  });
+  return Array.from(expandGlobSync("blog/*.md"))
+    .map((file) => readPost(file))
+    .toSorted((a, b) => b.attrs.date.getTime() - a.attrs.date.getTime());
 }
 
 /**

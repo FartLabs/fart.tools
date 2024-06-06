@@ -385,3 +385,8 @@ footer p {
 .hljs {
   background-color: var(--darker-dark-green);
 }
+
+.blog-post-preview-list {
+  display: grid;
+  gap: 2rem;
+}

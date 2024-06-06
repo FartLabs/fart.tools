@@ -17,7 +17,7 @@ export function BlogPage(props: BlogPageProps) {
 
       <PageBreak />
 
-      <PageSection>
+      <PageSection class="blog-post-preview-list">
         {getPosts(props.topicID)
           .map((post) => <BlogPostPreview post={post} />)
           .join("")}
