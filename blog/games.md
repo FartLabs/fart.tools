@@ -14,11 +14,11 @@ tech to build fun games that push the boundaries of what's possible!
 
 ## Fart Concentration
 
-- Play online: <https://concentration.fart.tools>
-- Source code: <https://github.com/FartLabs/concentration>
-
 We're excited to introduce _Fart Concentration_, a fun and challenging memory
 game puts your auditory memory skills to the test.
+
+- Play online: <https://concentration.fart.tools>
+- Source code: <https://github.com/FartLabs/concentration>
 
 This game features a variety of **fart sounds** that you must match to win.
 
