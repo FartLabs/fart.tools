@@ -59,6 +59,8 @@ function countTopics(posts: Post[]): Map<string, number> {
  */
 function topicsOf(posts: Post[]): string[] {
   return Array.from(countTopics(posts).entries())
-    .toSorted(([, a], [, b]) => b - a)
+    .toSorted(([aTopic, aCount], [bTopic, bCount]) =>
+      aCount > bCount ? -1 : aCount < bCount ? 1 : aTopic.localeCompare(bTopic)
+    )
     .map(([topic]) => topic);
 }
