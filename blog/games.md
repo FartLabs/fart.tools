@@ -1,6 +1,6 @@
 ---
 title: "Games at FartLabs"
-description: "Play the latest games developed at FartLabs!"
+description: "Play the latest games developed at FartLabs! Why do we make games?"
 authors:
   - name: "Ethan Davidson"
     username: "EthanThatOneKid"
