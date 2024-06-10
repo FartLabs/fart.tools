@@ -254,8 +254,7 @@ a:hover,
   border-radius: 5px;
   background-color: var(--lighter-dark-green);
   color: var(--green);
-  border: 1px solid var(--green);
-  border-radius: 5px;
+  border-radius: 2rem;
   display: inline-block;
   margin: 2px;
 }
