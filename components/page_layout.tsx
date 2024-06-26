@@ -67,7 +67,7 @@ const stylesheets = [
   "/tube-orange.css",
   "/tube-blue.css",
   "/tube-empty.css",
-  "/keyframes.css",
+  "/cubes.css",
   "/index.css",
 ];
 
