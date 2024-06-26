@@ -46,7 +46,7 @@
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  background-color: var(--darker-dark-green);
+  background-color: var(--fart-darker-dark-green);
 }
 
 .blog-post-preview-list {
@@ -55,5 +55,5 @@
 }
 
 .hljs {
-  background-color: var(--darker-dark-green);
+  background-color: var(--fart-darker-dark-green);
 }
