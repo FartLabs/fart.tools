@@ -4,7 +4,7 @@ export function PageFoot() {
   return (
     <FOOTER>
       <P>
-        © FartLabs <A class="fl-icon" href="/">🧪</A>
+        © FartLabs <A class="fart-logo" href="/">🧪</A>
       </P>
     </FOOTER>
   );

@@ -6,6 +6,6 @@ export interface PageSectionProps {
 }
 
 export function PageSection(props: PageSectionProps) {
-  const className = `page-section${props.class ? ` ${props.class}` : ""}`;
+  const className = `fart-section${props.class ? ` ${props.class}` : ""}`;
   return <SECTION class={className}>{...(props.children ?? [])}</SECTION>;
 }

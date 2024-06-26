@@ -32,6 +32,6 @@ const renderer: MarkdownIt = new MarkdownIt({
 
 renderer.use(anchorPlugin, {
   permalink: anchorPlugin.permalink.headerLink({
-    class: "page-link-visible-on-hover",
+    class: "fart-link-visible-on-hover",
   }),
 });

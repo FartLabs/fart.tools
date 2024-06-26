@@ -7,7 +7,7 @@ export function BlogPostPreview(props: { post: Post; level?: 1 | 3 }) {
   return (
     <DIV class="post-preview">
       <Heading>
-        <A class="page-link-visible-on-hover" href={`/${props.post.id}`}>
+        <A class="fart-link-visible-on-hover" href={`/${props.post.id}`}>
           {props.post.attrs.title}
         </A>
       </Heading>
@@ -35,7 +35,7 @@ function BlogPostDate(props: { date: Date }) {
 
 function BlogPostAuthor(props: { author: PostAuthor }) {
   return (
-    <A href={`https://github.com/${props.author.username}`} class="page-link">
+    <A href={`https://github.com/${props.author.username}`} class="fart-link">
       {props.author.name}
     </A>
   );
