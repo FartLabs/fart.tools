@@ -9,7 +9,7 @@ import {} from "#/components/page_button/buttons/chat_button.tsx";
 export function PageNav() {
   return (
     <NAV>
-      <A class="page-nav-header fart-link-visible-on-hover" href="/">
+      <A class="fart-header fart-link-visible-on-hover" href="/">
         FartLabs
       </A>
 

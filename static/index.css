@@ -1,9 +1,3 @@
-.page-nav-header {
-  font-family: "Overpass", sans-serif;
-  font-size: 1.5rem;
-  font-weight: 700;
-}
-
 .hero {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -32,6 +26,14 @@
     height: 200%;
     margin: 5rem auto;
   }
+}
+
+.background-blob {
+  background-image: url("molecule-blob.svg");
+  background-size: cover;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
 }
 
 .projects {
