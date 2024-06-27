@@ -111,6 +111,26 @@ export function ProjectsSection() {
           tubeGlow={true}
           topics={["blockly", "deno", "fresh", "subhosting"]}
         />
+
+        <ProjectSection
+          titleHTML={
+            <A href="https://github.com/FartLabs/fart.css" class="fart-link">
+              fart.css
+            </A>
+          }
+          descriptionHTML={
+            <P>
+              CSS library reusable across fart-tastic frontends. Visit{" "}
+              <A href="https://css.fart.tools/" class="fart-link">
+                css.fart.tools
+              </A>{" "}
+              to learn more!
+            </P>
+          }
+          tubeColor="green"
+          tubeGlow={true}
+          topics={["css"]}
+        />
       </DIV>
     </PageSection>
   );
