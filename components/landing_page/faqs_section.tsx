@@ -52,7 +52,7 @@ function FAQSection(props: FAQSectionProps) {
   return (
     <TextNode>
       <H3 id={props.id} class="page-heading-2">
-        <A class="page-link-visible-on-hover" href={`#${props.id}`}>
+        <A class="fart-link-visible-on-hover" href={`#${props.id}`}>
           {props.questionHTML}
         </A>
       </H3>

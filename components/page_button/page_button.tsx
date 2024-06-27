@@ -9,7 +9,7 @@ export interface PageButtonProps {
 export function PageButton(props: PageButtonProps) {
   return (
     <A
-      class="page-button"
+      class="fart-button"
       href={props.href}
       target={props.outbound ? "_blank" : undefined}
     >

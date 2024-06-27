@@ -11,7 +11,7 @@ export function ProjectsSection() {
       <DIV class="projects">
         <ProjectSection
           titleHTML={
-            <A href="https://github.com/FartLabs/jsonx" class="page-link">
+            <A href="https://github.com/FartLabs/jsonx" class="fart-link">
               jsonx
             </A>
           }
@@ -19,7 +19,7 @@ export function ProjectsSection() {
             <P>
               JSX runtime and compiler for composing JSON data. Visit the
               official{" "}
-              <A href="https://jsonx.fart.tools/" class="page-link">
+              <A href="https://jsonx.fart.tools/" class="fart-link">
                 jsonx website
               </A>{" "}
               to play with JSON like never before!
@@ -32,13 +32,13 @@ export function ProjectsSection() {
 
         <ProjectSection
           titleHTML={
-            <A href="https://github.com/FartLabs/htx" class="page-link">htx</A>
+            <A href="https://github.com/FartLabs/htx" class="fart-link">htx</A>
           }
           descriptionHTML={
             <P>
               Library of <CODE>@fartlabs/jsonx</CODE>{" "}
               components for composing HTML content. Visit the generated{" "}
-              <A href="https://jsr.io/@fartlabs/htx" class="page-link">
+              <A href="https://jsr.io/@fartlabs/htx" class="fart-link">
                 API documentation
               </A>{" "}
               to learn more!
@@ -51,14 +51,14 @@ export function ProjectsSection() {
 
         <ProjectSection
           titleHTML={
-            <A href="https://github.com/FartLabs/rtx" class="page-link">rtx</A>
+            <A href="https://github.com/FartLabs/rtx" class="fart-link">rtx</A>
           }
           descriptionHTML={
             <P>
               Library of <CODE>@fartlabs/jsonx</CODE> components for composing
               {" "}
               <CODE>@fartlabs/rt</CODE> routers. Visit the generated{" "}
-              <A href="https://jsr.io/@fartlabs/rtx" class="page-link">
+              <A href="https://jsr.io/@fartlabs/rtx" class="fart-link">
                 API documentation
               </A>{" "}
               to learn more!
@@ -71,7 +71,7 @@ export function ProjectsSection() {
 
         <ProjectSection
           titleHTML={
-            <A href="https://github.com/FartLabs/labs" class="page-link">
+            <A href="https://github.com/FartLabs/labs" class="fart-link">
               Labs
             </A>
           }
@@ -88,7 +88,7 @@ export function ProjectsSection() {
 
         <ProjectSection
           titleHTML={
-            <A href="https://github.com/FartLabs/deno_blocks" class="page-link">
+            <A href="https://github.com/FartLabs/deno_blocks" class="fart-link">
               Deno Blocks
             </A>
           }
@@ -101,7 +101,7 @@ export function ProjectsSection() {
               of Deno Subhosting Hackathon (Ryan Dahl's favorite). Visit{" "}
               <A
                 href="https://blocks.deno.dev/"
-                class="page-link"
+                class="fart-link"
               >
                 Deno Blocks
               </A>!
@@ -148,12 +148,12 @@ function ProjectSection(props: ProjectSectionProps) {
 
 function ProjectTopics(props: { topics: string[] }) {
   return (
-    <DIV class="topics">
+    <DIV class="fart-topics">
       {props.topics.map((topic) => <ProjectTopic topic={topic} />)}
     </DIV>
   );
 }
 
 function ProjectTopic(props: { topic: string }) {
-  return <SPAN class="topic">{props.topic}</SPAN>;
+  return <SPAN class="fart-topic">{props.topic}</SPAN>;
 }

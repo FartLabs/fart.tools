@@ -1,3 +1,116 @@
+.cubes {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  height: 42em;
+  margin: 4em auto;
+  justify-items: center;
+  max-width: 1000px;
+}
+
+@media (max-width: 800px) {
+  .cubes {
+    grid-template-columns: 1fr;
+  }
+
+  .cube:not(:nth-child(1)) {
+    display: none;
+  }
+}
+
+.cube {
+  font-size: 4rem;
+  width: 2em;
+  transform-style: preserve-3d;
+
+  @media (reduced-motion: reduce) {
+    animation-timing-function: 0s linear;
+  }
+}
+
+.cube:nth-child(1) {
+  animation: rise-fastest linear;
+  animation-timeline: view();
+}
+
+.cube:nth-child(2) {
+  animation: rise-fast linear;
+  animation-timeline: view();
+}
+
+.cube:nth-child(3) {
+  animation: rise linear;
+  animation-timeline: view();
+}
+
+.cube:nth-child(4) {
+  animation: rise-faster linear;
+  animation-timeline: view();
+}
+
+.side {
+  font-family: "Overpass", sans-serif;
+  font-weight: 900;
+  border-radius: 5px;
+  position: absolute;
+  width: 2em;
+  text-align: center;
+  line-height: 2em;
+}
+
+.top {
+  transform: rotateX(90deg) translateZ(1em);
+  color: var(--fart-darker-dark-green);
+  background-image: linear-gradient(#c3ef3caa, #c3ef3caa);
+  height: 2em;
+  outline: 2px solid var(--fart-darker-dark-green);
+  animation: fade-in linear;
+  animation-timeline: view();
+}
+
+.left {
+  transform: rotateY(-90deg) translateZ(1em);
+  background-image: linear-gradient(
+    var(--fart-lighter-dark-green) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.front {
+  transform: translateZ(1em);
+  color: var(--fart-green);
+  background-image: linear-gradient(
+    var(--fart-darker-dark-green) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.cube:nth-child(1) .front,
+.cube:nth-child(1) .left {
+  animation: fade-in linear, lengthen-fastest linear;
+  animation-timeline: view();
+}
+
+.cube:nth-child(2) .front,
+.cube:nth-child(2) .left {
+  animation: fade-in linear, lengthen-fast linear;
+  animation-timeline: view();
+}
+
+.cube:nth-child(3) .front,
+.cube:nth-child(3) .left {
+  animation: fade-in linear, lengthen linear;
+  animation-timeline: view();
+}
+
+.cube:nth-child(4) .front,
+.cube:nth-child(4) .left {
+  animation: fade-in linear, lengthen-faster linear;
+  animation-timeline: view();
+}
+
 @keyframes lengthen-fastest {
   0% {
     height: 0em;
@@ -247,37 +360,5 @@
 
   100% {
     opacity: 1;
-  }
-}
-
-@keyframes shake {
-  0% {
-    scale: 1;
-    transform: rotate(0deg);
-  }
-
-  20% {
-    transform: rotate(-25deg);
-  }
-
-  40% {
-    transform: rotate(10deg);
-  }
-
-  50% {
-    scale: 1.2;
-  }
-
-  60% {
-    transform: rotate(-25deg);
-  }
-
-  80% {
-    transform: rotate(10deg);
-  }
-
-  100% {
-    scale: 1;
-    transform: rotate(0deg);
   }
 }

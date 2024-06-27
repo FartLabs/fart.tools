@@ -7,7 +7,7 @@ export interface BlogTopicsProps {
 
 export function BlogTopics(props: BlogTopicsProps) {
   return (
-    <DIV class="topics">
+    <DIV class="fart-topics">
       {props.topics
         .map((topic) => <BlogTopic topic={topic} />)
         .join("")}
@@ -21,7 +21,7 @@ export interface BlogTopicProps {
 
 export function BlogTopic(props: BlogTopicProps) {
   return (
-    <A class="page-button" href={`/blog/${toTopicID(props.topic)}`}>
+    <A class="fart-button" href={`/blog/${toTopicID(props.topic)}`}>
       {props.topic}
     </A>
   );
