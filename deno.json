@@ -12,6 +12,7 @@
     "@std/fs": "jsr:@std/fs@^0.223.0",
     "@std/http": "jsr:@std/http@^0.223.0",
     "alea": "npm:alea@^1.0.1",
+    "feed": "npm:feed@^4.2.2",
     "highlight.js": "npm:highlight.js@^11.9.0",
     "markdown-it": "npm:markdown-it@^14.1.0",
     "markdown-it-anchor": "npm:markdown-it-anchor@^8.6.7",
