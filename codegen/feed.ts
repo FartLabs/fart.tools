@@ -41,6 +41,6 @@ export function generateFeed() {
     });
   });
 
-  Deno.writeTextFileSync("generated/blog/feed.xml", feed.rss2());
-  Deno.writeTextFileSync("generated/blog/feed.atom", feed.atom1());
+  Deno.writeTextFileSync("generated/feed.xml", feed.rss2());
+  Deno.writeTextFileSync("generated/feed.atom", feed.atom1());
 }
