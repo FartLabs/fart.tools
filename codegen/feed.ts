@@ -21,23 +21,27 @@ export function generateFeed() {
     },
   });
   posts.forEach((post) => {
+    const authors = post.attrs.authors.map((author) => ({
+      name: author.name,
+      link: author.username
+        ? `https://github.com/${author.username}`
+        : undefined,
+    }));
+    const date = new Date(post.attrs.date);
     feed.addItem({
       id: `${ORIGIN}/${post.id}`,
       link: `${ORIGIN}/${post.id}`,
       title: post.attrs.title,
       description: post.attrs.description,
-      date: new Date(post.attrs.date),
-      published: new Date(post.attrs.date),
+      date,
+      published: date,
       copyright: COPYRIGHT,
       category: post.attrs.topics.map((topic) => ({
-        name: topic.toLowerCase(),
+        name: topic,
+        term: topic.toLowerCase(),
       })),
-      author: post.attrs.authors.map((author) => ({
-        name: author.name,
-        link: author.username
-          ? `https://github.com/${author.username}`
-          : undefined,
-      })),
+      author: authors,
+      contributor: authors,
     });
   });
 
