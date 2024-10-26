@@ -20,7 +20,12 @@
   },
   "tasks": {
     "generate": "deno run --allow-read --allow-write codegen/codegen.ts",
-    "start": "deno run --allow-net --allow-read main.ts generated",
-    "dev": "deno run --allow-net --allow-read --watch codegen/codegen.ts"
+    "start": "deno run --allow-net --allow-read main.ts generated"
+  },
+  "fmt": {
+    "exclude": ["generated"]
+  },
+  "lint": {
+    "exclude": ["generated"]
   }
 }
