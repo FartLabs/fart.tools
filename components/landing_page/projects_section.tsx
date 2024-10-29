@@ -71,49 +71,6 @@ export function ProjectsSection() {
 
         <ProjectSection
           titleHTML={
-            <A href="https://github.com/FartLabs/labs" class="fart-link">
-              Labs
-            </A>
-          }
-          descriptionHTML={
-            <P>
-              Labs are data structures designed for composable and type-safe
-              management of variables and procedures at scale.
-            </P>
-          }
-          tubeColor="green"
-          tubeGlow={true}
-          topics={["codegen", "deno", "typescript"]}
-        />
-
-        <ProjectSection
-          titleHTML={
-            <A href="https://github.com/FartLabs/deno_blocks" class="fart-link">
-              Deno Blocks
-            </A>
-          }
-          descriptionHTML={
-            <P>
-              Blockly IDE integration with Fresh and Deno Subhosting.{" "}
-              <SPAN class="sparkle">
-                <EM>Winner</EM>
-              </SPAN>{" "}
-              of Deno Subhosting Hackathon (Ryan Dahl's favorite). Visit{" "}
-              <A
-                href="https://blocks.deno.dev/"
-                class="fart-link"
-              >
-                Deno Blocks
-              </A>!
-            </P>
-          }
-          tubeColor="orange"
-          tubeGlow={true}
-          topics={["blockly", "deno", "fresh", "subhosting"]}
-        />
-
-        <ProjectSection
-          titleHTML={
             <A href="https://github.com/FartLabs/fart.css" class="fart-link">
               fart.css
             </A>

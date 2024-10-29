@@ -1,18 +1,7 @@
-import { DIV, H2, SECTION } from "@fartlabs/htx";
-import { TextNode } from "@fartlabs/htx/special";
-import { PageSection } from "#/components/page_section.tsx";
+import { DIV, SECTION } from "@fartlabs/htx";
 
 export function RiseSection() {
-  return (
-    <TextNode>
-      <PageSection>
-        <H2 id="rise" class="page-heading">
-          Rise to the occasion
-        </H2>
-      </PageSection>
-      <Cubes />
-    </TextNode>
-  );
+  return <Cubes />;
 }
 
 function Cubes() {
