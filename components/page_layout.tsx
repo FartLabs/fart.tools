@@ -1,5 +1,4 @@
 import { BODY, HEAD, HTML, LINK, META, SCRIPT, TITLE } from "@fartlabs/htx";
-import { TextNode } from "@fartlabs/htx/special";
 import { PageNav } from "./page_nav.tsx";
 import { PageFoot } from "./page_foot.tsx";
 import { PageBreak } from "#/components/page_break.tsx";
@@ -20,9 +19,8 @@ export function PageLayout(props: PageLayoutProps) {
   const title = props.title ?? defaultTitle;
   const description = props.description ?? defaultDescription;
 
-  return (
-    <TextNode>
-      {"<!DOCTYPE html>"}
+  return "<!DOCTYPE html>\n" +
+    (
       <HTML lang="en">
         <HEAD>
           <META charset="UTF-8" />
@@ -48,8 +46,7 @@ export function PageLayout(props: PageLayoutProps) {
           <PageFoot />
         </BODY>
       </HTML>
-    </TextNode>
-  );
+    );
 }
 
 function Favicon() {

@@ -1,5 +1,4 @@
-import { A, H2, H3, P, STRONG } from "@fartlabs/htx";
-import { TextNode } from "@fartlabs/htx/special";
+import { A, DIV, H2, H3, P, STRONG } from "@fartlabs/htx";
 import { PageSection } from "#/components/page_section.tsx";
 import {
   BlogButton,
@@ -50,13 +49,13 @@ interface FAQSectionProps {
 
 function FAQSection(props: FAQSectionProps) {
   return (
-    <TextNode>
+    <DIV>
       <H3 id={props.id} class="page-heading-2">
         <A class="fart-link-visible-on-hover" href={`#${props.id}`}>
           {props.questionHTML}
         </A>
       </H3>
       {props.answerHTML}
-    </TextNode>
+    </DIV>
   );
 }

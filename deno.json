@@ -2,25 +2,25 @@
   "lock": false,
   "compilerOptions": {
     "jsx": "react-jsx",
-    "jsxImportSource": "@fartlabs/jsonx"
+    "jsxImportSource": "@fartlabs/htx"
   },
   "imports": {
     "#/": "./",
-    "@fartlabs/htx": "jsr:@fartlabs/htx@^0.0.3",
-    "@fartlabs/jsonx": "jsr:@fartlabs/jsonx@^0.0.10",
-    "@std/front-matter": "jsr:@std/front-matter@^0.223.0",
-    "@std/fs": "jsr:@std/fs@^0.223.0",
-    "@std/http": "jsr:@std/http@^0.223.0",
+    "@fartlabs/htx": "jsr:@fartlabs/htx@^0.0.5",
+    "@std/front-matter": "jsr:@std/front-matter@^1.0.0",
+    "@std/fs": "jsr:@std/fs@^1.0.0",
+    "@std/http": "jsr:@std/http@^1.0.0",
     "alea": "npm:alea@^1.0.1",
     "feed": "npm:feed@^4.2.2",
     "highlight.js": "npm:highlight.js@^11.9.0",
     "markdown-it": "npm:markdown-it@^14.1.0",
-    "markdown-it-anchor": "npm:markdown-it-anchor@^8.6.7",
+    "markdown-it-anchor": "npm:markdown-it-anchor@^9.0.0",
     "simplex-noise": "npm:simplex-noise@^4.0.1"
   },
   "tasks": {
     "generate": "deno run --allow-read --allow-write codegen/codegen.ts",
-    "start": "deno run --allow-net --allow-read main.ts generated"
+    "start": "deno run --allow-net --allow-read main.ts generated",
+    "molt": "deno run -A jsr:@molt/cli -w"
   },
   "fmt": {
     "exclude": ["generated"]

@@ -1,12 +1,12 @@
-import { DIV, H2, IMG, SCRIPT } from "@fartlabs/htx";
+import { DIV, H1, IMG, SCRIPT } from "@fartlabs/htx";
 import { PageSection } from "#/components/page_section.tsx";
 
 export function HeroSection() {
   return (
     <PageSection class="hero">
-      <H2 id="imagination" class="page-heading">
+      <H1 id="imagination" class="page-heading">
         Where imagination becomes great software
-      </H2>
+      </H1>
 
       {/* https://github.com/wagerfield/parallax?tab=readme-ov-file#2-configuration */}
       <DIV

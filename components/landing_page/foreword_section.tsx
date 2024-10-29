@@ -82,8 +82,8 @@ export function ForewordSection() {
       <P>
         -{" "}
         <A href="https://etok.me/" class="fart-link">
-          Ethan Davidson, Chief Scientist & Founder at FartLabs
-        </A>
+          Ethan Davidson
+        </A>, Chief Scientist & Founder at FartLabs
       </P>
     </PageSection>
   );
