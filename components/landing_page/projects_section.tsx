@@ -5,7 +5,7 @@ export function ProjectsSection() {
   return (
     <PageSection>
       <H2 id="projects" class="page-heading">
-        Notable projects
+        Featured projects
       </H2>
 
       <DIV class="projects">

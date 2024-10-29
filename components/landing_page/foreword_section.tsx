@@ -6,7 +6,7 @@ export function ForewordSection() {
   return (
     <PageSection>
       <H2 id="foreword" class="page-heading">
-        Modern software solutions in a snap
+        Software as unique as you are
       </H2>
 
       <P>
