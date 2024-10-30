@@ -7,6 +7,7 @@
   "imports": {
     "#/": "./",
     "@fartlabs/htx": "jsr:@fartlabs/htx@^0.0.5",
+    "@kitsonk/ga4": "jsr:@kitsonk/ga4@^0.1.0",
     "@std/front-matter": "jsr:@std/front-matter@^1.0.0",
     "@std/fs": "jsr:@std/fs@^1.0.0",
     "@std/http": "jsr:@std/http@^1.0.0",
@@ -15,8 +16,7 @@
     "highlight.js": "npm:highlight.js@^11.9.0",
     "markdown-it": "npm:markdown-it@^14.1.0",
     "markdown-it-anchor": "npm:markdown-it-anchor@^9.0.0",
-    "simplex-noise": "npm:simplex-noise@^4.0.1",
-    "ga": "https://deno.land/x/g_a@0.1.2/mod.ts"
+    "simplex-noise": "npm:simplex-noise@^4.0.1"
   },
   "tasks": {
     "generate": "deno run --allow-read --allow-write codegen/codegen.ts",
