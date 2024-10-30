@@ -1,7 +1,7 @@
 import { Feed } from "feed";
 import { posts } from "#/components/blog_page/data.ts";
 
-const ORIGIN = "https://fart.tools";
+const ORIGIN = "https://fartlabs.org";
 const ID = `${ORIGIN}/blog`;
 const COPYRIGHT = `Copyright ${new Date().getFullYear()} FartLabs`;
 

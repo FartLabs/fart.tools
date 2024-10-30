@@ -1,4 +1,4 @@
-# fart.tools
+# fartlabs.org
 
 🧪 Official website of FartLabs.
 

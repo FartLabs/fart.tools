@@ -72,12 +72,13 @@ export function ProjectsSection() {
         <ProjectSection
           titleHTML={
             <A href="https://github.com/FartLabs/fart.css" class="fart-link">
-              fart.css
+              Fart.css
             </A>
           }
           descriptionHTML={
             <P>
-              CSS library reusable across fart-tastic frontends. Visit{" "}
+              CSS library reusable across{" "}
+              <SPAN class="sparkle">fart-tastic</SPAN> frontends. Visit{" "}
               <A href="https://css.fart.tools/" class="fart-link">
                 css.fart.tools
               </A>{" "}

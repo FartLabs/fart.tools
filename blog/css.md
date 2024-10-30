@@ -45,10 +45,10 @@ Additionally, the developer community has adopted Fart.css for personal
 projects, further demonstrating its effectiveness in accelerating development.
 Examples include:
 
-- <https://fart.tools/>: FartLabs landing page.
+- <https://fartlabs.org/>: FartLabs landing page.
 - <https://css.fart.tools/>: Fart.css documentation website.
 - <https://concentration.fart.tools/>: Concentration game.
-- <https://etok.me/>: Personal website of Ethan.
+- <https://etok.me/>: Ethan's personal website.
 
 ## In honor of Halloween
 
@@ -65,5 +65,6 @@ This release marks the foundation for Fart.css. The development team actively
 seeks feedback from the community to optimize future iterations of the library.
 To contribute your insights, please
 [create a new issue](https://github.com/FartLabs/fart.css/issues/new) on our
-[Fart.css GitHub repository](https://github.com/FartLabs/fart.css) or join the
-discussion on our [Discord server](https://go.fart.tools/chat).
+Fart.css GitHub repository
+<a class="fart-button" href="https://github.com/FartLabs/fart.css">★Source<small>↗</small></a>
+or join the discussion on our [Discord server](https://go.fart.tools/chat).
