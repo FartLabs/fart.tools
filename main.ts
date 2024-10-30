@@ -1,3 +1,6 @@
 import { serveDir } from "@std/http/file-server";
+import { useGoogleAnalytics } from "./google-analytics.ts";
 
-Deno.serve((request) => serveDir(request, { fsRoot: Deno.args[0] ?? "." }));
+Deno.serve(useGoogleAnalytics(
+  (request) => serveDir(request, { fsRoot: Deno.args[0] ?? "." }),
+));

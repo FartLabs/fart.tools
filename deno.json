@@ -15,11 +15,12 @@
     "highlight.js": "npm:highlight.js@^11.9.0",
     "markdown-it": "npm:markdown-it@^14.1.0",
     "markdown-it-anchor": "npm:markdown-it-anchor@^9.0.0",
-    "simplex-noise": "npm:simplex-noise@^4.0.1"
+    "simplex-noise": "npm:simplex-noise@^4.0.1",
+    "ga": "https://deno.land/x/g_a@0.1.2/mod.ts"
   },
   "tasks": {
     "generate": "deno run --allow-read --allow-write codegen/codegen.ts",
-    "start": "deno run --allow-net --allow-read main.ts generated",
+    "start": "deno run --allow-net --allow-read --allow-env --env main.ts generated",
     "molt": "deno run -A jsr:@molt/cli -w"
   },
   "fmt": {
