@@ -54,9 +54,6 @@ function Favicon() {
 }
 
 const stylesheets = [
-  "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark-dimmed.min.css",
-  "https://css.fart.tools/fart.css",
-  "/background-blob.css",
   "/tube-green.css",
   "/tube-purple.css",
   "/tube-yellow.css",
@@ -65,6 +62,7 @@ const stylesheets = [
   "/tube-orange.css",
   "/tube-blue.css",
   "/tube-empty.css",
+  "https://css.fart.tools/fart.css",
   "/cubes.css",
   "/index.css",
 ];

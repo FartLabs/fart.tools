@@ -55,7 +55,3 @@
   display: grid;
   gap: 2rem;
 }
-
-.hljs {
-  background-color: var(--fart-darker-dark-green);
-}
