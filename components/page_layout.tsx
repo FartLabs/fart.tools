@@ -44,6 +44,14 @@ export function PageLayout(props: PageLayoutProps) {
           {props.children?.join("") ?? ""}
           <PageBreak />
           <PageFoot />
+
+          <SCRIPT>
+            {`document.addEventListener("DOMContentLoaded", function() {
+                const url = new URL(window.location.href);
+                console.log(url.searchParams);
+                // If url has search params, copy them over to Fart.css link.
+              });`}
+          </SCRIPT>
         </BODY>
       </HTML>
     );
@@ -53,7 +61,10 @@ function Favicon() {
   return <LINK rel="icon" href="/fl-logo.png" />;
 }
 
+const fartCSS = "https://css.fart.tools/fart.css";
+
 const stylesheets = [
+  "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark-dimmed.min.css",
   "/tube-green.css",
   "/tube-purple.css",
   "/tube-yellow.css",
@@ -62,7 +73,7 @@ const stylesheets = [
   "/tube-orange.css",
   "/tube-blue.css",
   "/tube-empty.css",
-  "https://css.fart.tools/fart.css",
+  fartCSS,
   "/cubes.css",
   "/index.css",
 ];
