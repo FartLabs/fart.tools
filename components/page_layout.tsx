@@ -45,13 +45,7 @@ export function PageLayout(props: PageLayoutProps) {
           <PageBreak />
           <PageFoot />
 
-          <SCRIPT>
-            {`document.addEventListener("DOMContentLoaded", function() {
-                const url = new URL(window.location.href);
-                const linkElement = document.head.querySelector('link[href="${fartCSS}"]');
-                linkElement.href = "https://css.fart.tools/fart.css" + url.search;
-              });`}
-          </SCRIPT>
+          <SCRIPT>{fartCssScript()}</SCRIPT>
         </BODY>
       </HTML>
     );
@@ -82,3 +76,19 @@ const scripts = [
   "https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js",
   "https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js",
 ];
+
+function fartCssScript() {
+  return `document.addEventListener("DOMContentLoaded", function() {
+  const url = new URL(window.location.href);
+  if (url.searchParams.size === 0) {
+    return;
+  }
+
+  const linkElement = document.head.querySelector('link[href="${fartCSS}"]');
+  if (linkElement === null) {
+    return;
+  }
+
+  linkElement.href = "${fartCSS}" + url.search;
+});`;
+}
