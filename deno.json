@@ -21,7 +21,8 @@
   "tasks": {
     "generate": "deno run --allow-read --allow-write codegen/codegen.ts",
     "start": "deno run --allow-net --allow-read --allow-env --env main.ts generated",
-    "molt": "deno run -A jsr:@molt/cli -w"
+    "molt": "deno run -A jsr:@molt/cli -w",
+    "gs": "deno task generate && deno task start"
   },
   "fmt": {
     "exclude": ["generated"]
