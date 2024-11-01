@@ -48,8 +48,8 @@ export function PageLayout(props: PageLayoutProps) {
           <SCRIPT>
             {`document.addEventListener("DOMContentLoaded", function() {
                 const url = new URL(window.location.href);
-                console.log(url.searchParams);
-                // If url has search params, copy them over to Fart.css link.
+                const linkElement = document.head.querySelector('link[href="${fartCSS}"]');
+                linkElement.href = "https://css.fart.tools/fart.css" + url.search;
               });`}
           </SCRIPT>
         </BODY>

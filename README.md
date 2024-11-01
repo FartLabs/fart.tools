@@ -19,6 +19,8 @@ Run `deno fmt` to format the code.
 
 Run `deno lint` to lint the code.
 
+Run `deno check main.ts` to check the code.
+
 ---
 
 Developed with 🧪 [**@FartLabs**](https://github.com/FartLabs)
