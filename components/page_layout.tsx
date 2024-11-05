@@ -24,6 +24,7 @@ export function PageLayout(props: PageLayoutProps) {
       <HTML lang="en">
         <HEAD>
           <META charset="UTF-8" />
+          <META name="theme-color" content="#004021" />
           <META
             name="viewport"
             content="width=device-width, initial-scale=1.0"
