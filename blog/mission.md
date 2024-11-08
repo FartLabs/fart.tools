@@ -39,7 +39,7 @@ computing.
 > developer with a lot of patience, the power to reshape software is out of your
 > hands.
 >
-> - [Tyler Angert](https://tyler.cafe/)
+> \- [Tyler Angert](https://tyler.cafe/)
 
 > In sum, I believe that there exists a better way forward for personal
 > computing. I do not purport to have all the answers, but I am coming at this
@@ -47,7 +47,7 @@ computing.
 > obsession with what potential personal computing presents to the future of our
 > society.
 >
-> - [Alexander Obenauer](https://alexobenauer.com/)
+> \- [Alexander Obenauer](https://alexobenauer.com/)
 
 Inspired by decades of science fiction and technological advancements, we gained
 the opportunity to shape a future where technology truly serves our needs. By
