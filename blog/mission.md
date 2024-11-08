@@ -1,6 +1,6 @@
 ---
 title: "FartLabs: Our Mission"
-description: "Generational software for a personalized digital experience."
+description: "Intergenerational software for a personalized digital experience."
 authors:
   - name: "Ethan Davidson"
     username: "EthanThatOneKid"
@@ -8,10 +8,10 @@ topics: ["Community"]
 date: 2024-11-07
 ---
 
-In today's digital world, software is crucial in how we work, connect, and
-explore. However, many applications prioritize generic functionality over
-individual needs. We believe software should be an extension of ourselves,
-adaptable and responsive to our unique preferences.
+In today's world, software is crucial in everything we do. However, many
+applications prioritize generic functionality over individual needs. We believe
+software should be an extension of ourselves, adaptable and responsive to our
+unique preferences.
 
 Inspired by philosophies like the
 [Semantic Web](https://en.wikipedia.org/wiki/Semantic_Web), we aim to develop
@@ -77,7 +77,7 @@ Our mission wouldn't exist without the inspiration of a truly unique individual
 good fart joke (and let's be honest, who doesn't?), he was utterly dedicated to
 the comedic power of flatulence.
 
-His passion manifested in the form of the "Fart Movie" serious - a self-made
+His passion manifested in the form of the "Fart Movie" series — a self-made
 collection of the funniest and most informative fart moments from popular movies
 and television shows. But Gregory's ambition went beyond mere compilation. He
 wrote, directed, animated, and even narrated some original scenes.
