@@ -1,6 +1,6 @@
 import { copySync, existsSync, expandGlobSync } from "@std/fs";
 import { generateTubes } from "./tubes.ts";
-import { generateHTML } from "./html.tsx";
+import { generateHTMLSync } from "./html.tsx";
 import { generateFeed } from "./feed.ts";
 
 if (import.meta.main) {
@@ -29,6 +29,6 @@ function copyFiles() {
 
 function generateFiles() {
   generateTubes();
-  generateHTML();
+  generateHTMLSync();
   generateFeed();
 }

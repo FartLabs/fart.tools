@@ -1,19 +1,19 @@
 import { LandingPage } from "#/components/landing_page/mod.ts";
 import { PeoplePage } from "#/components/people_page/mod.ts";
-import {
-  BlogPage,
-  posts,
-  topics,
-  toTopicID,
-} from "#/components/blog_page/mod.ts";
-import { BlogPostPage } from "#/components/blog_page/blog_post_page/mod.ts";
-import PEOPLE from "#/static/people.json" with { type: "json" };
+import { posts, topics } from "#/components/blog_page/data.ts";
+import { toTopicID } from "#/components/blog_page/posts.ts";
+import { BlogPage } from "#/components/blog_page/blog_page.tsx";
+import { BlogPostPage } from "#/components/blog_page/blog_post_page.tsx";
+import people from "#/static/people.json" with { type: "json" };
 
-export function generateHTML(directory: string = "generated") {
+/**
+ * generateHTMLSync generates the HTML files for the website synchronously.
+ */
+export function generateHTMLSync(directory: string = "generated") {
   const landingPageHTML: string = <LandingPage />;
   Deno.writeTextFileSync(`${directory}/index.html`, landingPageHTML);
 
-  const peoplePageHTML: string = <PeoplePage people={PEOPLE} />;
+  const peoplePageHTML: string = <PeoplePage people={people} />;
   Deno.mkdirSync(`${directory}/people`, { recursive: true });
   Deno.writeTextFileSync(`${directory}/people/index.html`, peoplePageHTML);
 
