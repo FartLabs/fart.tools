@@ -1,9 +1,9 @@
 import { LINK } from "@fartlabs/htx";
+import type { Post } from "#/components/blog_page/posts.ts";
 import { PageLayout } from "#/components/page_layout.tsx";
 import { PageSection } from "#/components/page_section.tsx";
 import { PageBreak } from "#/components/page_break.tsx";
 import { BlogPostPreview } from "#/components/blog_page/blog_post_preview.tsx";
-import type { Post } from "#/components/blog_page/mod.ts";
 
 export interface BlogPostPageProps {
   post: Post;
