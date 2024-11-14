@@ -1,10 +1,11 @@
 import { LandingPage } from "#/components/landing_page/mod.ts";
 import { PeoplePage } from "#/components/people_page/mod.ts";
-import { posts, topics } from "#/components/blog_page/data.ts";
+import { aliases, posts, topics } from "#/components/blog_page/data.ts";
 import { toTopicID } from "#/components/blog_page/posts.ts";
 import { BlogPage } from "#/components/blog_page/blog_page.tsx";
 import { BlogPostPage } from "#/components/blog_page/blog_post_page.tsx";
 import people from "#/static/people.json" with { type: "json" };
+import { PageRedirect } from "#/components/page_redirect.tsx";
 
 /**
  * generateHTMLSync generates the HTML files for the website synchronously.
@@ -37,6 +38,15 @@ export function generateHTMLSync(directory: string = "generated") {
     Deno.writeTextFileSync(
       `${directory}/${post.id}/index.html`,
       postPageHTML,
+    );
+  }
+
+  for (const [alias, destination] of aliases) {
+    const aliasPageHTML: string = <PageRedirect to={destination} />;
+    Deno.mkdirSync(`${directory}/${alias}`, { recursive: true });
+    Deno.writeTextFileSync(
+      `${directory}/${alias}/index.html`,
+      aliasPageHTML,
     );
   }
 }

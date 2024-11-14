@@ -6,6 +6,7 @@ authors:
     username: "EthanThatOneKid"
 topics: ["Community"]
 date: 2024-11-07
+aliases: ["about"]
 ---
 
 In today's world, software is crucial in everything we do. However, many
