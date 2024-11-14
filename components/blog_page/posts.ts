@@ -72,7 +72,7 @@ export function readPostSync(entry: WalkEntry): Post {
   };
 }
 
-const tocPrefix = "## On this page\n\n[[toc]]\n";
+const tocPrefix = "<strong>On this page</strong>\n\n[[toc]]\n";
 
 /**
  * countTopics counts the topics.
