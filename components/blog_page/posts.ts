@@ -114,6 +114,7 @@ export interface PostAttrs {
   authors: PostAuthor[];
   topics: string[];
   date: Date;
+  aliases?: string[];
 }
 
 /**
@@ -172,4 +173,26 @@ export function toTopicID(topic: string) {
  */
 export function getFeaturedPosts(posts: Post[], limit = 3): Post[] {
   return posts.toSorted(byPinnedDescending).slice(0, limit);
+}
+
+/**
+ * getAliases returns the aliases of the blog posts.
+ */
+export function getAliases(posts: Post[]): Map<string, string> {
+  const aliases = new Map<string, string>();
+  for (const post of posts) {
+    if (post.attrs.aliases === undefined) {
+      continue;
+    }
+
+    for (const alias of post.attrs.aliases) {
+      if (aliases.has(alias)) {
+        throw new Error(`duplicate alias ${alias}`);
+      }
+
+      aliases.set(alias, `/${post.id}`);
+    }
+  }
+
+  return aliases;
 }
