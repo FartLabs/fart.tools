@@ -6,6 +6,7 @@ authors:
     username: "EthanThatOneKid"
 topics: ["Games"]
 date: 2024-06-05
+toc: false
 ---
 
 At FartLabs, we're passionate about developer tools, but we also love creating

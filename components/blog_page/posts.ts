@@ -66,12 +66,16 @@ export function readPostSync(entry: WalkEntry): Post {
   return {
     id,
     attrs: extracted.attrs,
-    html: renderHTML(extracted.body),
+    html: renderHTML(
+      `${(extracted.attrs.toc ?? true) ? tocPrefix : ""}${extracted.body}`,
+    ),
   };
 }
 
+const tocPrefix = "## On this page\n\n[[toc]]\n";
+
 /**
- * constTopics counts the topics.
+ * countTopics counts the topics.
  */
 export function countTopics(posts: Post[]): Map<string, number> {
   const topics = new Map<string, number>();
@@ -115,6 +119,7 @@ export interface PostAttrs {
   topics: string[];
   date: Date;
   aliases?: string[];
+  toc?: boolean;
 }
 
 /**

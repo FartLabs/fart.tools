@@ -1,5 +1,6 @@
 import MarkdownIt from "markdown-it";
 import anchorPlugin from "markdown-it-anchor";
+import tocDoneRightPlugin from "markdown-it-toc-done-right";
 import hljs from "highlight.js";
 
 /**
@@ -35,3 +36,5 @@ renderer.use(anchorPlugin, {
     class: "fart-link-visible-on-hover",
   }),
 });
+
+renderer.use(tocDoneRightPlugin);
