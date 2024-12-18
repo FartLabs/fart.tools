@@ -9,7 +9,7 @@
 
 .markdown-body pre {
   font-family: monospace;
-  background-color: var(--fart-darker-dark-green);
+  background-color: var(--fart-darker-dark-primary);
   border-radius: 2em;
 }
 

@@ -62,10 +62,10 @@
 
 .top {
   transform: rotateX(90deg) translateZ(1em);
-  color: var(--fart-darker-dark-green);
-  background-image: linear-gradient(#c3ef3caa, #c3ef3caa);
+  color: var(--fart-darker-dark-primary);
+  background-image: linear-gradient(var(--fart-primary), var(--fart-primary));
   height: 2em;
-  outline: 2px solid var(--fart-darker-dark-green);
+  outline: 2px solid var(--fart-darker-dark-primary);
   animation: fade-in linear;
   animation-timeline: view();
 }
@@ -73,16 +73,16 @@
 .left {
   transform: rotateY(-90deg) translateZ(1em);
   background-image: linear-gradient(
-    var(--fart-lighter-dark-green) 0%,
+    var(--fart-lighter-dark-primary) 0%,
     rgba(0, 0, 0, 0) 100%
   );
 }
 
 .front {
   transform: translateZ(1em);
-  color: var(--fart-green);
+  color: var(--fart-primary);
   background-image: linear-gradient(
-    var(--fart-darker-dark-green) 0%,
+    var(--fart-darker-dark-primary) 0%,
     rgba(0, 0, 0, 0) 100%
   );
 }
