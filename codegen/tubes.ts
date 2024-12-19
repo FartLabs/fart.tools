@@ -13,7 +13,7 @@ const colors = {
   blue: "#1589FF",
 };
 
-export async function generateTubes() {
+export async function generateTubes(directory: string) {
   const verticesAmount = 100;
   const totalBubbles = 30;
   const path = [
@@ -23,22 +23,22 @@ export async function generateTubes() {
     { x: 20, y: 84 },
   ];
 
-  await Deno.writeTextFile("generated/tube-empty.svg", renderEmptyTube());
+  await Deno.writeTextFile(`${directory}/tube-empty.svg`, renderEmptyTube());
   await Deno.writeTextFile(
-    "generated/tube-empty.css",
+    `${directory}/tube-empty.css`,
     renderTubeCSS("empty", "#ffffffaa"),
   );
 
   for (const [colorName, colorValue] of Object.entries(colors)) {
     await Deno.writeTextFile(
-      `generated/tube-${colorName}.svg`,
+      `${directory}/tube-${colorName}.svg`,
       renderEmptyTube(
         renderTubeGlow(colorValue),
         renderBubbles(path, verticesAmount, totalBubbles, colorValue),
       ),
     );
     await Deno.writeTextFile(
-      `generated/tube-${colorName}.css`,
+      `${directory}/tube-${colorName}.css`,
       renderTubeCSS(colorName, colorValue),
     );
   }

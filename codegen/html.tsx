@@ -8,9 +8,9 @@ import { PageRedirect } from "#/components/page_redirect.tsx";
 import people from "#/static/people.json" with { type: "json" };
 
 /**
- * generateHTMLSync generates the HTML files for the website synchronously.
+ * generateHTML generates the HTML files for the website.
  */
-export async function generateHTMLSync(directory: string = "generated") {
+export async function generateHTML(directory: string) {
   await Deno.writeTextFile(`${directory}/index.html`, <LandingPage />);
 
   await Deno.mkdir(`${directory}/people`, { recursive: true });

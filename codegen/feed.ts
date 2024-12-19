@@ -5,7 +5,7 @@ const ORIGIN = "https://fartlabs.org";
 const ID = `${ORIGIN}/blog`;
 const COPYRIGHT = `Copyright ${new Date().getFullYear()} FartLabs`;
 
-export async function generateFeed() {
+export async function generateFeed(directory: string) {
   const feed = new Feed({
     id: ID,
     link: ID,
@@ -45,6 +45,6 @@ export async function generateFeed() {
     });
   });
 
-  await Deno.writeTextFile("generated/feed.xml", feed.rss2());
-  await Deno.writeTextFile("generated/feed.atom", feed.atom1());
+  await Deno.writeTextFile(`${directory}/feed.xml`, feed.rss2());
+  await Deno.writeTextFile(`${directory}/feed.atom`, feed.atom1());
 }
