@@ -3,16 +3,19 @@ import { default as seed } from "alea";
 
 const noise = createNoise2D(seed("tube"));
 
-const green = "#C3EF3C";
-const purple = "#9D00FF";
-const yellow = "#FDBD01";
-const turquoise = "#16E2F5";
-const magenta = "#FF00FF";
-const orange = "#FF6700";
-const blue = "#1589FF";
+const colors = {
+  green: "#C3EF3C",
+  purple: "#9D00FF",
+  yellow: "#FDBD01",
+  turquoise: "#16E2F5",
+  magenta: "#FF00FF",
+  orange: "#FF6700",
+  blue: "#1589FF",
+};
 
 export async function generateTubes() {
   const verticesAmount = 100;
+  const totalBubbles = 30;
   const path = [
     { x: 20, y: 20 },
     { x: 84, y: 20 },
@@ -20,67 +23,25 @@ export async function generateTubes() {
     { x: 20, y: 84 },
   ];
 
-  const emptyTubeSVG = renderEmptyTube();
-  await Deno.writeTextFile("generated/tube-empty.svg", emptyTubeSVG);
-
-  const emptyTubeCSS = renderTubeCSS("empty", "#ffffffaa");
-  await Deno.writeTextFile("generated/tube-empty.css", emptyTubeCSS);
-
-  const greenTubeSVG = renderGreenTube(
-    renderBubbles(path, verticesAmount, 30, green),
+  await Deno.writeTextFile("generated/tube-empty.svg", renderEmptyTube());
+  await Deno.writeTextFile(
+    "generated/tube-empty.css",
+    renderTubeCSS("empty", "#ffffffaa"),
   );
-  await Deno.writeTextFile("generated/tube-green.svg", greenTubeSVG);
 
-  const greenTubeCSS = renderTubeCSS("green", green);
-  await Deno.writeTextFile("generated/tube-green.css", greenTubeCSS);
-
-  const purpleTubeSVG = renderPurpleTube(
-    renderBubbles(path, verticesAmount, 30, purple),
-  );
-  await Deno.writeTextFile("generated/tube-purple.svg", purpleTubeSVG);
-
-  const purpleTubeCSS = renderTubeCSS("purple", purple);
-  await Deno.writeTextFile("generated/tube-purple.css", purpleTubeCSS);
-
-  const yellowTubeSVG = renderYellowTube(
-    renderBubbles(path, verticesAmount, 30, yellow),
-  );
-  await Deno.writeTextFile("generated/tube-yellow.svg", yellowTubeSVG);
-
-  const yellowTubeCSS = renderTubeCSS("yellow", yellow);
-  await Deno.writeTextFile("generated/tube-yellow.css", yellowTubeCSS);
-
-  const turquoiseTubeSVG = renderTurquoiseTube(
-    renderBubbles(path, verticesAmount, 30, turquoise),
-  );
-  await Deno.writeTextFile("generated/tube-turquoise.svg", turquoiseTubeSVG);
-
-  const turquoiseTubeCSS = renderTubeCSS("turquoise", turquoise);
-  await Deno.writeTextFile("generated/tube-turquoise.css", turquoiseTubeCSS);
-
-  const magentaTubeSVG = renderMagentaTube(
-    renderBubbles(path, verticesAmount, 30, magenta),
-  );
-  await Deno.writeTextFile("generated/tube-magenta.svg", magentaTubeSVG);
-
-  const magentaTubeCSS = renderTubeCSS("magenta", magenta);
-  await Deno.writeTextFile("generated/tube-magenta.css", magentaTubeCSS);
-
-  const orangeTubeSVG = renderOrangeTube(
-    renderBubbles(path, verticesAmount, 30, orange),
-  );
-  await Deno.writeTextFile("generated/tube-orange.svg", orangeTubeSVG);
-
-  const orangeTubeCSS = renderTubeCSS("orange", orange);
-  await Deno.writeTextFile("generated/tube-orange.css", orangeTubeCSS);
-
-  const blueTubeSVG = renderBlueTube(
-    renderBubbles(path, verticesAmount, 30, blue),
-  );
-  await Deno.writeTextFile("generated/tube-blue.svg", blueTubeSVG);
-
-  const blueTubeCSS = renderTubeCSS("blue", blue);
-  await Deno.writeTextFile("generated/tube-blue.css", blueTubeCSS);
+  for (const [colorName, colorValue] of Object.entries(colors)) {
+    await Deno.writeTextFile(
+      `generated/tube-${colorName}.svg`,
+      renderEmptyTube(
+        renderTubeGlow(colorValue),
+        renderBubbles(path, verticesAmount, totalBubbles, colorValue),
+      ),
+    );
+    await Deno.writeTextFile(
+      `generated/tube-${colorName}.css`,
+      renderTubeCSS(colorName, colorValue),
+    );
+  }
 }
 
 function renderTubeCSS(name: string, color: string) {
@@ -101,55 +62,6 @@ function renderTubeCSS(name: string, color: string) {
 }\n`;
 }
 
-function renderGreenTube(...children: string[]) {
-  return renderEmptyTube(
-    `<rect filter="blur(1px)" stroke="${green}aa" stroke-width="28" x="16" y="16" width="68" height="68" rx="16" ry="16" />`,
-    ...children,
-  );
-}
-
-function renderPurpleTube(...children: string[]) {
-  return renderEmptyTube(
-    `<rect filter="blur(1px)" stroke="${purple}aa" stroke-width="28" x="16" y="16" width="68" height="68" rx="16" ry="16" />`,
-    ...children,
-  );
-}
-
-function renderYellowTube(...children: string[]) {
-  return renderEmptyTube(
-    `<rect filter="blur(1px)" stroke="${yellow}aa" stroke-width="28" x="16" y="16" width="68" height="68" rx="16" ry="16" />`,
-    ...children,
-  );
-}
-
-function renderTurquoiseTube(...children: string[]) {
-  return renderEmptyTube(
-    `<rect filter="blur(1px)" stroke="${turquoise}aa" stroke-width="28" x="16" y="16" width="68" height="68" rx="16" ry="16" />`,
-    ...children,
-  );
-}
-
-function renderMagentaTube(...children: string[]) {
-  return renderEmptyTube(
-    `<rect filter="blur(1px)" stroke="${magenta}aa" stroke-width="28" x="16" y="16" width="68" height="68" rx="16" ry="16" />`,
-    ...children,
-  );
-}
-
-function renderOrangeTube(...children: string[]) {
-  return renderEmptyTube(
-    `<rect filter="blur(1px)" stroke="${orange}aa" stroke-width="28" x="16" y="16" width="68" height="68" rx="16" ry="16" />`,
-    ...children,
-  );
-}
-
-function renderBlueTube(...children: string[]) {
-  return renderEmptyTube(
-    `<rect filter="blur(1px)" stroke="${blue}aa" stroke-width="28" x="16" y="16" width="68" height="68" rx="16" ry="16" />`,
-    ...children,
-  );
-}
-
 function renderEmptyTube(...children: string[]) {
   return [
     `<svg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'>`,
@@ -159,6 +71,10 @@ function renderEmptyTube(...children: string[]) {
     `<rect filter="blur(2px)" stroke="#ffffffaa" stroke-width="7.5" x="17.5" y="17.5" width="66" height="66" rx="12" ry="12" />`,
     `</svg>\n`,
   ].join("\n");
+}
+
+function renderTubeGlow(color: string): string {
+  return `<rect filter="blur(1px)" stroke="${color}aa" stroke-width="28" x="16" y="16" width="68" height="68" rx="16" ry="16" />`;
 }
 
 function renderBubbles(
