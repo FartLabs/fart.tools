@@ -1,8 +1,7 @@
 import { GA4Report } from "@kitsonk/ga4";
 
-const GOOGLE_ANALYTICS_ID = Deno.env.get("GOOGLE_ANALYTICS_ID")!;
-
 export function useGoogleAnalytics(
+  measurementId: string,
   fn: (
     request: Request,
     info: Deno.ServeHandlerInfo<Deno.NetAddr>,
@@ -10,15 +9,15 @@ export function useGoogleAnalytics(
 ) {
   return async function (
     request: Request,
-    conn: Deno.ServeHandlerInfo<Deno.NetAddr>,
+    info: Deno.ServeHandlerInfo<Deno.NetAddr>,
   ) {
     let response: Response;
     try {
-      response = await fn(request, conn);
+      response = await fn(request, info);
     } finally {
       const report = new GA4Report({
-        measurementId: GOOGLE_ANALYTICS_ID,
-        conn,
+        measurementId,
+        conn: info,
         request,
         response: response!,
       });
