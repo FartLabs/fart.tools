@@ -4,49 +4,46 @@ import { aliases, posts, topics } from "#/components/blog_page/data.ts";
 import { toTopicID } from "#/components/blog_page/posts.ts";
 import { BlogPage } from "#/components/blog_page/blog_page.tsx";
 import { BlogPostPage } from "#/components/blog_page/blog_post_page.tsx";
-import people from "#/static/people.json" with { type: "json" };
 import { PageRedirect } from "#/components/page_redirect.tsx";
+import people from "#/static/people.json" with { type: "json" };
 
 /**
  * generateHTMLSync generates the HTML files for the website synchronously.
  */
-export function generateHTMLSync(directory: string = "generated") {
-  const landingPageHTML: string = <LandingPage />;
-  Deno.writeTextFileSync(`${directory}/index.html`, landingPageHTML);
+export async function generateHTMLSync(directory: string = "generated") {
+  await Deno.writeTextFile(`${directory}/index.html`, <LandingPage />);
 
-  const peoplePageHTML: string = <PeoplePage people={people} />;
-  Deno.mkdirSync(`${directory}/people`, { recursive: true });
-  Deno.writeTextFileSync(`${directory}/people/index.html`, peoplePageHTML);
+  await Deno.mkdir(`${directory}/people`, { recursive: true });
+  await Deno.writeTextFile(
+    `${directory}/people/index.html`,
+    <PeoplePage people={people} />,
+  );
 
-  const blogPageHTML: string = <BlogPage />;
-  Deno.mkdirSync(`${directory}/blog`, { recursive: true });
-  Deno.writeTextFileSync(`${directory}/blog/index.html`, blogPageHTML);
+  await Deno.mkdir(`${directory}/blog`, { recursive: true });
+  await Deno.writeTextFile(`${directory}/blog/index.html`, <BlogPage />);
 
   for (const topic of topics) {
     const topicID = toTopicID(topic);
-    const topicPageHTML: string = <BlogPage topicID={topicID} />;
-    Deno.mkdirSync(`${directory}/blog/${topicID}`, { recursive: true });
-    Deno.writeTextFileSync(
+    await Deno.mkdir(`${directory}/blog/${topicID}`, { recursive: true });
+    await Deno.writeTextFile(
       `${directory}/blog/${topicID}/index.html`,
-      topicPageHTML,
+      <BlogPage topicID={topicID} />,
     );
   }
 
   for (const post of posts) {
-    const postPageHTML: string = <BlogPostPage post={post} />;
-    Deno.mkdirSync(`${directory}/${post.id}`, { recursive: true });
-    Deno.writeTextFileSync(
+    await Deno.mkdir(`${directory}/${post.id}`, { recursive: true });
+    await Deno.writeTextFile(
       `${directory}/${post.id}/index.html`,
-      postPageHTML,
+      <BlogPostPage post={post} />,
     );
   }
 
   for (const [alias, destination] of aliases) {
-    const aliasPageHTML: string = <PageRedirect to={destination} />;
-    Deno.mkdirSync(`${directory}/${alias}`, { recursive: true });
-    Deno.writeTextFileSync(
+    await Deno.mkdir(`${directory}/${alias}`, { recursive: true });
+    await Deno.writeTextFile(
       `${directory}/${alias}/index.html`,
-      aliasPageHTML,
+      <PageRedirect to={destination} />,
     );
   }
 }

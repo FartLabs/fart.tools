@@ -1,34 +1,34 @@
-import { copySync, existsSync, expandGlobSync } from "@std/fs";
+import { copy, exists, expandGlob } from "@std/fs";
 import { generateTubes } from "./tubes.ts";
 import { generateHTMLSync } from "./html.tsx";
 import { generateFeed } from "./feed.ts";
 
 if (import.meta.main) {
-  removeGeneratedFiles();
-  copyFiles();
-  generateFiles();
+  await removeGeneratedFiles();
+  await copyFiles();
+  await generateFiles();
 }
 
-function removeGeneratedFiles() {
-  if (!existsSync("generated")) {
+async function removeGeneratedFiles() {
+  if (!(await exists("generated"))) {
     return;
   }
 
-  Deno.removeSync("generated", { recursive: true });
+  await Deno.remove("generated", { recursive: true });
 }
 
-function copyFiles() {
-  Deno.mkdirSync("generated", { recursive: true });
-  copySync("deno.json", "generated/deno.json", { overwrite: true });
-  copySync("static", "generated", { overwrite: true });
+async function copyFiles() {
+  await Deno.mkdir("generated", { recursive: true });
+  await copy("deno.json", "generated/deno.json", { overwrite: true });
+  await copy("static", "generated", { overwrite: true });
 
-  for (const file of expandGlobSync("*.ts")) {
-    copySync(file.path, `generated/${file.name}`, { overwrite: true });
+  for await (const file of expandGlob("*.ts")) {
+    await copy(file.path, `generated/${file.name}`, { overwrite: true });
   }
 }
 
-function generateFiles() {
-  generateTubes();
-  generateHTMLSync();
-  generateFeed();
+async function generateFiles() {
+  await generateTubes();
+  await generateHTMLSync();
+  await generateFeed();
 }
